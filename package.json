@@ -1,0 +1,21 @@
+{
+  "name": "vilela.lib.front",
+  "description": "Monorepo with Front-end Library.",
+  "version": "2.24.2",
+  "private": true,
+  "workspaces": [
+    "packages/build-lib",
+    "packages/shared"
+  ],
+  "scripts": {
+    "command": "node ./commands",
+    "prepublishOnly": "npm run command prepublish",
+    "dev": "npm run dev",
+    "dev:docs": "npm run dev -w docs/",
+    "dev:docs:cache": "npm run dev -w docs/ --no-manager-cache",
+    "build": "npm run build -ws --if-present",
+    "build:pkgs": "npm run build -w packages/ --if-present",
+    "test": "npm run test -ws --if-present",
+    "test:update": "npm run test:update -ws --if-present"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@vilela/shared",
+  "description": "Shared code for any projects.",
+  "version": "2.24.2",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "extensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx"
+  ],
+  "scripts": {
+    "dev": "vilela-lib dev",
+    "prebuild": "vilela-lib prebuild",
+    "build": "vilela-lib build",
+    "test": "vilela-lib test",
+    "test:update": "vilela-lib test-update",
+    "test:ci": "vilela-lib test-ci",
+    "lint": "vilela-lib lint"
+  },
+  "peerDependencies": {
+    "react": "^18.x"
+  },
+  "devDependencies": {
+    "@vilela/build-lib": "^2.x"
+  }
+}
