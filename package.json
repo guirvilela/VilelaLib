@@ -1,12 +1,14 @@
 {
-  "name": "vilela.lib.front",
+  "name": "@vilela/lib.front",
   "description": "Monorepo with Front-end Library.",
   "version": "2.24.2",
-  "private": true,
   "workspaces": [
     "packages/build-lib",
     "packages/shared"
   ],
+  "publishConfig": {
+    "@vilela:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "command": "node ./commands",
     "prepublishOnly": "npm run command prepublish",
@@ -17,5 +19,14 @@
     "build:pkgs": "npm run build -w packages/ --if-present",
     "test": "npm run test -ws --if-present",
     "test:update": "npm run test:update -ws --if-present"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-react": "^7.24.7"
   }
 }
