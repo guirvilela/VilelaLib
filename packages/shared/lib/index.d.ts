@@ -2,27 +2,27 @@
  * Type return of useForm Hook
  */
 interface Form<T> {
-  /** current value of form */
-  value: T;
-  /** set value of field */
-  set: (f: keyof T, options?: FormSetterOptions) => (v: T[keyof T]) => void;
-  /** set more fields, keep others fields */
-  setAll: (v: Partial<T>, options?: FormSetterOptions) => void;
-  /** reset fields, can ignores any field and set field same time */
-  reset: (ignores?: (keyof T)[], value?: Partial<T>) => void;
-  /** return by validator */
-  isValid: boolean;
-  /** return true if change any field */
-  hasChanges: boolean;
-  /** count changes fields, can custom compare fields */
-  count(compare?: (key: keyof T) => boolean): number;
-  /** return true if field never changed, can custom validation */
-  pristine(key?: keyof T | (keyof T)[] | ((a: T, b: T) => boolean)): boolean;
-  /** mark hasChanges to false */
-  markNoChanges(): void;
+    /** current value of form */
+    value: T;
+    /** set value of field */
+    set: (f: keyof T, options?: FormSetterOptions) => (v: T[keyof T]) => void;
+    /** set more fields, keep others fields */
+    setAll: (v: Partial<T>, options?: FormSetterOptions) => void;
+    /** reset fields, can ignores any field and set field same time */
+    reset: (ignores?: (keyof T)[], value?: Partial<T>) => void;
+    /** return by validator */
+    isValid: boolean;
+    /** return true if change any field */
+    hasChanges: boolean;
+    /** count changes fields, can custom compare fields */
+    count(compare?: (key: keyof T) => boolean): number;
+    /** return true if field never changed, can custom validation */
+    pristine(key?: keyof T | (keyof T)[] | ((a: T, b: T) => boolean)): boolean;
+    /** mark hasChanges to false */
+    markNoChanges(): void;
 }
 interface FormSetterOptions {
-  noMarkChange?: boolean;
+    noMarkChange?: boolean;
 }
 /**
  * Create state to use in forms
@@ -30,51 +30,48 @@ interface FormSetterOptions {
  * @param validator Function
  * @return Form
  */
-declare function useForm<T extends object>(
-  initial?: T,
-  validator?: (form: T) => boolean
-): Form<T>;
-declare function useFormMock<T = any, F = Form<Partial<T>>>(
-  props?: Partial<F> & {
+declare function useForm<T extends object>(initial?: T, validator?: (form: T) => boolean): Form<T>;
+declare function useFormMock<T = any, F = Form<Partial<T>>>(props?: Partial<F> & {
     spySet?: CallableFunction;
     spySetAll?: CallableFunction;
     spyReset?: CallableFunction;
     spyCount?: CallableFunction;
     spyPristine?: CallableFunction;
-  }
-): F;
+}): F;
 
 /**
  * Type object config of usePagination
  */
 interface PaginationConfig<T> {
-  /** Data source */
-  source: T[];
-  /** Initial page */
-  initialPage?: number;
-  /** Items by page */
-  initialPageSize?: number;
-  /** On change source, set first page */
-  resetOnChange?: boolean;
+    /** Data source */
+    source: T[];
+    /** Initial page */
+    initialPage?: number;
+    /** Items by page */
+    initialPageSize?: number;
+    /** On change source, set first page */
+    resetOnChange?: boolean;
 }
 /**
  * Type return of usePagination Hook
  */
 interface Pagination<T> {
-  /** Paged data */
-  data: T[];
-  /** Length rows of data */
-  totalItems: number;
-  /** Items by page */
-  pageSize: number;
-  /** Page selected */
-  currentPage: number;
-  /** Function call change page */
-  onChange: (page: number) => void;
-  /** Function call change page size */
-  onChangePageSize: (size: number) => void;
-  /** Function call accumulate page data */
-  onAccumulate: () => void;
+    /** Paged data */
+    data: T[];
+    /** Length rows of data */
+    totalItems: number;
+    /** Items by page */
+    pageSize: number;
+    /** Page selected */
+    currentPage: number;
+    /** Function call change page */
+    onChange: (page: number) => void;
+    /** Function call change page size */
+    onChangePageSize: (size: number) => void;
+    /** Function call accumulate page data */
+    onAccumulate: () => void;
+    /** Function call accumulate page data */
+    onSort: (sorter: (data: T[]) => T[]) => void;
 }
 /**
  * Create state to use in pagination
@@ -90,24 +87,24 @@ declare type QueueList<T> = Queue<T>[];
  * @return Object
  */
 declare function useQueue<T>(): {
-  queue: QueueList<T>;
-  addQueue: (task: Queue<T>) => void;
-  runQueue: (data: T) => Promise<void>;
+    queue: any;
+    addQueue: any;
+    runQueue: any;
 };
 
 /**
  * Object with keys/value string
  */
 declare type Dictionary<T = string> = {
-  [key: string]: T;
+    [key: string]: T;
 };
 /**
  * Util object with label and value
  */
 declare type Option<T = any, I = any> = {
-  id: I;
-  label: string;
-  value: T;
+    id: I;
+    label: string;
+    value: T;
 };
 /**
  * Common types
@@ -125,11 +122,7 @@ declare type NewID = ID;
  * @param operation Function (default is SUM)
  * @return number
  */
-declare function subtotal<T>(
-  compare: (item: T) => boolean,
-  compareWith?: (item: T) => number,
-  operation?: (acc: number, next: number) => number
-): (data: T[]) => number;
+declare function subtotal<T>(compare: (item: T) => boolean, compareWith?: (item: T) => number, operation?: (acc: number, next: number) => number): (data: T[]) => number;
 /**
  * Create array
  * @param length Number
@@ -144,21 +137,16 @@ declare function array<T>(length?: number, v?: T, increase?: boolean): T[];
  * @param items Array
  * @return Array
  */
-declare function segregateItems<
-  T,
-  R = T & {
+declare function segregateItems<T, R = T & {
     items: T[];
-  }
->(compare: (a: T, b: T) => boolean): (items: T[]) => R[];
+}>(compare: (a: T, b: T) => boolean): (items: T[]) => R[];
 /**
  * Remove Duplicates of array
  * @param compare Function
  * @param items Array
  * @return New array
  */
-declare function removeDuplicates<T>(
-  compare: (a: T, b: T) => boolean
-): (items: T[]) => T[];
+declare function removeDuplicates<T>(compare?: (a: T, b: T) => boolean): (items: T[]) => T[];
 /**
  * Transform nested array to flat array
  * @param key String (key of nested items)
@@ -167,6 +155,13 @@ declare function removeDuplicates<T>(
  * @return Array (flat array)
  */
 declare function flatList<T>(key: keyof T, source: T[], control: T[]): T[];
+/**
+ * Search string in array
+ * @param arr Array
+ * @param search String
+ * @return Array
+ */
+declare function arrSearch<T extends object>(arr: Array<T>, paths?: string[]): (search: string) => T[];
 
 /**
  * CPF number validator
@@ -253,26 +248,24 @@ declare function isRNE(value?: string): boolean;
  * @return Object { x, y }
  */
 declare function getElementPosition(el: HTMLElement): {
-  x: number;
-  y: number;
+    x: number;
+    y: number;
 };
 /**
  * Prevent defaults util to functional compose
  * @param fn Function
  * @return Function
  */
-declare function preventDefault(
-  fn?: (...args: any[]) => any
-): (e: Event) => void;
+declare function preventDefault(fn?: (...args: any[]) => any): (e: Event) => void;
 /**
  * Get position of scroll on screen
  * @return Object coordinates
  */
 declare function scrollPosition(): {
-  top: number;
-  right: number;
-  bottom: number;
-  left: number;
+    top: number;
+    right: number;
+    bottom: number;
+    left: number;
 };
 /**
  * Return language of browser
@@ -290,22 +283,14 @@ declare function getLocales(): string[];
  * @param title String (optional)
  * @param mode portrait | landscape (optional)
  */
-declare function print(
-  element: Element,
-  title?: string,
-  mode?: "portrait" | "landscape"
-): void;
+declare function print(element: Element, title?: string, mode?: "portrait" | "landscape"): void;
 /**
  * Create or update css property of element
  * @param key String
  * @param value String
  * @param el HTMLElement (default is root)
  */
-declare function setCssProperty(
-  key: string,
-  value: string,
-  el?: HTMLElement
-): void;
+declare function setCssProperty(key: string, value: string, el?: HTMLElement): void;
 /**
  * Return true if is Browser
  * @return Boolean
@@ -372,24 +357,15 @@ declare function downloadFromBlob(blob: Blob, filename: string): void;
 /**
  * Download file from Array of bytes
  */
-declare function downloadFromByteArray(
-  data: any,
-  filename: string,
-  contentType?: string
-): void;
+declare function downloadFromByteArray(data: any, filename: string, contentType?: string): void;
 /**
  * Download file from Base64
  */
-declare function downloadFromBase64(
-  b64: string,
-  filename: string,
-  contentType?: string,
-  sliceSize?: number
-): void;
+declare function downloadFromBase64(b64: string, filename: string, contentType?: string, sliceSize?: number): void;
 /**
  * Download file from url
  */
-declare function downloadFromUrl(url: string): void;
+declare function downloadFromUrl(url: string, forceDownload?: boolean): Promise<void>;
 /**
  * Return domain url
  * @param url String
@@ -432,11 +408,7 @@ declare function isLocalhostOrAzureEnv(env?: string): boolean;
  * @param port Number (localhost port)
  * @returns String
  */
-declare function buildUrlWithEnv(
-  url: string,
-  path?: string,
-  port?: number
-): string;
+declare function buildUrlWithEnv(url: string, path?: string, port?: number): string;
 /**
  * Resize DOM window
  * @param x Number (width)
@@ -491,10 +463,7 @@ declare function validateUri(uri: string): string | undefined;
  * @param filename String
  * @return File
  */
-declare function base64UrlToFile(
-  dataUrl: string,
-  filename: string
-): File | undefined;
+declare function base64UrlToFile(dataUrl: string, filename: string): File | undefined;
 
 /**
  * Save data in storage with expire
@@ -517,13 +486,11 @@ declare function loadCache<T>(key: string): T | undefined;
  * Load data in storage with expire
  * @param key String storage key
  */
-declare function loadCacheAndDetails<T>(key: string):
-  | {
-      data: T;
-      at: ISODate;
-      until: ISODate;
-    }
-  | undefined;
+declare function loadCacheAndDetails<T>(key: string): {
+    data: T;
+    at: ISODate;
+    until: ISODate;
+} | undefined;
 /**
  * Remove all data in storage expired
  */
@@ -534,11 +501,11 @@ declare function clearCache(): void;
 declare function purgeCache(): void;
 
 declare const CONST: {
-  UF: {
-    uf: string;
-    name: string;
-    capital: string;
-  }[];
+    UF: {
+        uf: string;
+        name: string;
+        capital: string;
+    }[];
 };
 
 /**
@@ -546,11 +513,7 @@ declare const CONST: {
  * @param data Dictionary (key: value)
  * @param expires Date
  */
-declare function saveCookie(
-  data: Dictionary,
-  expires?: ISODate,
-  sameSite?: "Strict" | "Lax" | "None"
-): void;
+declare function saveCookie(data: Dictionary, expires?: ISODate, sameSite?: 'Strict' | 'Lax' | 'None'): void;
 /**
  * Get/Load cookie with security
  * @param keys String[]
@@ -617,12 +580,12 @@ declare function isDate(v?: ISODate | Date): boolean;
  */
 declare function isDateEmpty(date?: ISODate | Date): boolean;
 interface SetDateValues {
-  day?: number;
-  month?: number;
-  year?: number;
-  hour?: number;
-  min?: number;
-  sec?: number;
+    day?: number;
+    month?: number;
+    year?: number;
+    hour?: number;
+    min?: number;
+    sec?: number;
 }
 /**
  * Set values in date
@@ -630,51 +593,35 @@ interface SetDateValues {
  * @param values Object config
  * @return Date
  */
-declare function setDate(
-  v: ISODate | Date,
-  values: SetDateValues,
-  add?: boolean
-): Date;
+declare function setDate(v: ISODate | Date, values: SetDateValues, add?: boolean): Date;
 /**
  * Set values in date ISO
  * @param date ISODate | Date
  * @param values Object config
  * @return Date
  */
-declare function setISO(
-  date: ISODate | Date,
-  values: SetDateValues,
-  add?: boolean
-): string;
+declare function setISO(date: ISODate | Date, values: SetDateValues, add?: boolean): string;
 /**
  * Set values in date ISO
  * @param date ISODate | Date
  * @param values Object config
  * @return Date
  */
-declare function setDateISO(
-  date: ISODate | Date,
-  values: SetDateValues,
-  add?: boolean
-): string;
+declare function setDateISO(date: ISODate | Date, values: SetDateValues, add?: boolean): string;
 /**
  * Set values in date ISO
  * @param date ISODate | Date
  * @param values Object config
  * @return Date
  */
-declare function setTimeISO(
-  date: ISODate | Date,
-  values: SetDateValues,
-  add?: boolean
-): string;
+declare function setTimeISO(date: ISODate | Date, values: SetDateValues, add?: boolean): string;
 interface AddDateValues {
-  days?: number;
-  months?: number;
-  years?: number;
-  hours?: number;
-  mins?: number;
-  secs?: number;
+    days?: number;
+    months?: number;
+    years?: number;
+    hours?: number;
+    mins?: number;
+    secs?: number;
 }
 /**
  * Add values in date
@@ -696,20 +643,14 @@ declare function addISO(date: ISODate | Date, values: AddDateValues): string;
  * @param values Object config
  * @return Date
  */
-declare function addDateISO(
-  date: ISODate | Date,
-  values: AddDateValues
-): string;
+declare function addDateISO(date: ISODate | Date, values: AddDateValues): string;
 /**
  * Add values in time ISO
  * @param date ISODate | Date
  * @param values Object config
  * @return Date
  */
-declare function addTimeISO(
-  date: ISODate | Date,
-  values: AddDateValues
-): string;
+declare function addTimeISO(date: ISODate | Date, values: AddDateValues): string;
 /**
  * Parse date from iso date string
  * @param date ISODate | Date
@@ -841,21 +782,17 @@ declare function objectCopy<T>(obj: T): T;
  * Get array from enum entries
  * @return Array {key,value}
  */
-declare function enumToCollection<T extends object>(
-  en: T
-): {
-  key: string;
-  value: T;
+declare function enumToCollection<T extends object>(en: T): {
+    key: string;
+    value: T;
 }[];
 /**
  * Get object from enum entries
  * @return Object {key:value}
  */
-declare function enumToObject<T extends object>(
-  en: T
-): {
-  key: T;
-  value: keyof T;
+declare function enumToObject<T extends object>(en: T): {
+    key: T;
+    value: keyof T;
 };
 /**
  * Extract deep property in object by path
@@ -863,10 +800,7 @@ declare function enumToObject<T extends object>(
  * @param path String (e.g 'foo.bar')
  * @return Generic is last property of path
  */
-declare function deepFind<T, O = unknown>(
-  object: O,
-  path: string
-): T | undefined;
+declare function deepFind<T, O = unknown>(object: O, path: string): T | undefined;
 /**
  * Validate if object or array is defined (object empty and array length zero is false)
  * @param object any
@@ -887,11 +821,7 @@ declare function isEqual(a: any, b: any): boolean;
  * @param keys Array
  * @return Boolean
  */
-declare function searchInObject<T extends object>(
-  object: T,
-  search: string,
-  keys?: (keyof T)[]
-): boolean;
+declare function searchInObject<T extends object>(object: T, search: string, keys?: (keyof T)[]): boolean;
 /**
  * Tranform keys of object in camelCase
  * @param data Object
@@ -916,10 +846,7 @@ declare function objectToFormData<T extends object>(v: T): FormData;
  * @param data Any
  * @param milliseconds Number (default = 2000)
  */
-declare function delay<T>(
-  data: T | (() => T),
-  milliseconds?: number
-): Promise<T>;
+declare function delay<T>(data: T | (() => T), milliseconds?: number): Promise<T>;
 
 /**
  * Wrap up Components
@@ -939,11 +866,7 @@ declare function sorter<A, B>(): (a: A, b: B) => number;
  * @param field String (keys of object A/B)
  * @return Function
  */
-declare function sorterByField<
-  A = any,
-  B = any,
-  F extends keyof A & keyof B = any
->(field: F): (a: A, b: B) => number;
+declare function sorterByField<A = any, B = any, F extends keyof A & keyof B = any>(field: F): (a: A, b: B) => number;
 /**
  * Sorter array of deep object by path (using deepFind)
  * @param path String (e.g 'foo.bar')
@@ -1010,12 +933,7 @@ declare function alphaNumFormatter(value?: string): string;
  * @param value String
  * @return String
  */
-declare function phoneFormatter(
-  v?: string,
-  ddd?: string,
-  ddi?: string,
-  noFormatNumber?: boolean
-): string;
+declare function phoneFormatter(v?: string, ddd?: string, ddi?: string, noFormatNumber?: boolean): string;
 /**
  * Parse value to string
  * @param px any
@@ -1029,11 +947,7 @@ declare function parseStr(v?: unknown): string;
  * @param replace String
  * @return String
  */
-declare function replaceAll(
-  value: string,
-  search: string | RegExp,
-  replace?: string
-): string;
+declare function replaceAll(value: string, search: string | RegExp, replace?: string): string;
 /**
  * Lighten or darken color
  * @param color String
@@ -1047,8 +961,19 @@ declare function shadeColor(color: string, percent: number): string;
  * @return Boolean
  */
 declare function parseBool(v?: any): boolean;
+/**
+ * Search string in array of strings
+ * @param search String
+ * @param elements String[]
+ * @return Boolean
+ */
+declare function strSearch(elements: any[]): (search: string) => boolean;
 
 declare function factoryTestId(props: any, addOn: string): any;
+/**
+ * Show log of value and return it self
+ */
+declare function withLog<T = unknown>(v: T, message?: string): T;
 
 /**
  * Forces a function to wait time before running again
@@ -1062,157 +987,4 @@ declare function debounce(wait?: number): (callback: () => void) => void;
  */
 declare function uniqueKey(): string;
 
-export {
-  $,
-  CONST,
-  Dictionary,
-  Form,
-  ID,
-  ISODate,
-  ISOTime,
-  NewID,
-  Option,
-  Pagination,
-  PaginationConfig,
-  Queue,
-  QueueList,
-  Raw,
-  addDate,
-  addDateISO,
-  addISO,
-  addTimeISO,
-  alphaNumFormatter,
-  array,
-  base64UrlToFile,
-  buildUrlWithEnv,
-  camelCase,
-  camelCaseProps,
-  capitalizedCase,
-  cepFormatter,
-  cepValidator,
-  clearCache,
-  cnpjFormatter,
-  cnpjValidator,
-  compose,
-  cpfCnpjFormatter,
-  cpfCnpjValidator,
-  cpfFormatter,
-  cpfValidator,
-  date,
-  dateISO,
-  daysDiff,
-  debounce,
-  decodeBase64,
-  decodeBase64Unicode,
-  deepFind,
-  delay,
-  domainFromUrl,
-  doubleDecodeURI,
-  doubleEncodeURI,
-  downloadFromBase64,
-  downloadFromBlob,
-  downloadFromByteArray,
-  downloadFromUrl,
-  enumToCollection,
-  enumToObject,
-  factoryTestId,
-  fileReader,
-  flatList,
-  formatISO,
-  getElementPosition,
-  getFilenameFromUrl,
-  getInitials,
-  getLocale,
-  getLocales,
-  goBack,
-  isAndroid,
-  isBrowser,
-  isChrome,
-  isCnpj,
-  isCpf,
-  isCpfCnpj,
-  isDate,
-  isDateEmpty,
-  isDateEqual,
-  isDefined,
-  isEmail,
-  isEqual,
-  isExternalLink,
-  isFirefox,
-  isIE,
-  isIOS,
-  isIframe,
-  isLocalhostOrAzureEnv,
-  isMobile,
-  isOpera,
-  isPtBr,
-  isRNE,
-  isSafari,
-  isServer,
-  isSomething,
-  isTestingBrowser,
-  loadCache,
-  loadCacheAndDetails,
-  loadCookie,
-  loadCookies,
-  monthISO,
-  monthsDiff,
-  numberFormatter,
-  objectCopy,
-  objectToFormData,
-  parseBool,
-  parseDate,
-  parseISO,
-  parseJwt,
-  parseNumber,
-  parsePercent,
-  parseStr,
-  phoneFormatter,
-  preventDefault,
-  print,
-  purgeCache,
-  purgeCookies,
-  randomNumber,
-  removeCache,
-  removeCookie,
-  removeDuplicates,
-  replaceAll,
-  resizeWindow,
-  rgFormatter,
-  roundNumber,
-  saveCache,
-  saveCookie,
-  scrollPosition,
-  scrollTo,
-  searchInObject,
-  segregateItems,
-  sendToClipboard,
-  setCssProperty,
-  setDate,
-  setDateISO,
-  setISO,
-  setTimeISO,
-  shadeColor,
-  simpleDecodeURI,
-  simpleEncodeURI,
-  sorter,
-  sorterByField,
-  sorterDeep,
-  subtotal,
-  textFormatter,
-  timeISO,
-  titleCase,
-  tryDecodeBase64,
-  tryEncodeBase64,
-  uniqueKey,
-  uriExists,
-  useForm,
-  useFormMock,
-  usePagination,
-  useQueue,
-  validateUri,
-  weekISO,
-  wrapse,
-  yearsDiff,
-  zeroTwoDigits,
-};
+export { $, CONST, Dictionary, Form, ID, ISODate, ISOTime, NewID, Option, Pagination, PaginationConfig, Queue, QueueList, Raw, addDate, addDateISO, addISO, addTimeISO, alphaNumFormatter, arrSearch, array, base64UrlToFile, buildUrlWithEnv, camelCase, camelCaseProps, capitalizedCase, cepFormatter, cepValidator, clearCache, cnpjFormatter, cnpjValidator, compose, cpfCnpjFormatter, cpfCnpjValidator, cpfFormatter, cpfValidator, date, dateISO, daysDiff, debounce, decodeBase64, decodeBase64Unicode, deepFind, delay, domainFromUrl, doubleDecodeURI, doubleEncodeURI, downloadFromBase64, downloadFromBlob, downloadFromByteArray, downloadFromUrl, enumToCollection, enumToObject, factoryTestId, fileReader, flatList, formatISO, getElementPosition, getFilenameFromUrl, getInitials, getLocale, getLocales, goBack, isAndroid, isBrowser, isChrome, isCnpj, isCpf, isCpfCnpj, isDate, isDateEmpty, isDateEqual, isDefined, isEmail, isEqual, isExternalLink, isFirefox, isIE, isIOS, isIframe, isLocalhostOrAzureEnv, isMobile, isOpera, isPtBr, isRNE, isSafari, isServer, isSomething, isTestingBrowser, loadCache, loadCacheAndDetails, loadCookie, loadCookies, monthISO, monthsDiff, numberFormatter, objectCopy, objectToFormData, parseBool, parseDate, parseISO, parseJwt, parseNumber, parsePercent, parseStr, phoneFormatter, preventDefault, print, purgeCache, purgeCookies, randomNumber, removeCache, removeCookie, removeDuplicates, replaceAll, resizeWindow, rgFormatter, roundNumber, saveCache, saveCookie, scrollPosition, scrollTo, searchInObject, segregateItems, sendToClipboard, setCssProperty, setDate, setDateISO, setISO, setTimeISO, shadeColor, simpleDecodeURI, simpleEncodeURI, sorter, sorterByField, sorterDeep, strSearch, subtotal, textFormatter, timeISO, titleCase, tryDecodeBase64, tryEncodeBase64, uniqueKey, uriExists, useForm, useFormMock, usePagination, useQueue, validateUri, weekISO, withLog, wrapse, yearsDiff, zeroTwoDigits };

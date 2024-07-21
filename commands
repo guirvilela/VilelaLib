@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const COMMAND = process.argv[2];
+const RELEASE_MODE = !!process.env.RELEASE_MODE;
+
+const commands = {
+  prepublish,
+  help,
+};
+
+if (!COMMAND || !commands[COMMAND]) {
+  help();
+  process.exit(0);
+}
+
+function prepublish() {
+  if (!RELEASE_MODE) {
+    console.error("only publish in CI/CD!");
+    process.exit(1);
+  }
+}
+
+function help() {
+  console.log(`available commands...\n\n${Object.keys(commands).join("\n")}`);
+}
+
+commands[COMMAND]();
