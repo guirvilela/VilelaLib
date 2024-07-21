@@ -1,5 +1,5 @@
 {
-  "name": "@vilela/lib.front",
+  "name": "@guirvilela/lib.front",
   "description": "Monorepo with Front-end Library.",
   "version": "2.24.2",
   "workspaces": [
@@ -7,7 +7,7 @@
     "packages/shared"
   ],
   "publishConfig": {
-    "@vilela:registry": "https://npm.pkg.github.com"
+    "@guirvilela:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "command": "node ./commands",
