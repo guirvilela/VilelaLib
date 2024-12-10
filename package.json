@@ -4,6 +4,8 @@
   "version": "2.24.2",
   "workspaces": [
     "packages/build-lib",
+    "packages/http",
+    "packages/auth",
     "packages/shared"
   ],
   "publishConfig": {
