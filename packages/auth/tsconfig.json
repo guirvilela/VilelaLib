@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "compilerOptions": {
+    "jsx": "react"
+  },
+  "extends": "../build-lib/tsconfig",
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts*"]
+}
