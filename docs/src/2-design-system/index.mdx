@@ -1,0 +1,80 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Design System/Overview" />
+
+# Design System
+
+Um design system é um conjunto de princípios, padrões, componentes, diretrizes e estilos que definem a identidade visual e a experiência do usuário em uma aplicação ou produto. Ele é criado para garantir a consistência e a eficiência no desenvolvimento de interfaces de usuário em todas as plataformas e dispositivos.
+
+O design system serve como uma fonte única de verdade para todos os elementos visuais, como cores, tipografia, ícones, espaçamento, animações e componentes de interface do usuário. Ele também ajuda a garantir a acessibilidade, a usabilidade e a escalabilidade do produto.
+
+Além disso, um design system pode ser usado para reduzir o tempo e o custo do desenvolvimento de novas funcionalidades, aumentar a colaboração entre designers e desenvolvedores e melhorar a comunicação entre as equipes.
+
+### Onde entra o codigo?
+
+Um Design System em código é uma biblioteca de componentes e padrões de design pré-definidos, documentados e testados, que pode ser compartilhada e reutilizada em diferentes projetos. Ele é implementado como uma biblioteca de código, geralmente escrita em uma linguagem de programação como JavaScript, que contém componentes, estilos, tipografia, paletas de cores, iconografia, entre outros elementos de design.
+
+### Como utilizar
+
+Utilize o npm para instalar o pacote de sua escolha:
+
+```sh
+#Para utilizar os átomos
+npm i @hubert/atoms
+
+#Para utilizar as moléculas
+npm i @hubert/molecules
+
+#Para utilizar as organismos
+npm i @hubert/organisms
+```
+
+## Atomic Design
+
+<img src="/assets/img/atomic-design.png" width="60%" />
+
+### O que é Atomic Design
+
+Atomic Design é uma metodologia de design que se baseia na criação de um sistema de design modular e escalável.
+Essa abordagem tem como objetivo criar componentes de design independentes,
+chamados de átomos de design, que podem ser reutilizados em
+diferentes contextos para criar designs mais eficientes e consistentes.
+
+### Níveis do Atomic Design
+
+A metodologia é baseada em cinco níveis de componentes: átomos, moléculas, organismos, templates e páginas.
+
+### Átomos
+
+Os átomos são os componentes individuais e independentes, como botões, campos de formulários, ícones e outros elementos básicos (pacote `@hubert/atoms`).
+
+### Moléculas
+
+As moléculas são grupos de átomos que funcionam juntos, como um formulário que consiste em vários campos de entrada (pacote `@hubert/molecules`).
+
+### Organismos
+
+Os organismos são componentes mais complexos,
+compostos de moléculas e átomos, como um cabeçalho de página que contém um logotipo, um menu de navegação e um botão de pesquisa (pacote `@hubert/organisms`).
+
+### Templates
+
+Os templates são as estruturas de design que definem como os componentes serão organizados e exibidos na página, como o `layout` de uma página de produto (estes componentes pertence ao projeto e pode ser encontrado na pasta `src/layouts` dos mesmos).
+
+### Pages
+
+As páginas são o resultado final da combinação de todos esses componentes, template/layout e logica necessaria para seu funcionamento (estes componentes pertence ao projeto e pode ser encontrado na pasta `src/pages` dos mesmos).
+
+### Fundamentos do Atomic Design
+
+O Atomic Design é baseado em dois princípios fundamentais: a consistência e a flexibilidade. A consistência é importante para garantir que o design seja reconhecido e compreendido pelos usuários,
+enquanto a flexibilidade é importante para permitir a adaptação do design a diferentes contextos e necessidades.
+
+### Benefícios do Atomic Design
+
+Essa metodologia é utilizada por designers e equipes de design para criar sistemas de design que possam ser
+facilmente atualizados e adaptados a diferentes projetos, ajudando a aumentar a eficiência e consistência do processo de design.
+
+---
+
+Keep calm and code on 🤘.

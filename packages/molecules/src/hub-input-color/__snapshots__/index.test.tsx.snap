@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubInputColor component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+}
+
+.c3 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0 .c1 {
+  border: 1px solid #A2B2BF;
+  background-color: #FFFFFF;
+  padding: 8px;
+}
+
+.c4 {
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  border-radius: 8px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <input
+        autocomplete="off"
+        class=""
+        id="hub-text-field-hub-input-color-"
+        type="text"
+        value=""
+      />
+      <div
+        class="c3"
+      />
+      <input
+        class="c4"
+        type="color"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,121 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/functions/flatList" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / flatList
+
+# Function: flatList()
+
+```ts
+function flatList<T>(
+   key: keyof T, 
+   source: T[], 
+   control: T[]): T[]
+```
+
+Transforma nested array para flat array
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`key`
+
+</td>
+<td>
+
+keyof `T`
+
+</td>
+<td>
+
+String (key of nested items)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`source`
+
+</td>
+<td>
+
+`T`[]
+
+</td>
+<td>
+
+Array (nested array)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`control`
+
+</td>
+<td>
+
+`T`[]
+
+</td>
+<td>
+
+Array (empty/initial array)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`T`[]
+
+Array (flat array)
+
+## Defined in
+
+utils/array.ts:81
+
+
+***
+
+Keep calm and code on 🤘.

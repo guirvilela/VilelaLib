@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Observability/functions/AppInsightsProvider" />
+
+
+
+[**Observability Library**](/?path=/docs/libs-observability-overview--page) • **Docs**
+
+***
+
+[Observability Library](/?path=/docs/libs-observability-overview--page) / AppInsightsProvider
+
+# Function: AppInsightsProvider()
+
+```ts
+function AppInsightsProvider(__namedParameters: AppInsightsProviderProps): Element
+```
+
+React provider que expoe todas funções do application insights pre-configurado.
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`__namedParameters`
+
+</td>
+<td>
+
+`AppInsightsProviderProps`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Element`
+
+## Example
+
+```ts
+<AppInsightsProvider configs={appInsightsConfig}>
+  <OutrosComponents />
+</AppInsightsProvider>
+
+const { trackEvent } = useAppInsights();
+```
+
+## Defined in
+
+appInsights/index.tsx:91
+
+
+***
+
+Keep calm and code on 🤘.

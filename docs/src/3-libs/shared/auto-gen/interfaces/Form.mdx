@@ -1,0 +1,156 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/interfaces/Form" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / Form
+
+# Interface: Form\<T\>
+
+Objeto que representa um formulario (retornado pelo `useForm`)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`hasChanges`</td><td>`boolean`</td><td>retorna true se change any field</td><td>hooks/form.ts:20</td></tr>
+<tr><td>`isValid`</td><td>`boolean`</td><td>retorna valor do calculo do validator dos campos</td><td>hooks/form.ts:18</td></tr>
+<tr><td>`reset`</td><td>(`ignores`?: keyof `T`[], `value`?: [`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`T`\>) => `void`</td><td>reset fields, can ignores any field e set field same time</td><td>hooks/form.ts:16</td></tr>
+<tr><td>`set`</td><td>(`f`: keyof `T`, `options`?: `FormSetterOptions`) => (`v`: `T`\[keyof `T`\]) => `void`</td><td>muda um campo por vez</td><td>hooks/form.ts:12</td></tr>
+<tr><td>`setAll`</td><td>(`v`: [`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`T`\>, `options`?: `FormSetterOptions`) => `void`</td><td>muda todos os campos, se undefined mantem valor anterior</td><td>hooks/form.ts:14</td></tr>
+<tr><td>`value`</td><td>`T`</td><td>valor atual do form</td><td>hooks/form.ts:10</td></tr>
+</table>
+
+## Methods
+
+### count()
+
+```ts
+count(compare?: (key: keyof T) => boolean): number
+```
+
+calcula quais campos mudaram, pode ser customizado utilizando o parametro 'compare'
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`compare`?
+
+</td>
+<td>
+
+(`key`: keyof `T`) => `boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+hooks/form.ts:22
+
+***
+
+### markNoChanges()
+
+```ts
+markNoChanges(): void
+```
+
+marca hasChanges para false
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+hooks/form.ts:26
+
+***
+
+### pristine()
+
+```ts
+pristine(key?: keyof T | keyof T[] | (a: T, b: T) => boolean): boolean
+```
+
+retorna true se o campo nunca mudou, pode ser customizado utilizando o parametro 'compare'
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`key`?
+
+</td>
+<td>
+
+keyof `T` \| keyof `T`[] \| (`a`: `T`, `b`: `T`) => `boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+hooks/form.ts:24
+
+
+***
+
+Keep calm and code on 🤘.

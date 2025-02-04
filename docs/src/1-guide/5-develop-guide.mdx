@@ -1,0 +1,189 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Develop Guide" />
+
+# Guia de boas praticas no desenvolvimento
+
+## Projeto e GIT
+
+Antes de mais nada, sempre mantenha seu projeto local e GIT atualizado com a ultima versão do repositório/origin. Assim você evita problemas simples de build e tests, por conta de ter um node_modules desatualizado.
+
+Siga os seguintes passos antes de começar a codar:
+
+- rode `git fetch` ou clique em `Fetch from Remote` no `Git Graph`
+- crie uma branch nova a partir da `origin/develop`
+- rode `npm install`
+- code on 🤘
+
+## Estrutura dos Projetos
+
+- Todos os projetos do front segue a mesma arquitetura.
+
+```
+├── deploy/         # Pipelines e scripts necessários para o CI/CD.
+├── public/         # Assets que irão para o servidor sem passar pelo build.
+├── src/            # Código-fonte principal.
+├──── components/   # Pasta com componentes puros, que não possuem dependência de outros componentes do mesmo projeto.
+├──── config/       # Códigos que representam configurações de ambiente e providers.
+├──── hooks/        # Pasta com somente o código da logica das pages.
+├──── i18n/         # Arquivos de localização e tradução em formato de JSON.
+├──── layouts/      # Componentes não puro que representam layout a ser aplicado em cada page.
+├──── mocks/        # Arquivos JSON que retornam dados fixos para o server mock (`npm run mock`).
+├──── pages/        # Componentes não puro que conectam layout + components puros e a logica da tela representando uma page completa.
+├──── providers/    # Providers React específicos da aplicação, disponibiliza logica de negocio para a aplicação toda.
+├──── services/     # Classes com as configurações e tipagens necessárias para realizar as chamadas http (representam o back-end).
+```
+
+### Components
+
+Para fazer um componente, nescessário seguir o mesmo padrão de separação que fizemos anterirormente, dentro da pasta componente existem os modulos e dentro dos modulos as funcionalidades.
+
+Ao criar uma componente é nescessário seguir as convenções abaixo:
+
+- Utilize o export ao declarar o nome do componente
+- O nome do componente precisa iniciar com o nome da page
+- components não possuem export default
+
+  ex:
+
+  ![components example](/assets/img/develop-guide/develop-guide-components-example.png)
+
+### Hooks
+
+Para fazer um Hook/Controller , nescessário seguir o mesmo padrão de separação que fizemos anterirormente, dentro da pasta hooks existem os modulos e dentro dos modulos as funcionalidades.
+
+![hooks location](/assets/img/develop-guide/develop-guide-hooks-location.png)
+
+Ao criar uma Hook/Controller é nescessário seguir as convenções abaixo:
+
+- Utlize export ao declarar o hook
+- Nomear o Hook iniciando com "use" e finalizando com "Controller"
+
+  ex: useRepoAcessosController()
+
+- Não utilizar export default no fim do hook
+
+Dentro da function do hook organizar o código da seguinte forma:
+
+- contexto (useRouter,useService,useAction)
+- states da propia controller
+- form (caso houver)
+- callbacks
+- handlers
+- useEffect
+
+### I18n
+
+Os projetos precisam possuir um arquivo onde seja possível a troca de idiomas, é nescessário que seja feito um arquivo JSON para Internacionalização.
+Para isso temos a pasta "i18n" em cada projeto, dentro dela irá conter uma sub pasta para cada modulo do projeto (financeiro, dp , condominios, etc ) , dentro da pasta do modulo irá conter mais uma pasta com as opções dentro do modulo, e em seguida os arquivos de tradução no formato .json , exemplo abaixo:
+
+![i18n structure](/assets/img/develop-guide/develop-guide-i18n-folder-structure.png)
+
+no arquivo json , usamos a seguinte convenção:
+
+"nome-da-page_title" : "Nome da Page"
+
+- o nome da propiedade será composto pelo nome da page usando "-" para separar palvras como se fosse espaços
+- após o nome da page é utilizado o "\_" para informar qual elemento o texto faz parte na page
+
+  ex: "rateio_list-search-initial-period-label": "Período inicial"
+
+- caso a page partença a um fluxo, como "Contratos > novo " não será feita mais uma quebra , todos os derivados da page contratos ficarão no mesmo arquivo
+
+  ex: contratos-list e contratos-new , são pages diferentes porém referente a mesma funcionalidade:
+
+  ![i18n prop model](/assets/img/develop-guide/develop-guide-i18n-prop-model-example.png)
+
+Após realizado o procedimento de criação , para utilizar nas pages , é nescessário passar dentro da função "compose" no final da page , a função withI18n , conforme exemplo abaixo:
+
+![i18n](/assets/img/develop-guide/develop-guide-i18n-page-withI18n.png)
+
+A utilização nas pages , components e hooks e feita atravez da importação da função useI18nMessage()
+
+ex: const t = useI18nMessage();
+
+e para usar em um local:
+
+![i18n use](/assets/img/develop-guide/develop-guide-i18n-use.png)
+
+Conforme a imagem acima, existem palavras que se repetem muito no projeto, para essas palavras simples, colocamos dentro do objeto JSON raiz:
+
+![i18n reuse](/assets/img/develop-guide/develop-guide-i18n-reuse.png)
+
+### Pages
+
+Todas as Paginas do Projeto se encontram na pasta Pages, dentro da pasta há as subpastas dos modulos da aplicação, e dentro de cada modulo as funcionalidades, conforma imagem abaixo:
+
+![page structure](/assets/img/develop-guide/develop-guide-services-structure.png)
+
+Todas as Pages precisam ter restrições de acesso por autorização, para isso no fim de cada page é nescessário ter as funções que provem essas restrições, sendo elas:
+
+withAuth()
+withAccess([])
+
+É nescessário passar na função withAccess os codigos de acesso. por exemplo, a tela de contratos:
+
+![with acess example](/assets/img/develop-guide/develop-guide-withAccess-example.png)
+
+para identificar qual o código de acesso que pertence a cada page, entre no GO(gestão online) e no menu admin selecione o seu usuário:
+
+![auth example](/assets/img/develop-guide/develop-guide-auth-example.png)
+
+Em casos do modulo possuir mais pages fora a index, como no caso da page "Contratos" existem as pages "novo" e "resumo", essas pages também precisam receber o código de autorização da "Contratos" conforme abaixo:
+
+![auth example2](/assets/img/develop-guide/develop-guide-pages-auth2.png)
+
+Ao criar uma page é nescessário seguir as convenções abaixo:
+
+- Utilize o export ao declarar o nome da page
+- No fim da pagina, faça um export default com o nome da page:
+  ![page declaration example](/assets/img/develop-guide/develop-guide-page-declaration-example.png)
+- O nome da page precisa terminar em "Page" ex: ContratosPage()
+- Todas as pages precisam ter a tag Head com o title da page
+
+  ex:
+
+  ![page head example](/assets/img/develop-guide/develop-guide-page-head-example.png)
+
+### Services
+
+Antes de criar uma service é nescessário verificar se a chamada HTTP já existe dentro das services já criadas anterirormente!
+
+Todas as chamadas Http do projeto ficarão dentro de uma service, ao criar uma service, dentro dos projetos na pasta "Services" , há pastas com cada API que utilizamos no projeto, e dentro da pasta da API existe a pasta para cada entidade da API.
+
+Conforme a imagem abaixo :
+
+![services structure](/assets/img/develop-guide/develop-guide-services-structure.png)
+
+Ao criar uma service é nescessário seguir as convenções abaixo:
+
+- Verificar se a Pasta da API e da Entidade da API já existem, caso contrário criar no padrão da imagem acima
+
+- Ao declarar a service use "export default class (nome da service)"
+  ![Services export example](/assets/img/develop-guide/develop-guide-services-export-example.png)
+
+- A service precisa ter o verbo HTTP seguido de sua funcionalidade
+
+  ex: getRateios() , getAcessosCondominio() , postAcessosCondominio()
+
+### Types
+
+Ao criar a Service, é nescessário especificar as tipagens das chamadas http, para isso há o arquivo "types.ts" na pasta de todas as services.
+
+![types location](/assets/img/develop-guide/develop-guide-types-location.png)
+
+Ao criar as tipagens das chamadas no arquivo types, incluir o verbo HTTP no inicio para identificação da utilização da interface
+
+ex:
+
+![types example1](/assets/img/develop-guide/develop-guide-services-types-example.png)
+
+Caso sua interface tiver mais um objeto dentro, o ideal é seja feita uma nova interface como no exemplo abaixo:
+
+![types example2](/assets/img/develop-guide/develop-guide-interface-example.png)
+
+---
+
+> Próximo passo... [Ambientes 🚀](/?path=/docs/guide-environments--page)
+
+Keep calm and code on 🤘.

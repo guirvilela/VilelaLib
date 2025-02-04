@@ -1,0 +1,307 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Auth/interfaces/IAuthContext" />
+
+
+
+[**Auth Library**](/?path=/docs/libs-auth-overview--page) • **Docs**
+
+***
+
+[Auth Library](/?path=/docs/libs-auth-overview--page) / IAuthContext
+
+# Interface: IAuthContext
+
+Objeto com todos as propriedades disponiveis no contexto do `AuthProvider`
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`accessToken`</td><td>`undefined` | `string`</td><td>Token JWT (accounts)</td><td>types.ts:27</td></tr>
+<tr><td>`authenticated`</td><td>`undefined` | `boolean`</td><td>Se esta autenticado ou nao</td><td>types.ts:25</td></tr>
+<tr><td>`erpToken`</td><td>`undefined` | `string`</td><td>Token OAuth (framework)</td><td>types.ts:29</td></tr>
+<tr><td>`isAdvogado`</td><td>`boolean`</td><td>user.tipoUsuario == 'ADVCO'</td><td>types.ts:59</td></tr>
+<tr><td>`isConselheiro`</td><td>`boolean`</td><td>user.tipoUsuario == 'CONS'</td><td>types.ts:55</td></tr>
+<tr><td>`isFornecedor`</td><td>`boolean`</td><td>user.tipoUsuario == 'FORN'</td><td>types.ts:61</td></tr>
+<tr><td>`isFuncionario`</td><td>`boolean`</td><td>user.tipoUsuario == 'FUNC'</td><td>types.ts:51</td></tr>
+<tr><td>`isMorador`</td><td>`boolean`</td><td>user.tipoUsuario == 'UNID'</td><td>types.ts:57</td></tr>
+<tr><td>`isSelf`</td><td>(`codigoPessoa`: `number`) => `boolean`</td><td>codigoPessoa == user.codigoPessoa</td><td>types.ts:63</td></tr>
+<tr><td>`isSindico`</td><td>`boolean`</td><td>user.tipoUsuario == 'SIND'</td><td>types.ts:53</td></tr>
+<tr><td>`isTipoUsuario`</td><td>(`tipo`: `string`) => `boolean`</td><td>isTipoUsuario('USR') == true/false</td><td>types.ts:65</td></tr>
+<tr><td>`isUsuarioHubert`</td><td>`boolean`</td><td>user.tipoUsuario == 'USR'</td><td>types.ts:49</td></tr>
+<tr><td>`user?`</td><td>[`User`](/?path=/docs/libs-auth-interfaces-user)</td><td>Usuario logado (jwt payload)</td><td>types.ts:31</td></tr>
+</table>
+
+## Methods
+
+### handleChangeAvatar()
+
+```ts
+handleChangeAvatar(url?: string): void
+```
+
+Util para mudar a foto do usuario logado
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`url`?
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+types.ts:46
+
+***
+
+### handleUnauthorized()
+
+```ts
+handleUnauthorized(redirectTo?: string): void
+```
+
+Util utilizado no `HttpProvider` para redicionar para a tela de login quando o token estiver vencido
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`redirectTo`?
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+types.ts:44
+
+***
+
+### login()
+
+```ts
+login(
+   accessToken: string, 
+   erpToken: string, 
+   expires?: string, 
+   callback?: (redirectTo?: string) => void): void
+```
+
+Autentica e configura o provider
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`accessToken`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`erpToken`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`expires`?
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`callback`?
+
+</td>
+<td>
+
+(`redirectTo`?: `string`) => `void`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+types.ts:33
+
+***
+
+### logout()
+
+```ts
+logout(callback?: () => void, purge?: boolean): void
+```
+
+Reseta o provider
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`callback`?
+
+</td>
+<td>
+
+() => `void`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`purge`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+types.ts:40
+
+***
+
+### redirect()
+
+```ts
+redirect(callback: (redirectTo?: string) => void): void
+```
+
+Realiza o redirect utilizando a rota anterior salva em cache (em caso de token vencido é redirecionado para a tela de login e ao utilizar essa função volta para tela anterior)
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`callback`
+
+</td>
+<td>
+
+(`redirectTo`?: `string`) => `void`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+types.ts:42
+
+
+***
+
+Keep calm and code on 🤘.

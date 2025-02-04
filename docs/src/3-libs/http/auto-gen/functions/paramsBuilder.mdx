@@ -1,0 +1,148 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/paramsBuilder" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / paramsBuilder
+
+# Function: paramsBuilder()
+
+```ts
+function paramsBuilder<T>(params: any, configs?: {
+  encrypted: boolean;
+  ignoresFormat: boolean | keyof T[];
+ }): T
+```
+
+Retorna um objeto a partir do query params de uma url.
+Pode ser utilizado com o `window.location.search` ou `router.query`
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`params`
+
+</td>
+<td>
+
+`any`
+
+</td>
+<td>
+
+Object/String
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`?
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+Object
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.encrypted`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Utilize essa config, caso os parametros foram encriptados pelo `paramsSerializer`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.ignoresFormat`?
+
+</td>
+<td>
+
+`boolean` \| keyof `T`[]
+
+</td>
+<td>
+
+Ignora a formatação de numero ou bool, se `true` ignora todos, se `array` ignora alguns
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`T`
+
+Object
+
+## Example
+
+```ts
+const params = paramsBuilder<UnidadesAcessosRouteParams>(
+  router.query,
+  { ignoresFormat: ['unidade'] }
+);
+```
+
+## Defined in
+
+utils/params.ts:161
+
+
+***
+
+Keep calm and code on 🤘.

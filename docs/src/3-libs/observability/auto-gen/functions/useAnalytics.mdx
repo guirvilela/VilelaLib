@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Observability/functions/useAnalytics" />
+
+
+
+[**Observability Library**](/?path=/docs/libs-observability-overview--page) • **Docs**
+
+***
+
+[Observability Library](/?path=/docs/libs-observability-overview--page) / useAnalytics
+
+# Function: useAnalytics()
+
+```ts
+function useAnalytics(): IAnalyticsContext
+```
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `AnalyticsProvider`
+
+## Returns
+
+`IAnalyticsContext`
+
+## Example
+
+```ts
+const { sendEvent } = useAnalytics();
+```
+
+## Defined in
+
+analytics/index.tsx:16
+
+
+***
+
+Keep calm and code on 🤘.

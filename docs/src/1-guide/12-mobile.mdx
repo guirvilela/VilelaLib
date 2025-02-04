@@ -1,0 +1,77 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Mobile" />
+
+# Mobile
+
+Utilizamos essa seção para compartilhar conhecimento sobre mobile e lojas.
+
+## Apple
+
+### Passos necessarios para realizar deploy na App Store
+
+\*_opcional se já estiver configurado_
+
+- Criar CSR\*
+- Criar certificado\*
+- Criar provisao\*
+- Criar arquivo p12\*
+- Atualizar as variaveis e arquivos de ambiente necessarios para o pipeline conseguir fazer deploy no App Center\*
+- Realizar modificacao no repo
+- Criar PR, após o merge em PROD, o pipeline inicia automaticamente
+- Verificar o App Center para ver se o release automatico no TestFlight
+- Criar release a partir do build no TestFlight
+- Publicar
+
+### Criar CSR (certificate signing request)
+
+- No Mac, abrir o app **Keychain Access**
+- No menu do app entrar em **Certificate Assistant > Request a Certificate from a Certificate Authority**
+- Digite seu email e nome
+- Deixe o campo "CA Email Address" vazio
+- Marque "Saved to disk"
+- Clique em "Continue"
+- Salve na pasta **Documents** para facilitar a transferencia depois!
+
+### Criar o certificado
+
+- Acesse [https://developer.apple.com/account/resources/certificates/list](https://developer.apple.com/account/resources/certificates/list)
+- Adicione um novo certificado
+- Selecione um tipo "Apple Distribution"
+- Selecione o arquivo CSR criado no topico anterior
+- Baixe o certificado (sera necessario na hora de criar o arquivo .p12)
+
+### Criar uma provisao (Apple provisioning profile)
+
+- Acesse [https://developer.apple.com/account/resources/profiles/list](https://developer.apple.com/account/resources/profiles/list)
+- Adicione uma nova "profile"
+- Selecione um tipo "Distribution -> App Store"
+- Selecione o App ID do app que ira fazer build/deploy
+- Baixe a provisao (sera necessario subir para o DevOps, "Library -> Secure files")
+
+### Criar um arquivo .p12 a partir do certificado
+
+- No Mac, abra o arquivo do certificado gerado nas etapas anteriores
+- Ao abrir o arquivo, o app **Keychain Access** importara automaticamente, apenas selecione a pasta "login" e continuar
+- Apos importar, clique no mesmo e clique com o botao direito no item do tipo "Private key"
+- No menu, clique em exportar
+- Salve a senha colocada aqui, pois sera necessario atualizar a variavel do pipeline caso não escolha a mesma senha já utilizada nos pipes ("Library -> \{variableGroupName\}"))
+- Salve na pasta **Documents** para facilitar a transferencia depois (sera necessario subir para o DevOps, "Library -> Secure files")
+
+### Transferir arquivos usando SSH
+
+**MacOS para Windows/Linux**
+
+```sh
+scp Hubert@{IP}:/Users/hubert/Documents/{filename} ./
+```
+
+**Windows/Linux para MacOS**
+
+```sh
+scp {filename} Hubert@{IP}:/Users/hubert/Documents/
+```
+
+---
+
+Keep calm and code on 🤘.

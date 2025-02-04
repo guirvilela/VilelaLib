@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Auth/functions/useAuth" />
+
+
+
+[**Auth Library**](/?path=/docs/libs-auth-overview--page) • **Docs**
+
+***
+
+[Auth Library](/?path=/docs/libs-auth-overview--page) / useAuth
+
+# Function: useAuth()
+
+```ts
+function useAuth(): IAuthContext
+```
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `AuthProvider`
+
+## Returns
+
+[`IAuthContext`](/?path=/docs/libs-auth-interfaces-iauthcontext)
+
+## Example
+
+```ts
+const { authenticated, handleUnauthorized } = useAuth();
+```
+
+## Defined in
+
+index.tsx:26
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,125 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/functions/withLayout" />
+
+
+
+[**Styles Library**](/?path=/docs/libs-styles-overview--page) • **Docs**
+
+***
+
+[Styles Library](/?path=/docs/libs-styles-overview--page) / withLayout
+
+# Function: withLayout()
+
+```ts
+function withLayout<P>(LayoutElement: (props?: P) => Element, layoutProps?: P): (Component: any) => NamedExoticComponent<object>
+```
+
+Função utilizada para adicionar um layout pré-configurado em uma pagina (pode ser utilizada com composition)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`P` *extends* `object`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`LayoutElement`
+
+</td>
+<td>
+
+(`props`?: `P`) => `Element`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`layoutProps`?
+
+</td>
+<td>
+
+`P`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Function`
+
+### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`Component`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Returns
+
+`NamedExoticComponent`\<`object`\>
+
+## Example
+
+```ts
+export default compose(
+  withLayout(DefaultLayout)
+)(CadastroAreasPage);
+```
+
+## Defined in
+
+providers/layout/index.tsx:11
+
+
+***
+
+Keep calm and code on 🤘.

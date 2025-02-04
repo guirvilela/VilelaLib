@@ -1,0 +1,49 @@
+import { HubProgressTab, HubProgressTabs } from '@hubert/atoms';
+import { colorLevels, colorsList, spacesList } from '@hubert/styles';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { TEXT } from '~/utils';
+import { HubProgressTabConfig, HubProgressTabsConfig } from './storyConfig.ts';
+
+<Meta title="Design System/Atoms/HubProgressTabs" />
+
+# HubProgressTab
+
+```
+import { HubProgressTab } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={HubProgressTabConfig.args}
+    argTypes={HubProgressTabConfig.props}
+  >
+    {(args) => <HubProgressTab {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+# HubProgressTabs
+
+```
+import { HubProgressTabs, HubProgressTab } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Usage"
+    args={HubProgressTabsConfig.args}
+    argTypes={HubProgressTabsConfig.props}
+  >
+    {(args) => (
+      <HubProgressTabs {...args}>
+        <HubProgressTab color="primary">{TEXT.Title}</HubProgressTab>,
+        <HubProgressTab color="condominios">{TEXT.Title}</HubProgressTab>,
+        <HubProgressTab>{TEXT.Title}</HubProgressTab>
+      </HubProgressTabs>
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Usage" />

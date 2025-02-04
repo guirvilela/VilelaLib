@@ -1,0 +1,137 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/bodySerializer" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / bodySerializer
+
+# Function: bodySerializer()
+
+```ts
+function bodySerializer<T>(body?: T, configs?: {
+  customSerializer: (body: T) => XMLHttpRequestBodyInit;
+ }): 
+  | undefined
+  | string
+  | Blob
+  | ArrayBufferView
+  | ArrayBuffer
+  | FormData
+```
+
+Serialize body to XMLHttpRequestBodyInit
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`body`?
+
+</td>
+<td>
+
+`T`
+
+</td>
+<td>
+
+Object
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`?
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+Object
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.customSerializer`?
+
+</td>
+<td>
+
+(`body`: `T`) => `XMLHttpRequestBodyInit`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+  \| `undefined`
+  \| `string`
+  \| [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob)
+  \| `ArrayBufferView`
+  \| [`ArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
+  \| [`FormData`](https://developer.mozilla.org/docs/Web/API/FormData)
+
+XMLHttpRequestBodyInit
+
+## Defined in
+
+utils/body.ts:8
+
+
+***
+
+Keep calm and code on 🤘.

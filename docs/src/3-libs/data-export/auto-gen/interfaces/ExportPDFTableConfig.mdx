@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/interfaces/ExportPDFTableConfig" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / ExportPDFTableConfig
+
+# Interface: ExportPDFTableConfig
+
+Objeto de configuração de uma tabela a ser inserida no conteudo do PDF
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`border?`</td><td>`boolean`[]</td><td>border: [left, top, right, bottom], [horizontal, vertical]</td><td>pdf/index.ts:144</td></tr>
+<tr><td>`cover?`</td><td>\{ `align`: [`ExportPDFPositionAlignment`](/?path=/docs/libs-data-export-type-aliases-exportpdfpositionalignment); `height`: `number`; `valign`: [`exportpdfpositionalignment`](-?path=-docs-libs-data-export-type-aliases-exportpdfpositionalignment); `width`: `number`; \}</td><td>you can also cover the image inside a rectangle</td><td>pdf/index.ts:165</td></tr>
+<tr><td>`cover.align`</td><td>[`ExportPDFPositionAlignment`](/?path=/docs/libs-data-export-type-aliases-exportpdfpositionalignment)</td><td>-</td><td>pdf/index.ts:169</td></tr>
+<tr><td>`cover.height`</td><td>`number`</td><td>-</td><td>pdf/index.ts:167</td></tr>
+<tr><td>`cover.valign`</td><td>[`ExportPDFPositionAlignment`](/?path=/docs/libs-data-export-type-aliases-exportpdfpositionalignment)</td><td>-</td><td>pdf/index.ts:168</td></tr>
+<tr><td>`cover.width`</td><td>`number`</td><td>-</td><td>pdf/index.ts:166</td></tr>
+<tr><td>`fit?`</td><td>`number`[]</td><td>you can also fit the image or qr code, inside a rectangle ([100, 100])</td><td>pdf/index.ts:163</td></tr>
+<tr><td>`height?`</td><td>`number`</td><td>image or qr code height (if you specify both width and height - image will be stretched)</td><td>pdf/index.ts:161</td></tr>
+<tr><td>`image?`</td><td>`string`</td><td>generate image in PDF **Example** `image: "data:image/jpeg;base64,...encodedContent..." image: "https://www2.hubert.com.br/logo.png"`</td><td>pdf/index.ts:151</td></tr>
+<tr><td>`layout?`</td><td>\{ `hLineColor`: (`index`: `number`, `node`: `any`) => `string`; `hLineWidth`: (`index`: `number`, `node`: `any`) => `number`; `paddingBottom`: (`index`: `number`) => `number`; `paddingLeft`: (`index`: `number`) => `number`; `paddingRight`: (`index`: `number`) => `number`; `paddingTop`: (`index`: `number`) => `number`; `vLineColor`: (`index`: `number`, `node`: `any`) => `string`; `vLineWidth`: (`index`: `number`, `node`: `any`) => `number`; \}</td><td>-</td><td>pdf/index.ts:73</td></tr>
+<tr><td>`layout.hLineColor?`</td><td>(`index`: `number`, `node`: `any`) => `string`</td><td>border line color (horizontal)</td><td>pdf/index.ts:78</td></tr>
+<tr><td>`layout.hLineWidth?`</td><td>(`index`: `number`, `node`: `any`) => `number`</td><td>width line color (horizontal)</td><td>pdf/index.ts:88</td></tr>
+<tr><td>`layout.paddingBottom?`</td><td>(`index`: `number`) => `number`</td><td>cell bottom space</td><td>pdf/index.ts:113</td></tr>
+<tr><td>`layout.paddingLeft?`</td><td>(`index`: `number`) => `number`</td><td>cell left space</td><td>pdf/index.ts:98</td></tr>
+<tr><td>`layout.paddingRight?`</td><td>(`index`: `number`) => `number`</td><td>cell right space</td><td>pdf/index.ts:108</td></tr>
+<tr><td>`layout.paddingTop?`</td><td>(`index`: `number`) => `number`</td><td>cell top space</td><td>pdf/index.ts:103</td></tr>
+<tr><td>`layout.vLineColor?`</td><td>(`index`: `number`, `node`: `any`) => `string`</td><td>border line color (vertical)</td><td>pdf/index.ts:83</td></tr>
+<tr><td>`layout.vLineWidth?`</td><td>(`index`: `number`, `node`: `any`) => `number`</td><td>width line color (horizontal)</td><td>pdf/index.ts:93</td></tr>
+<tr><td>`margin?`</td><td>`number`[]</td><td>margin: [left, top, right, bottom], [horizontal, vertical]</td><td>pdf/index.ts:142</td></tr>
+<tr><td>`ol?`</td><td>[`ExportPDFOptions`](/?path=/docs/libs-data-export-interfaces-exportpdfoptions)[]</td><td>generate numbered list, to treat a paragraph as a numbered list, set an array of items under the ul key</td><td>pdf/index.ts:174</td></tr>
+<tr><td>`pageBreak?`</td><td>`"after"` | `"before"`</td><td>jump to next page, after or before of this element</td><td>pdf/index.ts:176</td></tr>
+<tr><td>`qr?`</td><td>`string`</td><td>generate qr code **Example** `qr: "bla bla bla"`</td><td>pdf/index.ts:157</td></tr>
+<tr><td>`table?`</td><td>\{ `body`: [`ExportPDFOptions`](/?path=/docs/libs-data-export-interfaces-exportpdfoptions)[][]; `headerRows`: `number`; `widths`: (`string` | `number`)[]; \}</td><td>generate table in PDF (use ExportPDFTableUtils for format cells)</td><td>pdf/index.ts:116</td></tr>
+<tr><td>`table.body`</td><td>[`ExportPDFOptions`](/?path=/docs/libs-data-export-interfaces-exportpdfoptions)[][]</td><td>header, body and footer of table in same prop</td><td>pdf/index.ts:139</td></tr>
+<tr><td>`table.headerRows`</td><td>`number`</td><td>you can declare how many rows should be treated as headers headers are automatically repeated if the table spans over multiple pages</td><td>pdf/index.ts:123</td></tr>
+<tr><td>`table.widths`</td><td>(`string` | `number`)[]</td><td>widths of columns ['\*', 'auto', 100, '\*'] **Example** `pdfmake: css '*' : 100% 'auto' : auto 100 : 100px 80 : 80px 'same count of columns in body row'`</td><td>pdf/index.ts:137</td></tr>
+<tr><td>`ul?`</td><td>[`ExportPDFOptions`](/?path=/docs/libs-data-export-interfaces-exportpdfoptions)[]</td><td>generate bulleted list, to treat a paragraph as a bulleted list, set an array of items under the ul key</td><td>pdf/index.ts:172</td></tr>
+<tr><td>`width?`</td><td>`number`</td><td>image or qr code width (if you specify both width and height - image will be stretched)</td><td>pdf/index.ts:159</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

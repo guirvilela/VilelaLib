@@ -1,0 +1,73 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Condominios/Overview" />
+
+# Data Export
+
+Esta biblioteca contem e deve somente conter codigo relacionado a exportação de dados para csv, imagem ou pdf.
+
+## Como utilizar
+
+```
+npm i @hubert/condominios
+```
+
+Como configurar
+
+```js
+// arquivo: ~/config/condominios.ts
+import { CondominiosConfig } from '@hubert/condominios';
+import config from '.'; // config geral
+
+const condominiosConfig: CondominiosConfig = {
+  initialLoadData: true,
+  baseUrlApiErp: config.backend.apiErp,
+  cacheKey: 'hub.{nomeApp}.condominiosList',
+  condominioSelectedKey: 'hub.{nomeApp}.condominioSelected',
+  condominioConfigKey: 'hub.{nomeApp}.condominioConfig',
+  localMode: config.local.enabled
+};
+
+export default condominiosConfig;
+```
+
+Uso do provider
+
+```js
+// arquivo: ~/pages/_app.tsx
+import { CondominiosProvider } from '@hubert/condominios';
+import condominiosConfig from '~/config/condominios';
+
+<CondominiosProvider configs={condominiosConfig}>...</CondominiosProvider>;
+```
+
+Uso dos componentes
+
+```js
+// arquivo: ~/layouts/{nomeLayout}/index.tsx
+import { HubCondominioItem, HubCondominioSelect } from '@hubert/organisms';
+
+<HubCondominioSelect
+  items={condominios}
+  loading={condominioLoading}
+  color={condominioConfig?.tema?.corSec as never}
+  colorText={condominioConfig?.tema?.corSecText as never}
+  warning={condominioWarning}
+  info={
+    !isDateEmpty(condominioConfig?.periodoAtual?.dataInicio)
+      ? t('app_condo-selector-plano', {
+          at: f.customDateFormatter({ day: '2-digit' })(
+            condominioConfig.periodoAtual.dataInicio
+          ),
+          to: f.customDateFormatter({ day: '2-digit' })(
+            condominioConfig.periodoAtual.dataFim
+          )
+        })
+      : ''
+  }
+  value={condominioSelected}
+  onChange={handleChangeCondominio}
+/>
+```
+
+Keep calm and code on 🤘.

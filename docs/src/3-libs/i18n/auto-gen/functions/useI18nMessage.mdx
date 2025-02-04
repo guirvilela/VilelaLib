@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/I18n/functions/useI18nMessage" />
+
+
+
+[**I18n Library**](/?path=/docs/libs-i18n-overview--page) • **Docs**
+
+***
+
+[I18n Library](/?path=/docs/libs-i18n-overview--page) / useI18nMessage
+
+# Function: useI18nMessage()
+
+```ts
+function useI18nMessage(): (key: string, values?: Record<string, any>) => string & {
+  render: (key: string, values?: Record<string, any>) => Element;
+}
+```
+
+Esta função retorna uma função que pode ser usada para obter mensagens internacionalizadas com placeholders para valores.
+A função retornada tem dois parâmetros: key que é a chave da mensagem e values que é um objeto com os valores a serem substituídos nos placeholders da mensagem.
+A função retorna a mensagem formatada com os valores fornecidos.
+
+## Returns
+
+(`key`: `string`, `values`?: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>) => `string` & \{
+  `render`: (`key`: `string`, `values`?: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>) => `Element`;
+ \}
+
+## Example
+
+```ts
+import { useI18nFormatter } from '@hubert/i18n';
+
+const t = useI18nFormatter();
+
+<HubButton>{t('button-doc-translate')}</HubButton>;
+//resultado: <HubButton>Documentação do Botão</HubButton>;
+```
+
+## Defined in
+
+hooks/messages.tsx:19
+
+
+***
+
+Keep calm and code on 🤘.

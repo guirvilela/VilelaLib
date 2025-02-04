@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubAlert component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  margin-top: -2px;
+  width: 100%;
+}
+
+.c4 {
+  font-family: Nunito Sans;
+  font-size: 14px;
+  line-height: 1.6666666666666667;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  color: #040C12;
+}
+
+.c5 {
+  font-family: Nunito Sans;
+  font-size: 14px;
+  line-height: 1.6666666666666667;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  color: #495057;
+  font-weight: 400;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #FBFDFD;
+  color: #304A5D;
+  border: 1px solid #304A5D;
+  border-radius: 4px;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  padding: 8px;
+  gap: 8px;
+}
+
+.c0 .c1 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+}
+
+.c0 .c3 {
+  font-weight: 600;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <span
+        class="c3 c4"
+      >
+        Title Test
+      </span>
+      <span
+        class="c5"
+      >
+        Content test
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

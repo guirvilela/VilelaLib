@@ -1,0 +1,84 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/useService" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / useService
+
+# Function: useService()
+
+```ts
+function useService<T>(factory: (http: {
+  delete: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  get: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  patch: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  post: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  put: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+ }) => T): T
+```
+
+useService é um hook que retorna um serviço criado usando o contexto Http atual e uma função factory.
+A função factory deve receber um objeto Http como argumento e retornar o serviço desejado.
+O hook usa a função useHttp para obter o objeto Http atual e cria o serviço usando React.useMemo para evitar recriar o objeto sempre que o componente é atualizado.
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`factory`
+
+</td>
+<td>
+
+(`http`: \{ `delete`: \<`T`, `B`, `P`, `U`\>(`this`: `any`, `url`: `string`, `configs`: [`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`t`, `b`, `p`, `u`\>\>; `get`: \<`t`, `b`, `p`, `u`\>(`this`: `any`, `url`: `string`, `configs`: [`httpconfig`](-?path=-docs-libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`t`, `b`, `p`, `u`\>\>; `patch`: \<`t`, `b`, `p`, `u`\>(`this`: `any`, `url`: `string`, `configs`: [`httpconfig`](-?path=-docs-libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`t`, `b`, `p`, `u`\>\>; `post`: \<`t`, `b`, `p`, `u`\>(`this`: `any`, `url`: `string`, `configs`: [`httpconfig`](-?path=-docs-libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`t`, `b`, `p`, `u`\>\>; `put`: \<`t`, `b`, `p`, `u`\>(`this`: `any`, `url`: `string`, `configs`: [`httpconfig`](-?path=-docs-libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\>; \}) => `T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`T`
+
+## Defined in
+
+providers/index.tsx:74
+
+
+***
+
+Keep calm and code on 🤘.

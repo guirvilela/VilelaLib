@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Auth/functions/withAuth" />
+
+
+
+[**Auth Library**](/?path=/docs/libs-auth-overview--page) • **Docs**
+
+***
+
+[Auth Library](/?path=/docs/libs-auth-overview--page) / withAuth
+
+# Function: withAuth()
+
+```ts
+function withAuth(config?: WithAuthConfig): (Component: any) => NamedExoticComponent<object>
+```
+
+Função utilizada como guarda das paginas que requerem autenticação (pode ser utilizada com composition)
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`?
+
+</td>
+<td>
+
+`WithAuthConfig`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Function`
+
+### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`Component`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Returns
+
+`NamedExoticComponent`\<`object`\>
+
+## Example
+
+```ts
+export default compose(
+  withAuth()
+)(CadastroAreasPage);
+```
+
+## Defined in
+
+index.tsx:232
+
+
+***
+
+Keep calm and code on 🤘.

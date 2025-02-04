@@ -1,0 +1,5 @@
+{
+  "extends": "../build-lib/tsconfig",
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts*"]
+}

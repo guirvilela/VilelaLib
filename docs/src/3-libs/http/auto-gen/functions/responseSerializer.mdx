@@ -1,0 +1,126 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/responseSerializer" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / responseSerializer
+
+# Function: responseSerializer()
+
+```ts
+function responseSerializer<T>(response: Response, configs?: {
+  customSerializer: (response: Response) => Promise<T>;
+}): Promise<T>
+```
+
+Serialize response object para um tipo customizavel
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`response`
+
+</td>
+<td>
+
+[`Response`](https://developer.mozilla.org/docs/Web/API/Response)
+
+</td>
+<td>
+
+Response
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`?
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.customSerializer`?
+
+</td>
+<td>
+
+(`response`: [`Response`](https://developer.mozilla.org/docs/Web/API/Response)) => [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`T`\>
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`T`\>
+
+T
+
+## Defined in
+
+utils/response.ts:200
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubPhone component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0 .c1 {
+  border: 1px solid #A2B2BF;
+  background-color: #FFFFFF;
+  padding: 0px 8px 0px 0px;
+}
+
+.c3 {
+  font-family: 'Flags';
+  width: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #F1F3F5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+        title="Brazil (Brasil)"
+      >
+        🇧🇷
+      </div>
+      <input
+        autocomplete="off"
+        class=""
+        id="hub-text-field-hub-phone-number-asd"
+        title="(11) 91234-4321"
+        type="text"
+        value="(11) 91234-4321"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

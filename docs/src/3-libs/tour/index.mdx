@@ -1,0 +1,86 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Tour/Overview" />
+
+# Tour Library
+
+Esta biblioteca contem e deve somente conter codigo relacionado a tour/tooltip de ajuda e treinamento para js/ts.
+
+## Como utilizar
+
+```sh
+npm i @hubert/tour
+```
+
+No entry da aplicação, (nextjs é o arquivo pages/\_app.ts) importar o css necessario:
+
+```js
+import { TourProvider } from '@hubert/tour';
+import '@hubert/tour/lib/styles.css';
+
+/* ... */
+import tourConfig from '~/config/tour';
+
+export const App = ({ Component, pageProps }) => (
+  /* ... */
+  <TourProvider configs={tourConfig}>
+    {/* ... */}
+    <Component {...pageProps} />
+    {/* ... */}
+  </TourProvider>
+  /* ... */
+);
+```
+
+Configuração padrão/inicial (src/config/tour.ts):
+
+```js
+import { TourConfig } from '@hubert/tour';
+
+const tourConfig: TourConfig = {
+  dontShowAgain: true,
+  dontShowAgainCookie: 'hub.{appName}.tour'
+};
+
+export default tourConfig;
+```
+
+Exemplo:
+
+```jsx
+import React from 'react';
+import { HubTour, useTour } from '@hubert/tour';
+
+const { runTour, showTourHints } = useTour();
+
+//? Inicia o tour ao iniciar a pagina
+React.useEffect(() => {
+  runTour({
+    showBullets: false,
+    dontShowAgainCookie: config.keys.tourLegacyLink
+  });
+}, []);
+
+//? Mostra todos os hints ao iniciar a pagina
+React.useEffect(() => {
+  showTourHints();
+}, []);
+
+return (
+  <>
+    <HubTour title="Titulo do tour" content="Conteudo do tour">
+      {/* Elemento que o tour usara como ancora (igual tooltip) */}
+      <Filho>
+    </HubTour>
+
+    ...
+
+    <HubTour hint="Conteudo do hibt">
+      {/* Elemento que o tour usara como ancora (igual tooltip) */}
+      <Filho>
+    </HubTour>
+  </>
+);
+```
+
+Keep calm and code on 🤘.

@@ -1,0 +1,88 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/interfaces/Action" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / Action
+
+# Interface: Action\<T, M, P\>
+
+Type return of useAction Hook
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`M`
+
+</td>
+<td>
+
+`T`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`P`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`closeMsg`</td><td>() => `void`</td><td>reset success or error message</td><td>hooks/action.ts:43</td></tr>
+<tr><td>`complete`</td><td>`boolean`</td><td>true if action called and finish</td><td>hooks/action.ts:31</td></tr>
+<tr><td>`error`</td><td>`string`</td><td>request error message</td><td>hooks/action.ts:21</td></tr>
+<tr><td>`exec`</td><td>(`request`: `ActionRequest`\<`T`\> | () => [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`T` | [`HttpResponse`](/?path=/docs/libs-http-classes-httpresponse)\<`t`, `any`, `any`, `any`\>\> | `actionrequest`\<`t`\>, `configs`?: `actionconfig`\<`t`, `m`, `p`\>, `props`?: `p`) => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`M`, `any`, `any`, `any`\>\></td><td>execute http request</td><td>hooks/action.ts:33</td></tr>
+<tr><td>`hasMsg`</td><td>`boolean`</td><td>true if exist success or error message</td><td>hooks/action.ts:41</td></tr>
+<tr><td>`loading`</td><td>`boolean`</td><td>true on starting request and false on done</td><td>hooks/action.ts:27</td></tr>
+<tr><td>`payload`</td><td>`M`</td><td>request results on done and after mutation</td><td>hooks/action.ts:19</td></tr>
+<tr><td>`pristine`</td><td>`boolean`</td><td>true if action has not yet been called</td><td>hooks/action.ts:29</td></tr>
+<tr><td>`reset`</td><td>(`keepData`?: `boolean`) => `void`</td><td>reset all props of action to initial state</td><td>hooks/action.ts:47</td></tr>
+<tr><td>`statusCode`</td><td>`number`</td><td>request status code</td><td>hooks/action.ts:23</td></tr>
+<tr><td>`success`</td><td>`string` | `boolean`</td><td>request success feedback (can be message if has config successMsg)</td><td>hooks/action.ts:25</td></tr>
+<tr><td>`updateData`</td><td>(`v`: `M`) => `void`</td><td>manual set payload value</td><td>hooks/action.ts:45</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

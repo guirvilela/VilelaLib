@@ -1,0 +1,44 @@
+{
+  "name": "@hubert/organisms",
+  "description": "Organisms components for web projects.",
+  "version": "2.29.11",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "extensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx"
+  ],
+  "scripts": {
+    "dev": "hubert-lib dev",
+    "prebuild": "hubert-lib prebuild",
+    "build": "hubert-lib build",
+    "test": "hubert-lib test",
+    "test:update": "hubert-lib test-update",
+    "test:ci": "hubert-lib test-ci",
+    "lint": "hubert-lib lint"
+  },
+  "peerDependencies": {
+    "@hubert/atoms": "^2.x",
+    "@hubert/http": "^2.x",
+    "@hubert/molecules": "^2.x",
+    "@hubert/shared": "^2.x",
+    "@hubert/styles": "^2.x",
+    "@hubert/i18n": "^2.x",
+    "react": "^18.x",
+    "styled-components": "^5.x"
+  },
+  "devDependencies": {
+    "@hubert/build-lib": "^2.x",
+    "@babel/preset-react": "^7.18.6",
+    "babel-plugin-inline-react-svg": "^2.0.1",
+    "babel-plugin-styled-components": "^1.8.0",
+    "jest-styled-components": "^7.1.0"
+  }
+}

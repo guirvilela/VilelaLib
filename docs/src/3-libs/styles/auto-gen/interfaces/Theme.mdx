@@ -1,0 +1,381 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/interfaces/Theme" />
+
+
+
+[**Styles Library**](/?path=/docs/libs-styles-overview--page) • **Docs**
+
+***
+
+[Styles Library](/?path=/docs/libs-styles-overview--page) / Theme
+
+# Interface: Theme
+
+Objeto com todas as variaveis do style-guide
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`breakpoints`</td><td>\{ `lg`: `'992px'`; `md`: `'768px'`; `sm`: `'576px'`; `xl`: `'1200px'`; `xs`: `'480px'`; `xxl`: `'1600px'`; \}</td><td>-</td><td>variables/theme.ts:14</td></tr>
+<tr><td>`breakpoints.lg`</td><td>`string`</td><td>Return Breakpoint.lg = 992px</td><td>variables/breakpoints.ts:23</td></tr>
+<tr><td>`breakpoints.md`</td><td>`string`</td><td>Return Breakpoint.md = 768px</td><td>variables/breakpoints.ts:21</td></tr>
+<tr><td>`breakpoints.sm`</td><td>`string`</td><td>Return Breakpoint.sm = 576px</td><td>variables/breakpoints.ts:19</td></tr>
+<tr><td>`breakpoints.xl`</td><td>`string`</td><td>Return Breakpoint.xl = 1200px</td><td>variables/breakpoints.ts:25</td></tr>
+<tr><td>`breakpoints.xs`</td><td>`string`</td><td>Return Breakpoint.xs = 480px</td><td>variables/breakpoints.ts:17</td></tr>
+<tr><td>`breakpoints.xxl`</td><td>`string`</td><td>Return Breakpoint.xxl = 1600px</td><td>variables/breakpoints.ts:27</td></tr>
+<tr><td>`colors`</td><td>\{ `black`: \{ `100`: `'#000000'`; `200`: `'#000000'`; `300`: `'#000000'`; `400`: `'#000000'`; `500`: `'#000000'`; `600`: `'#000000'`; `700`: `'#000000'`; `800`: `'#000000'`; `900`: `'#000000'`; `A100`: `'#000000'`; `A200`: `'#000000'`; `A300`: `'#000000'`; `A400`: `'#000000'`; `A500`: `'#000000'`; `A600`: `'#000000'`; `A700`: `'#000000'`; `A800`: `'#000000'`; `A900`: `'#000000'`; \}; `condominios`: \{ `100`: `'#CCEBFF'`; `200`: `'#A1DAFF'`; `300`: `'#7DCAFF'`; `400`: `'#5EBBF3'`; `500`: `'#46AAE1'`; `600`: `'#3686B2'`; `700`: `'#266486'`; `800`: `'#174159'`; `900`: `'#071F2C'`; `A100`: `'#D3EBF8'`; `A200`: `'#B9D4E3'`; `A300`: `'#A0BECF'`; `A400`: `'#88A9BB'`; `A500`: `'#7094A7'`; `A600`: `'#577E93'`; `A700`: `'#3F6980'`; `A800`: `'#26536C'`; `A900`: `'#0E3E58'`; \}; `error`: \{ `100`: `'#FFE7E8'`; `200`: `'#F6B8AE'`; `300`: `'#ED8975'`; `400`: `'#FD606B'`; `500`: `'#BE1A25'`; `600`: `'#99151E'`; `700`: `'#751017'`; `800`: `'#510B10'`; `900`: `'#2D0609'`; `A100`: `'#F9D8D2'`; `A200`: `'#F3B0A3'`; `A300`: `'#ED8975'`; `A400`: `'#D37563'`; `A500`: `'#BB6351'`; `A600`: `'#A35040'`; `A700`: `'#8B3E2F'`; `A800`: `'#722B1D'`; `A900`: `'#5A190C'`; \}; `imoveis`: \{ `100`: `'#D2E4FD'`; `200`: `'#ACCDF7'`; `300`: `'#8AB8EC'`; `400`: `'#6DA4DC'`; `500`: `'#5591C8'`; `600`: `'#42729F'`; `700`: `'#305577'`; `800`: `'#1E374F'`; `900`: `'#0C1A27'`; `A100`: `'#D8E6F3'`; `A200`: `'#BECEDD'`; `A300`: `'#A7B8C8'`; `A400`: `'#8FA2B4'`; `A500`: `'#788C9F'`; `A600`: `'#60768B'`; `A700`: `'#486076'`; `A800`: `'#314A62'`; `A900`: `'#19344D'`; \}; `info`: \{ `100`: `'#EEF8FF'`; `200`: `'#BCE3FF'`; `300`: `'#8BCEFF'`; `400`: `'#50B4FE'`; `500`: `'#268EDB'`; `600`: `'#1E71AE'`; `700`: `'#165483'`; `800`: `'#0F3857'`; `900`: `'#071C2C'`; `A100`: `'#D3E8F8'`; `A200`: `'#B9D0E3'`; `A300`: `'#A0BBCF'`; `A400`: `'#88A5BB'`; `A500`: `'#708FA7'`; `A600`: `'#577993'`; `A700`: `'#3F6480'`; `A800`: `'#264E6C'`; `A900`: `'#0E3858'`; \}; `neutral`: \{ `100`: `'#FBFDFD'`; `200`: `'#E8EEF4'`; `300`: `'#CCD5DD'`; `400`: `'#A2B2BF'`; `500`: `'#304A5D'`; `600`: `'#08273C'`; `700`: `'#061A27'`; `800`: `'#040C12'`; `900`: `'#020C12'`; `A100`: `'#DDE7EE'`; `A200`: `'#B0BFCA'`; `A300`: `'#8699A8'`; `A400`: `'#5B7385'`; `A500`: `'#304D63'`; `A600`: `'#2C475B'`; `A700`: `'#284154'`; `A800`: `'#253B4C'`; `A900`: `'#213545'`; \}; `neutralGrey`: \{ `100`: `'#F1F3F5'`; `200`: `'#E9ECEF'`; `300`: `'#DEE2E6'`; `400`: `'#CED4DA'`; `500`: `'#ADB5BD'`; `600`: `'#868E96'`; `700`: `'#495057'`; `800`: `'#343A40'`; `900`: `'#212529'`; `A100`: `'#FAFAFA'`; `A200`: `'#DFDFE0'`; `A300`: `'#C5C7C8'`; `A400`: `'#ACAEB0'`; `A500`: `'#929699'`; `A600`: `'#797D81'`; `A700`: `'#606469'`; `A800`: `'#464C51'`; `A900`: `'#2D3339'`; \}; `outsourcing`: \{ `100`: `'#D6F3FF'`; `200`: `'#B3E7FA'`; `300`: `'#94DBF1'`; `400`: `'#7ACEE4'`; `500`: `'#64BED2'`; `600`: `'#4D96A6'`; `700`: `'#376F7C'`; `800`: `'#214952'`; `900`: `'#0B2228'`; `A100`: `'#EBF9F9'`; `A200`: `'#B2E7E8'`; `A300`: `'#A3E2E3'`; `A400`: `'#94DDDF'`; `A500`: `'#85D9DA'`; `A600`: `'#67B0B1'`; `A700`: `'#4B898A'`; `A800`: `'#2E6162'`; `A900`: `'#123A3B'`; \}; `primary`: \{ `100`: `'#CAD3E1'`; `200`: `'#98AAC1'`; `300`: `'#65829E'`; `400`: `'#335B78'`; `500`: `'#083350'`; `600`: `'#072E47'`; `700`: `'#06283F'`; `800`: `'#062336'`; `900`: `'#051E2E'`; `A100`: `'#E8F4FD'`; `A200`: `'#CAD9E5'`; `A300`: `'#AEC1CE'`; `A400`: `'#92A8B7'`; `A500`: `'#7690A1'`; `A600`: `'#5B778A'`; `A700`: `'#3F5E73'`; `A800`: `'#23465D'`; `A900`: `'#072D46'`; \}; `success`: \{ `100`: `'#E5FFEB'`; `200`: `'#C7FFD4'`; `300`: `'#A9FFBD'`; `400`: `'#74EB90'`; `500`: `'#25A443'`; `600`: `'#1E8536'`; `700`: `'#17662A'`; `800`: `'#10481D'`; `900`: `'#092A11'`; `A100`: `'#E0EBE7'`; `A200`: `'#B7D2C8'`; `A300`: `'#8FB9AA'`; `A400`: `'#7DA496'`; `A500`: `'#6C9083'`; `A600`: `'#5A7B70'`; `A700`: `'#49675D'`; `A800`: `'#38534A'`; `A900`: `'#273F37'`; \}; `transparent`: \{ `100`: `'transparent'`; `200`: `'transparent'`; `300`: `'transparent'`; `400`: `'transparent'`; `500`: `'transparent'`; `600`: `'transparent'`; `700`: `'transparent'`; `800`: `'transparent'`; `900`: `'transparent'`; `A100`: `'transparent'`; `A200`: `'transparent'`; `A300`: `'transparent'`; `A400`: `'transparent'`; `A500`: `'transparent'`; `A600`: `'transparent'`; `A700`: `'transparent'`; `A800`: `'transparent'`; `A900`: `'transparent'`; \}; `warning`: \{ `100`: `'#FFF3E2'`; `200`: `'#FFE9C8'`; `300`: `'#FFDFAF'`; `400`: `'#FFBE5B'`; `500`: `'#D7850B'`; `600`: `'#AC6A09'`; `700`: `'#835107'`; `800`: `'#593705'`; `900`: `'#301E03'`; `A100`: `'#F9EBD2'`; `A200`: `'#F5DDB4'`; `A300`: `'#F2D096'`; `A400`: `'#D8B67E'`; `A500`: `'#BF9E67'`; `A600`: `'#A68650'`; `A700`: `'#8D6E39'`; `A800`: `'#745622'`; `A900`: `'#5B3E0B'`; \}; `white`: \{ `100`: `'#FFFFFF'`; `200`: `'#FFFFFF'`; `300`: `'#FFFFFF'`; `400`: `'#FFFFFF'`; `500`: `'#FFFFFF'`; `600`: `'#FFFFFF'`; `700`: `'#FFFFFF'`; `800`: `'#FFFFFF'`; `900`: `'#FFFFFF'`; `A100`: `'#FFFFFF'`; `A200`: `'#FFFFFF'`; `A300`: `'#FFFFFF'`; `A400`: `'#FFFFFF'`; `A500`: `'#FFFFFF'`; `A600`: `'#FFFFFF'`; `A700`: `'#FFFFFF'`; `A800`: `'#FFFFFF'`; `A900`: `'#FFFFFF'`; \}; \}</td><td>-</td><td>variables/theme.ts:13</td></tr>
+<tr><td>`colors.black`</td><td>\{ `100`: `'#000000'`; `200`: `'#000000'`; `300`: `'#000000'`; `400`: `'#000000'`; `500`: `'#000000'`; `600`: `'#000000'`; `700`: `'#000000'`; `800`: `'#000000'`; `900`: `'#000000'`; `A100`: `'#000000'`; `A200`: `'#000000'`; `A300`: `'#000000'`; `A400`: `'#000000'`; `A500`: `'#000000'`; `A600`: `'#000000'`; `A700`: `'#000000'`; `A800`: `'#000000'`; `A900`: `'#000000'`; \}</td><td>-</td><td>variables/colors.ts:225</td></tr>
+<tr><td>`colors.black.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:243</td></tr>
+<tr><td>`colors.black.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:242</td></tr>
+<tr><td>`colors.black.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:241</td></tr>
+<tr><td>`colors.black.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:240</td></tr>
+<tr><td>`colors.black.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:239</td></tr>
+<tr><td>`colors.black.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:238</td></tr>
+<tr><td>`colors.black.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:237</td></tr>
+<tr><td>`colors.black.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:236</td></tr>
+<tr><td>`colors.black.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:235</td></tr>
+<tr><td>`colors.black.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:234</td></tr>
+<tr><td>`colors.black.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:233</td></tr>
+<tr><td>`colors.black.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:232</td></tr>
+<tr><td>`colors.black.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:231</td></tr>
+<tr><td>`colors.black.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:230</td></tr>
+<tr><td>`colors.black.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:229</td></tr>
+<tr><td>`colors.black.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:228</td></tr>
+<tr><td>`colors.black.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:227</td></tr>
+<tr><td>`colors.black.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:226</td></tr>
+<tr><td>`colors.condominios`</td><td>\{ `100`: `'#CCEBFF'`; `200`: `'#A1DAFF'`; `300`: `'#7DCAFF'`; `400`: `'#5EBBF3'`; `500`: `'#46AAE1'`; `600`: `'#3686B2'`; `700`: `'#266486'`; `800`: `'#174159'`; `900`: `'#071F2C'`; `A100`: `'#D3EBF8'`; `A200`: `'#B9D4E3'`; `A300`: `'#A0BECF'`; `A400`: `'#88A9BB'`; `A500`: `'#7094A7'`; `A600`: `'#577E93'`; `A700`: `'#3F6980'`; `A800`: `'#26536C'`; `A900`: `'#0E3E58'`; \}</td><td>-</td><td>variables/colors.ts:25</td></tr>
+<tr><td>`colors.condominios.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:43</td></tr>
+<tr><td>`colors.condominios.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:42</td></tr>
+<tr><td>`colors.condominios.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:41</td></tr>
+<tr><td>`colors.condominios.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:40</td></tr>
+<tr><td>`colors.condominios.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:39</td></tr>
+<tr><td>`colors.condominios.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:38</td></tr>
+<tr><td>`colors.condominios.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:37</td></tr>
+<tr><td>`colors.condominios.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:36</td></tr>
+<tr><td>`colors.condominios.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:35</td></tr>
+<tr><td>`colors.condominios.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:34</td></tr>
+<tr><td>`colors.condominios.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:33</td></tr>
+<tr><td>`colors.condominios.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:32</td></tr>
+<tr><td>`colors.condominios.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:31</td></tr>
+<tr><td>`colors.condominios.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:30</td></tr>
+<tr><td>`colors.condominios.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:29</td></tr>
+<tr><td>`colors.condominios.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:28</td></tr>
+<tr><td>`colors.condominios.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:27</td></tr>
+<tr><td>`colors.condominios.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:26</td></tr>
+<tr><td>`colors.error`</td><td>\{ `100`: `'#FFE7E8'`; `200`: `'#F6B8AE'`; `300`: `'#ED8975'`; `400`: `'#FD606B'`; `500`: `'#BE1A25'`; `600`: `'#99151E'`; `700`: `'#751017'`; `800`: `'#510B10'`; `900`: `'#2D0609'`; `A100`: `'#F9D8D2'`; `A200`: `'#F3B0A3'`; `A300`: `'#ED8975'`; `A400`: `'#D37563'`; `A500`: `'#BB6351'`; `A600`: `'#A35040'`; `A700`: `'#8B3E2F'`; `A800`: `'#722B1D'`; `A900`: `'#5A190C'`; \}</td><td>-</td><td>variables/colors.ts:125</td></tr>
+<tr><td>`colors.error.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:143</td></tr>
+<tr><td>`colors.error.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:142</td></tr>
+<tr><td>`colors.error.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:141</td></tr>
+<tr><td>`colors.error.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:140</td></tr>
+<tr><td>`colors.error.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:139</td></tr>
+<tr><td>`colors.error.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:138</td></tr>
+<tr><td>`colors.error.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:137</td></tr>
+<tr><td>`colors.error.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:136</td></tr>
+<tr><td>`colors.error.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:135</td></tr>
+<tr><td>`colors.error.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:134</td></tr>
+<tr><td>`colors.error.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:133</td></tr>
+<tr><td>`colors.error.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:132</td></tr>
+<tr><td>`colors.error.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:131</td></tr>
+<tr><td>`colors.error.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:130</td></tr>
+<tr><td>`colors.error.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:129</td></tr>
+<tr><td>`colors.error.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:128</td></tr>
+<tr><td>`colors.error.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:127</td></tr>
+<tr><td>`colors.error.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:126</td></tr>
+<tr><td>`colors.imoveis`</td><td>\{ `100`: `'#D2E4FD'`; `200`: `'#ACCDF7'`; `300`: `'#8AB8EC'`; `400`: `'#6DA4DC'`; `500`: `'#5591C8'`; `600`: `'#42729F'`; `700`: `'#305577'`; `800`: `'#1E374F'`; `900`: `'#0C1A27'`; `A100`: `'#D8E6F3'`; `A200`: `'#BECEDD'`; `A300`: `'#A7B8C8'`; `A400`: `'#8FA2B4'`; `A500`: `'#788C9F'`; `A600`: `'#60768B'`; `A700`: `'#486076'`; `A800`: `'#314A62'`; `A900`: `'#19344D'`; \}</td><td>-</td><td>variables/colors.ts:45</td></tr>
+<tr><td>`colors.imoveis.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:63</td></tr>
+<tr><td>`colors.imoveis.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:62</td></tr>
+<tr><td>`colors.imoveis.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:61</td></tr>
+<tr><td>`colors.imoveis.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:60</td></tr>
+<tr><td>`colors.imoveis.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:59</td></tr>
+<tr><td>`colors.imoveis.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:58</td></tr>
+<tr><td>`colors.imoveis.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:57</td></tr>
+<tr><td>`colors.imoveis.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:56</td></tr>
+<tr><td>`colors.imoveis.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:55</td></tr>
+<tr><td>`colors.imoveis.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:54</td></tr>
+<tr><td>`colors.imoveis.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:53</td></tr>
+<tr><td>`colors.imoveis.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:52</td></tr>
+<tr><td>`colors.imoveis.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:51</td></tr>
+<tr><td>`colors.imoveis.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:50</td></tr>
+<tr><td>`colors.imoveis.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:49</td></tr>
+<tr><td>`colors.imoveis.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:48</td></tr>
+<tr><td>`colors.imoveis.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:47</td></tr>
+<tr><td>`colors.imoveis.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:46</td></tr>
+<tr><td>`colors.info`</td><td>\{ `100`: `'#EEF8FF'`; `200`: `'#BCE3FF'`; `300`: `'#8BCEFF'`; `400`: `'#50B4FE'`; `500`: `'#268EDB'`; `600`: `'#1E71AE'`; `700`: `'#165483'`; `800`: `'#0F3857'`; `900`: `'#071C2C'`; `A100`: `'#D3E8F8'`; `A200`: `'#B9D0E3'`; `A300`: `'#A0BBCF'`; `A400`: `'#88A5BB'`; `A500`: `'#708FA7'`; `A600`: `'#577993'`; `A700`: `'#3F6480'`; `A800`: `'#264E6C'`; `A900`: `'#0E3858'`; \}</td><td>-</td><td>variables/colors.ts:85</td></tr>
+<tr><td>`colors.info.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:103</td></tr>
+<tr><td>`colors.info.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:102</td></tr>
+<tr><td>`colors.info.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:101</td></tr>
+<tr><td>`colors.info.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:100</td></tr>
+<tr><td>`colors.info.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:99</td></tr>
+<tr><td>`colors.info.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:98</td></tr>
+<tr><td>`colors.info.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:97</td></tr>
+<tr><td>`colors.info.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:96</td></tr>
+<tr><td>`colors.info.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:95</td></tr>
+<tr><td>`colors.info.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:94</td></tr>
+<tr><td>`colors.info.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:93</td></tr>
+<tr><td>`colors.info.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:92</td></tr>
+<tr><td>`colors.info.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:91</td></tr>
+<tr><td>`colors.info.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:90</td></tr>
+<tr><td>`colors.info.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:89</td></tr>
+<tr><td>`colors.info.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:88</td></tr>
+<tr><td>`colors.info.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:87</td></tr>
+<tr><td>`colors.info.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:86</td></tr>
+<tr><td>`colors.neutral`</td><td>\{ `100`: `'#FBFDFD'`; `200`: `'#E8EEF4'`; `300`: `'#CCD5DD'`; `400`: `'#A2B2BF'`; `500`: `'#304A5D'`; `600`: `'#08273C'`; `700`: `'#061A27'`; `800`: `'#040C12'`; `900`: `'#020C12'`; `A100`: `'#DDE7EE'`; `A200`: `'#B0BFCA'`; `A300`: `'#8699A8'`; `A400`: `'#5B7385'`; `A500`: `'#304D63'`; `A600`: `'#2C475B'`; `A700`: `'#284154'`; `A800`: `'#253B4C'`; `A900`: `'#213545'`; \}</td><td>-</td><td>variables/colors.ts:165</td></tr>
+<tr><td>`colors.neutral.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:183</td></tr>
+<tr><td>`colors.neutral.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:182</td></tr>
+<tr><td>`colors.neutral.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:181</td></tr>
+<tr><td>`colors.neutral.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:180</td></tr>
+<tr><td>`colors.neutral.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:179</td></tr>
+<tr><td>`colors.neutral.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:178</td></tr>
+<tr><td>`colors.neutral.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:177</td></tr>
+<tr><td>`colors.neutral.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:176</td></tr>
+<tr><td>`colors.neutral.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:175</td></tr>
+<tr><td>`colors.neutral.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:174</td></tr>
+<tr><td>`colors.neutral.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:173</td></tr>
+<tr><td>`colors.neutral.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:172</td></tr>
+<tr><td>`colors.neutral.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:171</td></tr>
+<tr><td>`colors.neutral.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:170</td></tr>
+<tr><td>`colors.neutral.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:169</td></tr>
+<tr><td>`colors.neutral.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:168</td></tr>
+<tr><td>`colors.neutral.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:167</td></tr>
+<tr><td>`colors.neutral.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:166</td></tr>
+<tr><td>`colors.neutralGrey`</td><td>\{ `100`: `'#F1F3F5'`; `200`: `'#E9ECEF'`; `300`: `'#DEE2E6'`; `400`: `'#CED4DA'`; `500`: `'#ADB5BD'`; `600`: `'#868E96'`; `700`: `'#495057'`; `800`: `'#343A40'`; `900`: `'#212529'`; `A100`: `'#FAFAFA'`; `A200`: `'#DFDFE0'`; `A300`: `'#C5C7C8'`; `A400`: `'#ACAEB0'`; `A500`: `'#929699'`; `A600`: `'#797D81'`; `A700`: `'#606469'`; `A800`: `'#464C51'`; `A900`: `'#2D3339'`; \}</td><td>-</td><td>variables/colors.ts:185</td></tr>
+<tr><td>`colors.neutralGrey.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:203</td></tr>
+<tr><td>`colors.neutralGrey.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:202</td></tr>
+<tr><td>`colors.neutralGrey.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:201</td></tr>
+<tr><td>`colors.neutralGrey.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:200</td></tr>
+<tr><td>`colors.neutralGrey.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:199</td></tr>
+<tr><td>`colors.neutralGrey.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:198</td></tr>
+<tr><td>`colors.neutralGrey.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:197</td></tr>
+<tr><td>`colors.neutralGrey.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:196</td></tr>
+<tr><td>`colors.neutralGrey.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:195</td></tr>
+<tr><td>`colors.neutralGrey.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:194</td></tr>
+<tr><td>`colors.neutralGrey.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:193</td></tr>
+<tr><td>`colors.neutralGrey.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:192</td></tr>
+<tr><td>`colors.neutralGrey.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:191</td></tr>
+<tr><td>`colors.neutralGrey.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:190</td></tr>
+<tr><td>`colors.neutralGrey.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:189</td></tr>
+<tr><td>`colors.neutralGrey.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:188</td></tr>
+<tr><td>`colors.neutralGrey.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:187</td></tr>
+<tr><td>`colors.neutralGrey.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:186</td></tr>
+<tr><td>`colors.outsourcing`</td><td>\{ `100`: `'#D6F3FF'`; `200`: `'#B3E7FA'`; `300`: `'#94DBF1'`; `400`: `'#7ACEE4'`; `500`: `'#64BED2'`; `600`: `'#4D96A6'`; `700`: `'#376F7C'`; `800`: `'#214952'`; `900`: `'#0B2228'`; `A100`: `'#EBF9F9'`; `A200`: `'#B2E7E8'`; `A300`: `'#A3E2E3'`; `A400`: `'#94DDDF'`; `A500`: `'#85D9DA'`; `A600`: `'#67B0B1'`; `A700`: `'#4B898A'`; `A800`: `'#2E6162'`; `A900`: `'#123A3B'`; \}</td><td>-</td><td>variables/colors.ts:65</td></tr>
+<tr><td>`colors.outsourcing.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:83</td></tr>
+<tr><td>`colors.outsourcing.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:82</td></tr>
+<tr><td>`colors.outsourcing.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:81</td></tr>
+<tr><td>`colors.outsourcing.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:80</td></tr>
+<tr><td>`colors.outsourcing.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:79</td></tr>
+<tr><td>`colors.outsourcing.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:78</td></tr>
+<tr><td>`colors.outsourcing.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:77</td></tr>
+<tr><td>`colors.outsourcing.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:76</td></tr>
+<tr><td>`colors.outsourcing.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:75</td></tr>
+<tr><td>`colors.outsourcing.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:74</td></tr>
+<tr><td>`colors.outsourcing.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:73</td></tr>
+<tr><td>`colors.outsourcing.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:72</td></tr>
+<tr><td>`colors.outsourcing.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:71</td></tr>
+<tr><td>`colors.outsourcing.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:70</td></tr>
+<tr><td>`colors.outsourcing.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:69</td></tr>
+<tr><td>`colors.outsourcing.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:68</td></tr>
+<tr><td>`colors.outsourcing.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:67</td></tr>
+<tr><td>`colors.outsourcing.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:66</td></tr>
+<tr><td>`colors.primary`</td><td>\{ `100`: `'#CAD3E1'`; `200`: `'#98AAC1'`; `300`: `'#65829E'`; `400`: `'#335B78'`; `500`: `'#083350'`; `600`: `'#072E47'`; `700`: `'#06283F'`; `800`: `'#062336'`; `900`: `'#051E2E'`; `A100`: `'#E8F4FD'`; `A200`: `'#CAD9E5'`; `A300`: `'#AEC1CE'`; `A400`: `'#92A8B7'`; `A500`: `'#7690A1'`; `A600`: `'#5B778A'`; `A700`: `'#3F5E73'`; `A800`: `'#23465D'`; `A900`: `'#072D46'`; \}</td><td>-</td><td>variables/colors.ts:5</td></tr>
+<tr><td>`colors.primary.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:23</td></tr>
+<tr><td>`colors.primary.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:22</td></tr>
+<tr><td>`colors.primary.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:21</td></tr>
+<tr><td>`colors.primary.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:20</td></tr>
+<tr><td>`colors.primary.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:19</td></tr>
+<tr><td>`colors.primary.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:18</td></tr>
+<tr><td>`colors.primary.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:17</td></tr>
+<tr><td>`colors.primary.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:16</td></tr>
+<tr><td>`colors.primary.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:15</td></tr>
+<tr><td>`colors.primary.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:14</td></tr>
+<tr><td>`colors.primary.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:13</td></tr>
+<tr><td>`colors.primary.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:12</td></tr>
+<tr><td>`colors.primary.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:11</td></tr>
+<tr><td>`colors.primary.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:10</td></tr>
+<tr><td>`colors.primary.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:9</td></tr>
+<tr><td>`colors.primary.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:8</td></tr>
+<tr><td>`colors.primary.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:7</td></tr>
+<tr><td>`colors.primary.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:6</td></tr>
+<tr><td>`colors.success`</td><td>\{ `100`: `'#E5FFEB'`; `200`: `'#C7FFD4'`; `300`: `'#A9FFBD'`; `400`: `'#74EB90'`; `500`: `'#25A443'`; `600`: `'#1E8536'`; `700`: `'#17662A'`; `800`: `'#10481D'`; `900`: `'#092A11'`; `A100`: `'#E0EBE7'`; `A200`: `'#B7D2C8'`; `A300`: `'#8FB9AA'`; `A400`: `'#7DA496'`; `A500`: `'#6C9083'`; `A600`: `'#5A7B70'`; `A700`: `'#49675D'`; `A800`: `'#38534A'`; `A900`: `'#273F37'`; \}</td><td>-</td><td>variables/colors.ts:105</td></tr>
+<tr><td>`colors.success.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:123</td></tr>
+<tr><td>`colors.success.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:122</td></tr>
+<tr><td>`colors.success.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:121</td></tr>
+<tr><td>`colors.success.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:120</td></tr>
+<tr><td>`colors.success.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:119</td></tr>
+<tr><td>`colors.success.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:118</td></tr>
+<tr><td>`colors.success.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:117</td></tr>
+<tr><td>`colors.success.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:116</td></tr>
+<tr><td>`colors.success.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:115</td></tr>
+<tr><td>`colors.success.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:114</td></tr>
+<tr><td>`colors.success.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:113</td></tr>
+<tr><td>`colors.success.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:112</td></tr>
+<tr><td>`colors.success.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:111</td></tr>
+<tr><td>`colors.success.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:110</td></tr>
+<tr><td>`colors.success.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:109</td></tr>
+<tr><td>`colors.success.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:108</td></tr>
+<tr><td>`colors.success.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:107</td></tr>
+<tr><td>`colors.success.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:106</td></tr>
+<tr><td>`colors.transparent`</td><td>\{ `100`: `'transparent'`; `200`: `'transparent'`; `300`: `'transparent'`; `400`: `'transparent'`; `500`: `'transparent'`; `600`: `'transparent'`; `700`: `'transparent'`; `800`: `'transparent'`; `900`: `'transparent'`; `A100`: `'transparent'`; `A200`: `'transparent'`; `A300`: `'transparent'`; `A400`: `'transparent'`; `A500`: `'transparent'`; `A600`: `'transparent'`; `A700`: `'transparent'`; `A800`: `'transparent'`; `A900`: `'transparent'`; \}</td><td>-</td><td>variables/colors.ts:245</td></tr>
+<tr><td>`colors.transparent.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:263</td></tr>
+<tr><td>`colors.transparent.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:262</td></tr>
+<tr><td>`colors.transparent.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:261</td></tr>
+<tr><td>`colors.transparent.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:260</td></tr>
+<tr><td>`colors.transparent.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:259</td></tr>
+<tr><td>`colors.transparent.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:258</td></tr>
+<tr><td>`colors.transparent.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:257</td></tr>
+<tr><td>`colors.transparent.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:256</td></tr>
+<tr><td>`colors.transparent.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:255</td></tr>
+<tr><td>`colors.transparent.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:254</td></tr>
+<tr><td>`colors.transparent.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:253</td></tr>
+<tr><td>`colors.transparent.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:252</td></tr>
+<tr><td>`colors.transparent.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:251</td></tr>
+<tr><td>`colors.transparent.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:250</td></tr>
+<tr><td>`colors.transparent.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:249</td></tr>
+<tr><td>`colors.transparent.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:248</td></tr>
+<tr><td>`colors.transparent.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:247</td></tr>
+<tr><td>`colors.transparent.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:246</td></tr>
+<tr><td>`colors.warning`</td><td>\{ `100`: `'#FFF3E2'`; `200`: `'#FFE9C8'`; `300`: `'#FFDFAF'`; `400`: `'#FFBE5B'`; `500`: `'#D7850B'`; `600`: `'#AC6A09'`; `700`: `'#835107'`; `800`: `'#593705'`; `900`: `'#301E03'`; `A100`: `'#F9EBD2'`; `A200`: `'#F5DDB4'`; `A300`: `'#F2D096'`; `A400`: `'#D8B67E'`; `A500`: `'#BF9E67'`; `A600`: `'#A68650'`; `A700`: `'#8D6E39'`; `A800`: `'#745622'`; `A900`: `'#5B3E0B'`; \}</td><td>-</td><td>variables/colors.ts:145</td></tr>
+<tr><td>`colors.warning.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:163</td></tr>
+<tr><td>`colors.warning.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:162</td></tr>
+<tr><td>`colors.warning.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:161</td></tr>
+<tr><td>`colors.warning.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:160</td></tr>
+<tr><td>`colors.warning.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:159</td></tr>
+<tr><td>`colors.warning.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:158</td></tr>
+<tr><td>`colors.warning.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:157</td></tr>
+<tr><td>`colors.warning.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:156</td></tr>
+<tr><td>`colors.warning.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:155</td></tr>
+<tr><td>`colors.warning.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:154</td></tr>
+<tr><td>`colors.warning.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:153</td></tr>
+<tr><td>`colors.warning.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:152</td></tr>
+<tr><td>`colors.warning.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:151</td></tr>
+<tr><td>`colors.warning.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:150</td></tr>
+<tr><td>`colors.warning.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:149</td></tr>
+<tr><td>`colors.warning.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:148</td></tr>
+<tr><td>`colors.warning.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:147</td></tr>
+<tr><td>`colors.warning.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:146</td></tr>
+<tr><td>`colors.white`</td><td>\{ `100`: `'#FFFFFF'`; `200`: `'#FFFFFF'`; `300`: `'#FFFFFF'`; `400`: `'#FFFFFF'`; `500`: `'#FFFFFF'`; `600`: `'#FFFFFF'`; `700`: `'#FFFFFF'`; `800`: `'#FFFFFF'`; `900`: `'#FFFFFF'`; `A100`: `'#FFFFFF'`; `A200`: `'#FFFFFF'`; `A300`: `'#FFFFFF'`; `A400`: `'#FFFFFF'`; `A500`: `'#FFFFFF'`; `A600`: `'#FFFFFF'`; `A700`: `'#FFFFFF'`; `A800`: `'#FFFFFF'`; `A900`: `'#FFFFFF'`; \}</td><td>-</td><td>variables/colors.ts:205</td></tr>
+<tr><td>`colors.white.100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:223</td></tr>
+<tr><td>`colors.white.200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:222</td></tr>
+<tr><td>`colors.white.300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:221</td></tr>
+<tr><td>`colors.white.400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:220</td></tr>
+<tr><td>`colors.white.500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:219</td></tr>
+<tr><td>`colors.white.600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:218</td></tr>
+<tr><td>`colors.white.700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:217</td></tr>
+<tr><td>`colors.white.800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:216</td></tr>
+<tr><td>`colors.white.900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:215</td></tr>
+<tr><td>`colors.white.A100`</td><td>`string`</td><td>-</td><td>variables/colors.ts:214</td></tr>
+<tr><td>`colors.white.A200`</td><td>`string`</td><td>-</td><td>variables/colors.ts:213</td></tr>
+<tr><td>`colors.white.A300`</td><td>`string`</td><td>-</td><td>variables/colors.ts:212</td></tr>
+<tr><td>`colors.white.A400`</td><td>`string`</td><td>-</td><td>variables/colors.ts:211</td></tr>
+<tr><td>`colors.white.A500`</td><td>`string`</td><td>-</td><td>variables/colors.ts:210</td></tr>
+<tr><td>`colors.white.A600`</td><td>`string`</td><td>-</td><td>variables/colors.ts:209</td></tr>
+<tr><td>`colors.white.A700`</td><td>`string`</td><td>-</td><td>variables/colors.ts:208</td></tr>
+<tr><td>`colors.white.A800`</td><td>`string`</td><td>-</td><td>variables/colors.ts:207</td></tr>
+<tr><td>`colors.white.A900`</td><td>`string`</td><td>-</td><td>variables/colors.ts:206</td></tr>
+<tr><td>`grid`</td><td>\{ `0`: `'0%'`; `1`: `'8.333333333%'`; `10`: `'83.33333333%'`; `11`: `'91.66666667%'`; `12`: `'100%'`; `2`: `'16.66666667%'`; `3`: `'25%'`; `4`: `'33.33333333%'`; `5`: `'41.66666667%'`; `6`: `'50%'`; `7`: `'58.33333333%'`; `8`: `'66.66666667%'`; `9`: `'75%'`; \}</td><td>-</td><td>variables/theme.ts:17</td></tr>
+<tr><td>`grid.0`</td><td>`string`</td><td>Return 0%</td><td>variables/grid.ts:6</td></tr>
+<tr><td>`grid.1`</td><td>`string`</td><td>Return 8.333333333%</td><td>variables/grid.ts:8</td></tr>
+<tr><td>`grid.10`</td><td>`string`</td><td>Return 83.33333333%</td><td>variables/grid.ts:26</td></tr>
+<tr><td>`grid.11`</td><td>`string`</td><td>Return 91.66666667%</td><td>variables/grid.ts:28</td></tr>
+<tr><td>`grid.12`</td><td>`string`</td><td>Return 100%</td><td>variables/grid.ts:30</td></tr>
+<tr><td>`grid.2`</td><td>`string`</td><td>Return 16.66666667%</td><td>variables/grid.ts:10</td></tr>
+<tr><td>`grid.3`</td><td>`string`</td><td>Return 25%</td><td>variables/grid.ts:12</td></tr>
+<tr><td>`grid.4`</td><td>`string`</td><td>Return 33.33333333%</td><td>variables/grid.ts:14</td></tr>
+<tr><td>`grid.5`</td><td>`string`</td><td>Return 41.66666667%</td><td>variables/grid.ts:16</td></tr>
+<tr><td>`grid.6`</td><td>`string`</td><td>Return 50%</td><td>variables/grid.ts:18</td></tr>
+<tr><td>`grid.7`</td><td>`string`</td><td>Return 58.33333333%</td><td>variables/grid.ts:20</td></tr>
+<tr><td>`grid.8`</td><td>`string`</td><td>Return 66.66666667%</td><td>variables/grid.ts:22</td></tr>
+<tr><td>`grid.9`</td><td>`string`</td><td>Return 75%</td><td>variables/grid.ts:24</td></tr>
+<tr><td>`mediaQuery`</td><td>\{ `custom`: (`size`: `string`) => `string`; `gtCustom`: (`size`: `string`) => `string`; `gtLg`: `string`; `gtMd`: `string`; `gtSm`: `string`; `gtXl`: `string`; `gtXs`: `string`; `gtXxl`: `string`; `lg`: `string`; `md`: `string`; `sm`: `string`; `xl`: `string`; `xs`: `string`; `xxl`: `string`; \}</td><td>-</td><td>variables/theme.ts:15</td></tr>
+<tr><td>`mediaQuery.custom`</td><td>(`size`: `string`) => `string`</td><td>max-width: {size}</td><td>variables/mediaQuery.ts:35</td></tr>
+<tr><td>`mediaQuery.gtCustom`</td><td>(`size`: `string`) => `string`</td><td>min-width: {size}</td><td>variables/mediaQuery.ts:49</td></tr>
+<tr><td>`mediaQuery.gtLg`</td><td>`string`</td><td>min-width: 992px</td><td>variables/mediaQuery.ts:43</td></tr>
+<tr><td>`mediaQuery.gtMd`</td><td>`string`</td><td>min-width: 768px</td><td>variables/mediaQuery.ts:41</td></tr>
+<tr><td>`mediaQuery.gtSm`</td><td>`string`</td><td>min-width: 576px</td><td>variables/mediaQuery.ts:39</td></tr>
+<tr><td>`mediaQuery.gtXl`</td><td>`string`</td><td>min-width: 1200px</td><td>variables/mediaQuery.ts:45</td></tr>
+<tr><td>`mediaQuery.gtXs`</td><td>`string`</td><td>min-width: 480px</td><td>variables/mediaQuery.ts:37</td></tr>
+<tr><td>`mediaQuery.gtXxl`</td><td>`string`</td><td>min-width: 1600px</td><td>variables/mediaQuery.ts:47</td></tr>
+<tr><td>`mediaQuery.lg`</td><td>`string`</td><td>max-width: 992px</td><td>variables/mediaQuery.ts:29</td></tr>
+<tr><td>`mediaQuery.md`</td><td>`string`</td><td>max-width: 768px</td><td>variables/mediaQuery.ts:27</td></tr>
+<tr><td>`mediaQuery.sm`</td><td>`string`</td><td>max-width: 576px</td><td>variables/mediaQuery.ts:25</td></tr>
+<tr><td>`mediaQuery.xl`</td><td>`string`</td><td>max-width: 1200px</td><td>variables/mediaQuery.ts:31</td></tr>
+<tr><td>`mediaQuery.xs`</td><td>`string`</td><td>max-width: 480px</td><td>variables/mediaQuery.ts:23</td></tr>
+<tr><td>`mediaQuery.xxl`</td><td>`string`</td><td>max-width: 1600px</td><td>variables/mediaQuery.ts:33</td></tr>
+<tr><td>`shadows`</td><td>\{ `1`: `'0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)'`; `2`: `'0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)'`; `3`: `'0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)'`; \}</td><td>-</td><td>variables/theme.ts:16</td></tr>
+<tr><td>`shadows.1`</td><td>`string`</td><td>-</td><td>variables/shadow.ts:5</td></tr>
+<tr><td>`shadows.2`</td><td>`string`</td><td>-</td><td>variables/shadow.ts:6</td></tr>
+<tr><td>`shadows.3`</td><td>`string`</td><td>-</td><td>variables/shadow.ts:7</td></tr>
+<tr><td>`spaces`</td><td>\{ `0`: `'0px'`; `1`: `'4px'`; `10`: `'64px'`; `11`: `'72px'`; `12`: `'80px'`; `13`: `'88px'`; `14`: `'96px'`; `15`: `'104px'`; `16`: `'112px'`; `17`: `'120px'`; `18`: `'128px'`; `2`: `'8px'`; `3`: `'16px'`; `4`: `'20px'`; `5`: `'24px'`; `6`: `'32px'`; `7`: `'40px'`; `8`: `'48px'`; `9`: `'56px'`; \}</td><td>-</td><td>variables/theme.ts:12</td></tr>
+<tr><td>`spaces.0`</td><td>`string`</td><td>return 0px</td><td>variables/spaces.ts:6</td></tr>
+<tr><td>`spaces.1`</td><td>`string`</td><td>return 4px</td><td>variables/spaces.ts:8</td></tr>
+<tr><td>`spaces.10`</td><td>`string`</td><td>return 64px</td><td>variables/spaces.ts:26</td></tr>
+<tr><td>`spaces.11`</td><td>`string`</td><td>return 72px</td><td>variables/spaces.ts:28</td></tr>
+<tr><td>`spaces.12`</td><td>`string`</td><td>return 80px</td><td>variables/spaces.ts:30</td></tr>
+<tr><td>`spaces.13`</td><td>`string`</td><td>return 88px</td><td>variables/spaces.ts:32</td></tr>
+<tr><td>`spaces.14`</td><td>`string`</td><td>return 96px</td><td>variables/spaces.ts:34</td></tr>
+<tr><td>`spaces.15`</td><td>`string`</td><td>return 104px</td><td>variables/spaces.ts:36</td></tr>
+<tr><td>`spaces.16`</td><td>`string`</td><td>return 112px</td><td>variables/spaces.ts:38</td></tr>
+<tr><td>`spaces.17`</td><td>`string`</td><td>return 120px</td><td>variables/spaces.ts:40</td></tr>
+<tr><td>`spaces.18`</td><td>`string`</td><td>return 128px</td><td>variables/spaces.ts:42</td></tr>
+<tr><td>`spaces.2`</td><td>`string`</td><td>return 8px</td><td>variables/spaces.ts:10</td></tr>
+<tr><td>`spaces.3`</td><td>`string`</td><td>return 16px</td><td>variables/spaces.ts:12</td></tr>
+<tr><td>`spaces.4`</td><td>`string`</td><td>return 20px</td><td>variables/spaces.ts:14</td></tr>
+<tr><td>`spaces.5`</td><td>`string`</td><td>return 24px</td><td>variables/spaces.ts:16</td></tr>
+<tr><td>`spaces.6`</td><td>`string`</td><td>return 32px</td><td>variables/spaces.ts:18</td></tr>
+<tr><td>`spaces.7`</td><td>`string`</td><td>return 40px</td><td>variables/spaces.ts:20</td></tr>
+<tr><td>`spaces.8`</td><td>`string`</td><td>return 48px</td><td>variables/spaces.ts:22</td></tr>
+<tr><td>`spaces.9`</td><td>`string`</td><td>return 56px</td><td>variables/spaces.ts:24</td></tr>
+<tr><td>`typography`</td><td>\{ `body1`: \{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.5714285714285714`; `size`: `'16px'`; \}; `body2`: \{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.6666666666666667`; `size`: `'14px'`; \}; `body3`: \{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.6666666666666667`; `size`: `'12px'`; \}; `h1`: \{ `family`: `'Kanit'`; `letterSpacing`: `'-0.02em'`; `lineHeight`: `1.2105263157894737`; `size`: `'40px'`; \}; `h2`: \{ `family`: `'Kanit'`; `letterSpacing`: `'-0.01em'`; `lineHeight`: `1.2666666666666666`; `size`: `'32px'`; \}; `h3`: \{ `family`: `'Kanit'`; `letterSpacing`: `'0em'`; `lineHeight`: `1.3333333333333333`; `size`: `'24px'`; \}; `h4`: \{ `family`: `'Kanit'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.4`; `size`: `'20px'`; \}; `subtitle`: \{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.5`; `size`: `'18px'`; \}; `subtitle2`: \{ `family`: `'Kanit'`; `letterSpacing`: `'-0.01em'`; `lineHeight`: `1.5714285714285714`; `size`: `'16px'`; \}; \}</td><td>-</td><td>variables/theme.ts:11</td></tr>
+<tr><td>`typography.body1`</td><td>\{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.5714285714285714`; `size`: `'16px'`; \}</td><td>Family: Nunito Sans, Size: 16px</td><td>variables/typography.ts:48</td></tr>
+<tr><td>`typography.body1.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:49</td></tr>
+<tr><td>`typography.body1.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:52</td></tr>
+<tr><td>`typography.body1.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:51</td></tr>
+<tr><td>`typography.body1.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:50</td></tr>
+<tr><td>`typography.body2`</td><td>\{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.6666666666666667`; `size`: `'14px'`; \}</td><td>Family: Nunito Sans, Size: 14px</td><td>variables/typography.ts:55</td></tr>
+<tr><td>`typography.body2.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:56</td></tr>
+<tr><td>`typography.body2.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:59</td></tr>
+<tr><td>`typography.body2.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:58</td></tr>
+<tr><td>`typography.body2.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:57</td></tr>
+<tr><td>`typography.body3`</td><td>\{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.6666666666666667`; `size`: `'12px'`; \}</td><td>Family: Nunito Sans, Size: 12px</td><td>variables/typography.ts:62</td></tr>
+<tr><td>`typography.body3.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:63</td></tr>
+<tr><td>`typography.body3.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:66</td></tr>
+<tr><td>`typography.body3.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:65</td></tr>
+<tr><td>`typography.body3.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:64</td></tr>
+<tr><td>`typography.h1`</td><td>\{ `family`: `'Kanit'`; `letterSpacing`: `'-0.02em'`; `lineHeight`: `1.2105263157894737`; `size`: `'40px'`; \}</td><td>Family: Kanit, Size: 40px</td><td>variables/typography.ts:6</td></tr>
+<tr><td>`typography.h1.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:7</td></tr>
+<tr><td>`typography.h1.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:10</td></tr>
+<tr><td>`typography.h1.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:9</td></tr>
+<tr><td>`typography.h1.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:8</td></tr>
+<tr><td>`typography.h2`</td><td>\{ `family`: `'Kanit'`; `letterSpacing`: `'-0.01em'`; `lineHeight`: `1.2666666666666666`; `size`: `'32px'`; \}</td><td>Family: Kanit, Size: 32px</td><td>variables/typography.ts:13</td></tr>
+<tr><td>`typography.h2.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:14</td></tr>
+<tr><td>`typography.h2.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:17</td></tr>
+<tr><td>`typography.h2.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:16</td></tr>
+<tr><td>`typography.h2.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:15</td></tr>
+<tr><td>`typography.h3`</td><td>\{ `family`: `'Kanit'`; `letterSpacing`: `'0em'`; `lineHeight`: `1.3333333333333333`; `size`: `'24px'`; \}</td><td>Family: Kanit, Size: 24px</td><td>variables/typography.ts:20</td></tr>
+<tr><td>`typography.h3.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:21</td></tr>
+<tr><td>`typography.h3.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:24</td></tr>
+<tr><td>`typography.h3.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:23</td></tr>
+<tr><td>`typography.h3.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:22</td></tr>
+<tr><td>`typography.h4`</td><td>\{ `family`: `'Kanit'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.4`; `size`: `'20px'`; \}</td><td>Family: Kanit, Size: 20px</td><td>variables/typography.ts:27</td></tr>
+<tr><td>`typography.h4.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:28</td></tr>
+<tr><td>`typography.h4.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:31</td></tr>
+<tr><td>`typography.h4.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:30</td></tr>
+<tr><td>`typography.h4.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:29</td></tr>
+<tr><td>`typography.subtitle`</td><td>\{ `family`: `'Nunito Sans'`; `letterSpacing`: `'0.01em'`; `lineHeight`: `1.5`; `size`: `'18px'`; \}</td><td>Family: Nunito Sans, Size: 18px</td><td>variables/typography.ts:34</td></tr>
+<tr><td>`typography.subtitle.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:35</td></tr>
+<tr><td>`typography.subtitle.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:38</td></tr>
+<tr><td>`typography.subtitle.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:37</td></tr>
+<tr><td>`typography.subtitle.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:36</td></tr>
+<tr><td>`typography.subtitle2`</td><td>\{ `family`: `'Kanit'`; `letterSpacing`: `'-0.01em'`; `lineHeight`: `1.5714285714285714`; `size`: `'16px'`; \}</td><td>Family: Kanit, Size: 16px</td><td>variables/typography.ts:41</td></tr>
+<tr><td>`typography.subtitle2.family`</td><td>`string`</td><td>-</td><td>variables/typography.ts:42</td></tr>
+<tr><td>`typography.subtitle2.letterSpacing`</td><td>`string`</td><td>-</td><td>variables/typography.ts:45</td></tr>
+<tr><td>`typography.subtitle2.lineHeight`</td><td>`number`</td><td>-</td><td>variables/typography.ts:44</td></tr>
+<tr><td>`typography.subtitle2.size`</td><td>`string`</td><td>-</td><td>variables/typography.ts:43</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,71 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { titleCase, sorter } from '@hubert/shared';
+import { colors } from '@hubert/styles';
+import { Fragment } from 'react';
+
+<Meta title="Libs/Styles/Colors" />
+
+# Colors
+
+Por padrão os projetos e bibliotecas da Hubert utilizam o style-guide criado pelo time de design.
+
+### Color Palette
+
+<ColorPalette>
+  {Object.keys(colors).map(x => Object.keys(colors[x]).sort(sorter()).reduce((acc, y) => {
+    acc.title = titleCase(x);
+
+    if (y.includes('A')) {
+      acc.alt[y] = colors[x][y];
+    } else {
+      acc.normal[y] = colors[x][y];
+    }
+    return acc;
+
+}, { alt: {}, normal: {} })).map((item, i) => (
+
+  <Fragment key={`docs-colors-${i}`}>
+    <ColorItem title={item.title} subtitle="Normal" colors={item.normal} />
+    <ColorItem title={item.title} subtitle="Alternative" colors={item.alt} />
+  </Fragment>
+))}
+</ColorPalette>
+
+### Como utilizar as cores
+
+Atualmente a maioria dos componentes já espera as propriedades `color` e `colorLevel` na qual `color` espera a chave principal e `colorLevel` (opcional utilizando o tom principal) espera o tom da cor.
+
+### Como usar o color level
+
+Todas as cores seguem uma estrutura de levels, ou seja, elas possuem uma cor padrão sendo o nivel 500, mas podendo ser alterada para ter diferentes tons, indo de 900 a 100;
+
+- 900 > Cor mais escura
+- ...
+- 500 > Cor padrão, tom principal
+- 400 > Cor com tom mais claro que a 500
+- ...
+- 100 > Cor mais clara em relação aos tons anteriores
+
+### Componentes
+
+#### index.tsx
+
+```ts
+import { HubText } from '@hubert/atoms';
+
+return (
+  <HubText typo="body1" color="primary" colorLevel="400">
+    Texto
+  </HubText>
+);
+```
+
+#### styles.ts
+
+```ts
+export const ComponentColor = styled.div`
+  background-color: ${({ theme }) => theme.colors.primary[500]};
+`;
+```
+
+Keep calm and code on 🤘.

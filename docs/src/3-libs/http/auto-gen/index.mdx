@@ -1,0 +1,465 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/Overview" />
+
+**Http Library** • **Docs**
+
+---
+
+# Http
+
+Esta biblioteca contem e deve somente conter codigo relacionado a http para js/ts.
+
+## Como utilizar
+
+```
+npm i @hubert/http
+```
+
+Exemplo:
+
+```javascript
+import { HttpProvider } from '@hubert/http';
+```
+
+## Classes
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[HttpResponse](/?path=/docs/libs-http-classes-httpresponse)
+
+</td>
+<td>
+
+Classe responsavel por construir e padronizar as respostas de chamada HTTP (se sucesso, status < 400)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[HttpResponseError](/?path=/docs/libs-http-classes-httpresponseerror)
+
+</td>
+<td>
+
+Classe responsavel por construir e padronizar as respostas de chamada HTTP (se erro, status >= 400)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Action](/?path=/docs/libs-http-interfaces-action)
+
+</td>
+<td>
+
+Type return of useAction Hook
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ActionStateless](/?path=/docs/libs-http-interfaces-actionstateless)
+
+</td>
+<td>
+
+Type return of useActionStateless Hook
+
+</td>
+</tr>
+<tr>
+<td>
+
+[HttpConfig](/?path=/docs/libs-http-interfaces-httpconfig)
+
+</td>
+<td>
+
+Objeto de configuração de uma chamada HTTP, utilizando o `httpClient()` (sem provider) ou `useHttp()` (com provider)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[HttpProviderConfig](/?path=/docs/libs-http-interfaces-httpproviderconfig)
+
+</td>
+<td>
+
+Objeto de configuração do `HttpProvider`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<table>
+<thead>
+<tr>
+<th>Type alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Act](/?path=/docs/libs-http-type-aliases-act)
+
+</td>
+<td>
+
+Type return of useAct Hook
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Http](/?path=/docs/libs-http-type-aliases-http)
+
+</td>
+<td>
+
+Objeto com todos os metodos pre-configurados no cliente HTTP
+
+</td>
+</tr>
+<tr>
+<td>
+
+[HttpMethod](/?path=/docs/libs-http-type-aliases-httpmethod)
+
+</td>
+<td>
+
+Alias com os possiveis metodos/verbo HTTP
+
+</td>
+</tr>
+<tr>
+<td>
+
+[HttpStatus](/?path=/docs/libs-http-type-aliases-httpstatus)
+
+</td>
+<td>
+
+Alias com os possiveis codigo de status HTTP
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[bodySerializer](/?path=/docs/libs-http-functions-bodyserializer)
+
+</td>
+<td>
+
+Serialize body to XMLHttpRequestBodyInit
+
+</td>
+</tr>
+<tr>
+<td>
+
+[factoryHttpClient](/?path=/docs/libs-http-functions-factoryhttpclient)
+
+</td>
+<td>
+
+Função para criar um cliente de chamada HTTP a ser utilizada no provider (não utilizar sem `React`)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[fixProtocol](/?path=/docs/libs-http-functions-fixprotocol)
+
+</td>
+<td>
+
+Corrige o protocolo de uma url utilizando o protoco do host (importante para não dar erro de CORS)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[headersSerializer](/?path=/docs/libs-http-functions-headersserializer)
+
+</td>
+<td>
+
+Serialize headers object to Headers
+
+</td>
+</tr>
+<tr>
+<td>
+
+[httpClient](/?path=/docs/libs-http-functions-httpclient)
+
+</td>
+<td>
+
+Função para realizar chamada HTTP sem necessidade de provider
+
+</td>
+</tr>
+<tr>
+<td>
+
+[HttpProvider](/?path=/docs/libs-http-functions-httpprovider)
+
+</td>
+<td>
+
+É um componente React que fornece um contexto Http para seus filhos, criado com React.createContext.
+Ele usa a função useAuth para obter as informações de autenticação e, em seguida, cria um objeto Http usando as funções factoryHttp ou factoryHttpMock, dependendo das configurações passadas por props.
+
+**Example**
+
+```ts
+<HttpProvider configs={httpConfig}>
+  <OutrosComponents />
+</HttpProvider>;
+
+const httpClient = useHttp();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[mockHttpClient](/?path=/docs/libs-http-functions-mockhttpclient)
+
+</td>
+<td>
+
+Versão mockada do `factoryHttpClient()` (não utilizar sem `React`)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[paramsBuilder](/?path=/docs/libs-http-functions-paramsbuilder)
+
+</td>
+<td>
+
+Retorna um objeto a partir do query params de uma url.
+Pode ser utilizado com o `window.location.search` ou `router.query`
+
+**Example**
+
+```ts
+const params = paramsBuilder<UnidadesAcessosRouteParams>(router.query, {
+  ignoresFormat: ['unidade']
+});
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[paramsSerializer](/?path=/docs/libs-http-functions-paramsserializer)
+
+</td>
+<td>
+
+Serialize parameters to string (?chave1=valor1&chave2=valor2)
+
+**Example**
+
+```ts
+`/my-units/access/add?${paramsSerializer({
+  codigoLiberacao: form.value.id,
+  condominio: form.value.condominio,
+  nomeCondominio: form.value.nomeCondominio
+})}`;
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[responseSerializer](/?path=/docs/libs-http-functions-responseserializer)
+
+</td>
+<td>
+
+Serialize response object para um tipo customizavel
+
+</td>
+</tr>
+<tr>
+<td>
+
+[urlParamsSerializer](/?path=/docs/libs-http-functions-urlparamsserializer)
+
+</td>
+<td>
+
+Serialize parameters of url
+
+**Example**
+
+```ts
+urlParamsSerializer(
+ 'https://teste.com/{chave1}/{chave2}'
+ {
+   chave1: form.value.chave1,
+   chave2: form.value.chave2
+ }
+);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useAct](/?path=/docs/libs-http-functions-useact)
+
+</td>
+<td>
+
+Simplificação do `useAction()` (menos codigo necessario com o mesmo resultado)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useAction](/?path=/docs/libs-http-functions-useaction)
+
+</td>
+<td>
+
+Cria um util para realizar chamadas http e ter acesso o pre-configurado com states react (loading, error, payload e outros)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useActionMock](/?path=/docs/libs-http-functions-useactionmock)
+
+</td>
+<td>
+
+Versão para testes do `useAction()` (utilizar em tests unitario)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useActionStateless](/?path=/docs/libs-http-functions-useactionstateless)
+
+</td>
+<td>
+
+Cria um util para realizar chamadas http, sem payload (similar ao `useAction()`, mas com menos recursos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useActionStatelessMock](/?path=/docs/libs-http-functions-useactionstatelessmock)
+
+</td>
+<td>
+
+Versão para testes do `useActionStateless()` (utilizar em tests unitario)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useHttp](/?path=/docs/libs-http-functions-usehttp)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `HttpProvider`
+
+**Example**
+
+```ts
+const httpClient = useHttp();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useService](/?path=/docs/libs-http-functions-useservice)
+
+</td>
+<td>
+
+useService é um hook que retorna um serviço criado usando o contexto Http atual e uma função factory.
+A função factory deve receber um objeto Http como argumento e retornar o serviço desejado.
+O hook usa a função useHttp para obter o objeto Http atual e cria o serviço usando React.useMemo para evitar recriar o objeto sempre que o componente é atualizado.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+Keep calm and code on 🤘.

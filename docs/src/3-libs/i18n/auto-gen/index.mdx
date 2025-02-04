@@ -1,0 +1,302 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/I18n/Overview" />
+
+**I18n Library** • **Docs**
+
+***
+
+# I18n
+
+Esta biblioteca contem códigos para adicionar internacionalização aos projetos, como também funções para formatar diferentes tipos de dados, como números, datas, moedas, entre outros.
+
+## Como utilizar
+
+```
+npm i @hubert/i18n
+```
+
+### Exemplo:
+
+```ts
+import { I18nProvider, useI18nMessage } from '@hubert/i18n';
+```
+
+## Enumerations
+
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Currency](/?path=/docs/libs-i18n-enumerations-currency)
+
+</td>
+<td>
+
+Moedas disponiveis
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Locale](/?path=/docs/libs-i18n-enumerations-locale)
+
+</td>
+<td>
+
+Localizações disponiveis
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Timezone](/?path=/docs/libs-i18n-enumerations-timezone)
+
+</td>
+<td>
+
+Fuso horario disponiveis
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[I18nConfig](/?path=/docs/libs-i18n-interfaces-i18nconfig)
+
+</td>
+<td>
+
+Objeto de configuração do I18nProvider
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Ii18nContext](/?path=/docs/libs-i18n-interfaces-ii18ncontext)
+
+</td>
+<td>
+
+Objeto com todos as propriedades disponiveis no contexto do `I18nProvider`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<table>
+<thead>
+<tr>
+<th>Type alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Lang](/?path=/docs/libs-i18n-type-aliases-lang)
+
+</td>
+<td>
+
+Objeto com a lista de localizações (JSON final)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Messages](/?path=/docs/libs-i18n-type-aliases-messages)
+
+</td>
+<td>
+
+Tipagem de um registro (chave:valor) dentro do JSON de traduções
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Variables
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[i18nDefaults](/?path=/docs/libs-i18n-variables-i18ndefaults)
+
+</td>
+<td>
+
+Objeto com as configurações obrigatorias do i18n
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[I18nProvider](/?path=/docs/libs-i18n-functions-i18nprovider)
+
+</td>
+<td>
+
+React provider que expoe toda a logica de autenticação.
+
+**Example**
+
+```ts
+<I18nProvider configs={i18nConfig}>
+  <OutrosComponents />
+</I18nProvider>
+
+const { timezone } = useI18n();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useI18n](/?path=/docs/libs-i18n-functions-usei18n)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `I18nProvider`
+
+**Example**
+
+```ts
+const { timezone } = useI18n();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useI18nFormatter](/?path=/docs/libs-i18n-functions-usei18nformatter)
+
+</td>
+<td>
+
+Essa função retorna um objeto contendo várias funções para formatar diferentes tipos de dados, como números, datas, moedas, entre outros.
+Essas funções são úteis para internacionalização (i18n) de aplicações, permitindo que os dados sejam formatados de acordo com a localização do usuário.
+
+**Example**
+
+```ts
+import { useI18nFormatter } from '@hubert/i18n';
+
+const { dateFormatter } = useI18nFormatter();
+
+const formattedDate = dateFormatter(new Date());
+
+//resultado: '10/10/2020'
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useI18nMessage](/?path=/docs/libs-i18n-functions-usei18nmessage)
+
+</td>
+<td>
+
+Esta função retorna uma função que pode ser usada para obter mensagens internacionalizadas com placeholders para valores.
+A função retornada tem dois parâmetros: key que é a chave da mensagem e values que é um objeto com os valores a serem substituídos nos placeholders da mensagem.
+A função retorna a mensagem formatada com os valores fornecidos.
+
+**Example**
+
+```ts
+import { useI18nFormatter } from '@hubert/i18n';
+
+const t = useI18nFormatter();
+
+<HubButton>{t('button-doc-translate')}</HubButton>;
+//resultado: <HubButton>Documentação do Botão</HubButton>;
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[withI18n](/?path=/docs/libs-i18n-functions-withi18n)
+
+</td>
+<td>
+
+Função utilizada para adicionar as traduções de uma pagina (pode ser utilizada com composition)
+
+**Example**
+
+```ts
+export default compose(
+  withI18n({
+    [Locale.EN_US]: import('~/i18n/cadastro-page/areas-page/en_US.json'),
+    [Locale.PT_BR]: import('~/i18n/cadastro-page/areas-page/pt_BR.json')
+  })
+)(CadastroAreasPage);
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubToggle component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 120px;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.c4 {
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: right 0.5s;
+  transition: right 0.5s;
+}
+
+.c5 {
+  display: none;
+}
+
+.c6 {
+  font-family: Nunito Sans;
+  font-size: 14px;
+  line-height: 1.6666666666666667;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .c1 {
+  background-color: #083350;
+  min-width: 32px;
+  width: 32px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.c0 .c3 {
+  background-color: #FFFFFF;
+  min-width: 8px;
+  width: 8px;
+  height: 8px;
+  right: 4px;
+}
+
+<div
+    class="c0"
+    id="test"
+  >
+    <div
+      class="c1 c2"
+      id="hub-toggle-icon-test"
+    >
+      <div
+        class="c3 c4"
+        id="hub-toggle-switch-test"
+      />
+    </div>
+    <input
+      checked=""
+      class="c5"
+      id="hub-toggle-test"
+      type="checkbox"
+    />
+    <label
+      class="c6"
+      for="hub-toggle-test"
+    >
+      Test
+    </label>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubSidenav component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  color: inherit;
+  overflow-y: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 245px;
+  max-width: 245px;
+  height: 100vh;
+  background-color: #083350;
+  color: #FFFFFF;
+  padding: 16px 0;
+  -webkit-animation: ease-in-out both 0.4s effect;
+  animation: ease-in-out both 0.4s effect;
+}
+
+.c0 .c1 {
+  padding: 0 32px;
+  font-family: Nunito Sans;
+  font-size: 14px;
+  line-height: 1.6666666666666667;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  height: 100%;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,150 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Auth/Overview" />
+
+**Auth Library** • **Docs**
+
+***
+
+# Auth Lib
+
+Esta biblioteca contem e deve somente conter codigo relacionado logica de autenticacao.
+
+## Como utilizar
+
+```
+npm i @hubert/auth
+```
+
+Exemplo:
+
+```javascript
+import { AuthProvider } from '@hubert/auth';
+```
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[AuthConfig](/?path=/docs/libs-auth-interfaces-authconfig)
+
+</td>
+<td>
+
+Objeto de configuração do `AuthProvider`
+
+</td>
+</tr>
+<tr>
+<td>
+
+[IAuthContext](/?path=/docs/libs-auth-interfaces-iauthcontext)
+
+</td>
+<td>
+
+Objeto com todos as propriedades disponiveis no contexto do `AuthProvider`
+
+</td>
+</tr>
+<tr>
+<td>
+
+[User](/?path=/docs/libs-auth-interfaces-user)
+
+</td>
+<td>
+
+Objeto com os dados do usuario logado
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[AuthProvider](/?path=/docs/libs-auth-functions-authprovider)
+
+</td>
+<td>
+
+React provider que expoe toda a logica de autenticação.
+
+**Example**
+
+```ts
+<AuthProvider configs={authConfig}>
+  <OutrosComponents />
+</AuthProvider>
+
+const { authenticated, handleUnauthorized } = useAuth();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useAuth](/?path=/docs/libs-auth-functions-useauth)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `AuthProvider`
+
+**Example**
+
+```ts
+const { authenticated, handleUnauthorized } = useAuth();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[withAuth](/?path=/docs/libs-auth-functions-withauth)
+
+</td>
+<td>
+
+Função utilizada como guarda das paginas que requerem autenticação (pode ser utilizada com composition)
+
+**Example**
+
+```ts
+export default compose(
+  withAuth()
+)(CadastroAreasPage);
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

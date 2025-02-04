@@ -1,0 +1,49 @@
+{
+  "name": "@hubert/docs",
+  "description": "Components documentation and demos.",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "private": true,
+  "scripts": {
+    "dev": "start-storybook -p 3999 --no-open",
+    "build": "build-storybook --docs -o dist/",
+    "lint": "hubert-lib lint",
+    "tools:update-icons": "node tools/update-icons",
+    "tools:jsdoc": "node tools/jsdoc-to-mdx",
+    "predev": "npm run tools:update-icons && npm run tools:jsdoc"
+  },
+  "dependencies": {
+    "@hubert/atoms": "^2.x",
+    "@hubert/data-export": "^2.x",
+    "@hubert/editor": "^2.x",
+    "@hubert/i18n": "^2.x",
+    "@hubert/molecules": "^2.x",
+    "@hubert/organisms": "^2.x",
+    "@hubert/shared": "^2.x",
+    "@hubert/styles": "^2.x",
+    "@hubert/tour": "^2.x",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@hubert/build-lib": "^2.x",
+    "@hubert/build-web": "^2.x",
+    "@mdx-js/react": "^2.2.1",
+    "@storybook/addon-docs": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/mdx2-csf": "^0.0.3",
+    "@storybook/react": "^6.5.15",
+    "@types/mdx": "^2.0.3",
+    "eslint-plugin-mdx": "^2.0.5",
+    "typedoc": "^0.26.11",
+    "typedoc-plugin-inline-sources": "^1.1.0",
+    "typedoc-plugin-markdown": "^4.2.10",
+    "typedoc-plugin-mdn-links": "^3.3.6",
+    "typedoc-plugin-merge-modules": "^6.0.3"
+  }
+}

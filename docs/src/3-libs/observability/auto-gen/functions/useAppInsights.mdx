@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Observability/functions/useAppInsights" />
+
+
+
+[**Observability Library**](/?path=/docs/libs-observability-overview--page) • **Docs**
+
+***
+
+[Observability Library](/?path=/docs/libs-observability-overview--page) / useAppInsights
+
+# Function: useAppInsights()
+
+```ts
+function useAppInsights(): undefined | AppInsights
+```
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `AppInsightsProvider`
+
+## Returns
+
+`undefined` \| `AppInsights`
+
+## Example
+
+```ts
+const { trackEvent } = useAppInsights();
+```
+
+## Defined in
+
+appInsights/index.tsx:17
+
+
+***
+
+Keep calm and code on 🤘.

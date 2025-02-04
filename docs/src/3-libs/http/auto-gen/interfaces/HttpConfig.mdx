@@ -1,0 +1,114 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/interfaces/HttpConfig" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / HttpConfig
+
+# Interface: HttpConfig\<B, P, T, U, H\>
+
+Objeto de configuração de uma chamada HTTP, utilizando o `httpClient()` (sem provider) ou `useHttp()` (com provider)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`B` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`P` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`U` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`H`
+
+</td>
+<td>
+
+[`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`accessToken?`</td><td>`string` | (`url`: `string`) => `string`</td><td>utils/client.ts:75</td></tr>
+<tr><td>`baseURL`</td><td>`string`</td><td>utils/client.ts:63</td></tr>
+<tr><td>`body?`</td><td>`B`</td><td>utils/client.ts:67</td></tr>
+<tr><td>`bodySerializer?`</td><td>(`body`: `B`) => `XMLHttpRequestBodyInit`</td><td>utils/client.ts:68</td></tr>
+<tr><td>`forceErrorOnNoContent?`</td><td>`boolean`</td><td>utils/client.ts:74</td></tr>
+<tr><td>`headers?`</td><td>`H`</td><td>utils/client.ts:65</td></tr>
+<tr><td>`headersSerializer?`</td><td>(`headers`: `H`) => [`Headers`](https://developer.mozilla.org/docs/Web/API/Headers)</td><td>utils/client.ts:66</td></tr>
+<tr><td>`method?`</td><td>[`HttpMethod`](/?path=/docs/libs-http-type-aliases-httpmethod)</td><td>utils/client.ts:64</td></tr>
+<tr><td>`onUnauthorized?`</td><td>(`redirectTo`?: `string`) => `void`</td><td>utils/client.ts:76</td></tr>
+<tr><td>`params?`</td><td>`P`</td><td>utils/client.ts:69</td></tr>
+<tr><td>`paramsSerializer?`</td><td>(`params`: `P`) => `string`</td><td>utils/client.ts:71</td></tr>
+<tr><td>`responseSerializer?`</td><td>(`response`: [`Response`](https://developer.mozilla.org/docs/Web/API/Response)) => [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`T`\></td><td>utils/client.ts:73</td></tr>
+<tr><td>`urlParams?`</td><td>`U`</td><td>utils/client.ts:70</td></tr>
+<tr><td>`urlParamsSerializer?`</td><td>(`url`: `string`, `params`: `U`) => `string`</td><td>utils/client.ts:72</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

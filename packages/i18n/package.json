@@ -1,0 +1,35 @@
+{
+  "name": "@hubert/i18n",
+  "description": "Internationalization codes for projects.",
+  "version": "2.29.11",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "extensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx"
+  ],
+  "scripts": {
+    "dev": "hubert-lib dev",
+    "prebuild": "hubert-lib prebuild",
+    "build": "hubert-lib build",
+    "test": "hubert-lib test",
+    "test:update": "hubert-lib test-update",
+    "test:ci": "hubert-lib test-ci",
+    "lint": "hubert-lib lint"
+  },
+  "peerDependencies": {
+    "@hubert/shared": "^2.x",
+    "react": "^18.x"
+  },
+  "devDependencies": {
+    "@hubert/build-lib": "^2.x",
+    "@babel/preset-react": "^7.18.6"
+  }
+}

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubText component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-family: Nunito Sans;
+  font-size: 16px;
+  line-height: 1.5714285714285714;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+<span
+    class="c0"
+  />
+</DocumentFragment>
+`;

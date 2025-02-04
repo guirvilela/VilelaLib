@@ -1,0 +1,88 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/functions/useFormMock" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / useFormMock
+
+# Function: useFormMock()
+
+```ts
+function useFormMock<T>(props?: Partial<Form<RecursivePartial<T>>> & {
+  spyCount: CallableFunction;
+  spyPristine: CallableFunction;
+  spyReset: CallableFunction;
+  spySet: CallableFunction;
+  spySetAll: CallableFunction;
+}): Form<T>
+```
+
+Versão mockada do `useForm` (utilizar em tests unitario)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`props`?
+
+</td>
+<td>
+
+[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`Form`](/?path=/docs/libs-shared-interfaces-form)\<[`recursivepartial`](-?path=-docs-libs-shared-type-aliases-recursivepartial)\<`T`\>\>\> & \{ `spyCount`: `CallableFunction`; `spyPristine`: `CallableFunction`; `spyReset`: `CallableFunction`; `spySet`: `CallableFunction`; `spySetAll`: `CallableFunction`; \}
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Form`](/?path=/docs/libs-shared-interfaces-form)\<`T`\>
+
+## Defined in
+
+hooks/form.ts:131
+
+
+***
+
+Keep calm and code on 🤘.

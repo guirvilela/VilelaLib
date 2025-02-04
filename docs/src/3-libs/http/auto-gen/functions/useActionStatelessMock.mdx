@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/useActionStatelessMock" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / useActionStatelessMock
+
+# Function: useActionStatelessMock()
+
+```ts
+function useActionStatelessMock<T>(props?: Partial<Action<T, T, unknown>> & {
+  spyCatcher: CallableFunction;
+  spyClearStatus: CallableFunction;
+  spyCloseMsg: CallableFunction;
+  spyFinish: CallableFunction;
+  spyReset: CallableFunction;
+  spyStart: CallableFunction;
+  spyUpdateStatus: CallableFunction;
+}): ActionStateless<T>
+```
+
+Versão para testes do `useActionStateless()` (utilizar em tests unitario)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`props`?
+
+</td>
+<td>
+
+[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`Action`](/?path=/docs/libs-http-interfaces-action)\<`T`, `T`, `unknown`\>\> & \{ `spyCatcher`: `CallableFunction`; `spyClearStatus`: `CallableFunction`; `spyCloseMsg`: `CallableFunction`; `spyFinish`: `CallableFunction`; `spyReset`: `CallableFunction`; `spyStart`: `CallableFunction`; `spyUpdateStatus`: `CallableFunction`; \}
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`ActionStateless`](/?path=/docs/libs-http-interfaces-actionstateless)\<`T`\>
+
+## Defined in
+
+hooks/action.ts:392
+
+
+***
+
+Keep calm and code on 🤘.

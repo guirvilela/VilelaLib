@@ -1,0 +1,226 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/paramsSerializer" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / paramsSerializer
+
+# Function: paramsSerializer()
+
+```ts
+function paramsSerializer<T>(params?: T, configs?: {
+  arrayRepeat: boolean;
+  customSerializer: (params: T) => string;
+  doubleEncodeURI: boolean;
+  encrypted: boolean;
+  noEncodeURI: boolean;
+  withQuestionMark: boolean;
+ }): string
+```
+
+Serialize parameters to string (?chave1=valor1&chave2=valor2)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`params`?
+
+</td>
+<td>
+
+`T`
+
+</td>
+<td>
+
+Object
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`?
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.arrayRepeat`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Repete as chaves em caso de ser um array (chave=valor1&chave=valor2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.customSerializer`?
+
+</td>
+<td>
+
+(`params`: `T`) => `string`
+
+</td>
+<td>
+
+Adiciona interrogação no inicio do conteudo
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.doubleEncodeURI`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Tecnica de duplo encode de char especial na url
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.encrypted`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Utilize essa config, para encriptar os parametros e ofuscar os dados na url
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.noEncodeURI`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Evita o encode de char especial na url
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs.withQuestionMark`?
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Adiciona interrogação no inicio do conteudo
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`string`
+
+string
+
+## Example
+
+```ts
+`/my-units/access/add?${paramsSerializer({
+  codigoLiberacao: form.value.id,
+  condominio: form.value.condominio,
+  nomeCondominio: form.value.nomeCondominio
+})}`
+```
+
+## Defined in
+
+utils/params.ts:21
+
+
+***
+
+Keep calm and code on 🤘.

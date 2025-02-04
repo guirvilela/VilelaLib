@@ -1,0 +1,146 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/Fonts" />
+
+# Fonts
+
+Os projetos da Hubert utiliza duas fontes como principais, a `Kanit` e a `Nunito`, podendo haver alterações.
+
+### Utilização
+
+Para a utilização das fontes é necessário a importação do `styles.css` no arquivo de entrada da aplicação.
+
+#### Para isso cole este código no app.tsx:
+
+```javascript
+import '@hubert/styles/lib/styles.css';
+```
+
+#### Não é recomendado recriar classes ou components que utilizem a fontes dessa lib diretamente!
+
+Para isso utilize o component `HubText` disponivel nas libs `@hubert/atoms`.
+
+- [Documentação do componente HubText](/?path=/docs/design-system-atoms-hubtext--default)
+
+```ts
+<HubText typo="body2">Text</HubText>
+```
+
+# Tipografias
+
+Por padrão os projetos da Hubert mantem a tipografia de fontes seguindo o design do Figma.
+
+[![](/assets/img/guide-design-style-guide.png)](https://www.figma.com/file/i4eDxKtMs7uyybWa43ojHn/Style-Guide-Hubert?node-id=1747%3A1621&t=BVsDRWLGha97tcgv-0)
+
+- **h1:** Family: Kanit, Size: 40px;
+- **h2:** Family: Kanit, Size: 32px;
+- **h3:** Family: Kanit, Size: 24px;
+- **h4:** Family: Kanit, Size: 20px;
+- **subtitle:** Family: Nunito Sans, Size: 18px;
+- **subtitle2:** Family: Kanit, Size: 16px;
+- **body1:** Family: Nunito Sans, Size: 16px;
+- **body2:** Family: Nunito Sans, Size: 14px;
+- **body3:** Family: Nunito Sans, Size: 12px;
+
+## Tipografia de espessuras de fonte
+
+```ts
+
+font-weigth: 400 | 500 | 600 | 700 | 800
+
+```
+
+## Como utilizar
+
+#### h1
+
+```ts
+Family: Kanit, Size: 40px
+
+
+<HubText typo="h1" weight="400">
+  text
+</HubText>
+```
+
+#### h2
+
+```ts
+Family: Kanit, Size: 32px
+
+<HubText typo="h2" weight="500">
+  text
+</HubText>
+```
+
+#### h3
+
+```ts
+Family: Kanit, Size: 24px
+
+<HubText typo="h3" weight="600">
+  text
+</HubText>
+```
+
+#### h4
+
+```ts
+Family: Kanit, Size: 20px
+
+<HubText typo="h4" weight="700">
+  text
+</HubText>
+```
+
+#### subtitle
+
+```ts
+Family: Nunito Sans, Size: 18px
+
+<HubText typo="subtitle" weight="800">
+  text
+</HubText>
+```
+
+#### subtitle2
+
+```ts
+Family: Kanit, Size: 16px
+
+<HubText typo="subtitle2" weight="400">
+  text
+</HubText>
+```
+
+#### body1
+
+```ts
+Family: Nunito Sans, Size: 16px
+
+<HubText typo="body1" weight="400">
+  text
+</HubText>
+```
+
+#### body2
+
+```ts
+Family: Nunito Sans, Size: 14px
+
+<HubText typo="body2" weight="400">
+  text
+</HubText>
+```
+
+#### body3
+
+```ts
+Family: Nunito Sans, Size: 12px
+
+<HubText typo="body3" weight="400">
+  text
+</HubText>
+```
+
+Keep calm and code on 🤘.

@@ -1,0 +1,28 @@
+{
+  "name": "@hubert/data-export",
+  "description": "Data export utils for web projects.",
+  "version": "2.29.11",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "extensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx"
+  ],
+  "scripts": {
+    "dev": "hubert-lib dev",
+    "prebuild": "hubert-lib prebuild",
+    "build": "hubert-lib build",
+    "test": "hubert-lib test",
+    "test:update": "hubert-lib test-update",
+    "test:ci": "hubert-lib test-ci",
+    "lint": "hubert-lib lint"
+  }
+ 
+}

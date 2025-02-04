@@ -1,0 +1,121 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/functions/searchInObject" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / searchInObject
+
+# Function: searchInObject()
+
+```ts
+function searchInObject<T>(
+   object: T, 
+   search: string, 
+   keys?: keyof T[]): boolean
+```
+
+Valida se `object` has `search` em values
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T` *extends* `object`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`object`
+
+</td>
+<td>
+
+`T`
+
+</td>
+<td>
+
+any
+
+</td>
+</tr>
+<tr>
+<td>
+
+`search`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+String
+
+</td>
+</tr>
+<tr>
+<td>
+
+`keys`?
+
+</td>
+<td>
+
+keyof `T`[]
+
+</td>
+<td>
+
+Array
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`boolean`
+
+Boolean
+
+## Defined in
+
+utils/object.ts:85
+
+
+***
+
+Keep calm and code on 🤘.

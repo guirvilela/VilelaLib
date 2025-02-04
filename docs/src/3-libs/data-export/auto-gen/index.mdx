@@ -1,0 +1,554 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/Overview" />
+
+**Data-export Library** • **Docs**
+
+***
+
+# Data Export
+
+Esta biblioteca contem e deve somente conter codigo relacionado a exportação de dados para csv, imagem ou pdf.
+
+## Como utilizar
+
+```
+npm i @hubert/data-export
+```
+
+## Exemplo gerar CSV:
+
+```js
+import React from 'react';
+import { exportCSV } from '@hubert/data-export';
+
+export function Controller() {
+  const handleDownloadCSV = React.useCallback(async () => {
+    await exportCSV('lista-contratos', [
+      { id: 1, valor: 1000 },
+      { id: 2, valor: 2000 },
+      { id: 3, valor: 3000 }
+    ]);
+  }, []);
+
+  return {
+    handleDownloadCSV
+  };
+}
+```
+
+Exemplo gerar Image:
+
+```js
+import React from 'react';
+import { exportImage, generateImage } from '@hubert/data-export';
+
+export function Controller() {
+  const elementRef = React.useRef<HTMLDivElement>();
+
+  const getImageUrl = React.useCallback(
+    () => {
+      return generateImage(elementRef.current); // get url image as base64
+    },
+    [elementRef.current]
+  );
+
+  const handleDownloadImage = React.useCallback(
+    async () => {
+      // Default is JPEG
+      await exportImage(
+        'relatorio-reservas',
+        elementRef.current
+      );
+
+      // Download as another type
+      await exportImage(
+        'relatorio-reservas',
+        elementRef.current,
+        ExportImageType.PNG
+      );
+    },
+    [elementRef.current]
+  );
+
+  return {
+    handleDownloadImage
+  };
+}
+```
+
+Exemplo gerar PDF:
+
+```js
+import React from 'react';
+import { exportPDF, ExportPDFTableUtils } from '@hubert/data-export';
+import { useI18nFormatter } from '@hubert/i18n';
+
+export function Controller() {
+  const f = useI18nFormatter();
+
+  const handleDownloadPDF = React.useCallback(async () => {
+    await exportPDF('relatorio-reservas', [
+      {
+        text: 'RELATORIO RESERVAS',
+        style: 'title',
+        alignment: 'center',
+        margin: [0, 3]
+      },
+      {
+        text: `${condominioSelected.codCondominio} - ${condominioSelected.nomeCondominio}`,
+        style: 'subtitle',
+        alignment: 'center',
+        margin: [0, 2]
+      },
+      {
+        text: `PERÍODO: ATÉ ${f.dateFormatter(new Date())}`,
+        style: 'body',
+        alignment: 'center',
+        margin: [0, 2]
+      },
+      {
+        margin: [0, 10],
+        table: {
+          headerRows: 0,
+          widths: ['*', 100, 100, 100],
+          body: [
+            [
+              ExportPDFTableUtils.HeaderLeft('CODIGO', {
+                fillColor: '#fff'
+              }),
+              ExportPDFTableUtils.HeaderRight('DESCRICAO', {
+                fillColor: '#fff'
+              })
+            ],
+            ...reservas.payload.map((x) => [
+              ExportPDFTableUtils.BodyLeft(x.codigoReserva, {
+                border: [true, true, false, false]
+              }),
+              ExportPDFTableUtils.BodyRight(x.descricao, {
+                format: false,
+                border: [false, true, false, false]
+              })
+            ]),
+            [
+              ExportPDFTableUtils.FooterLeft('TOTAL GERAL', {
+                fillColor: '#eee'
+              }),
+              ExportPDFTableUtils.FooterRight(reservas.payload.length, {
+                fillColor: '#eee'
+              })
+            ]
+          ]
+        }
+      }
+    ]);
+  }, []);
+
+  return {
+    handleDownloadPDF
+  };
+}
+```
+
+Exemplo gerar QRCode:
+
+```js
+import React from 'react';
+import { exportQRCode, generateQRCode, renderQRCode } from '@hubert/data-export';
+
+export function Controller() {
+  const elementRef = React.useRef<HTMLDivElement>();
+
+  const getImageDataUrl = React.useCallback(async () => {
+    const url = await generateQRCode('Hello Word!');
+    return url; // get image url as base64
+  }, []);
+
+  const handleRenderQRCode = React.useCallback(async () => {
+    await renderQRCode(elementRef.current, 'Hello Word!'); // render qrcode in html page
+  }, [elementRef.current]);
+
+  const handleDownloadQRCode = React.useCallback(async () => {
+    await exportQRCode('qrcode-image', 'Hello Word!'); // download png image
+  }, []);
+
+  return {
+    getImageDataUrl,
+    handleDownloadQRCode,
+    handleRenderQRCode
+  };
+}
+```
+
+## Enumerations
+
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ExportImageType](/?path=/docs/libs-data-export-enumerations-exportimagetype)
+
+</td>
+<td>
+
+Tipos de imagens disponivel para exportar o arquivo qrcode
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Classes
+
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ExportPDFTableUtils](/?path=/docs/libs-data-export-classes-exportpdftableutils)
+
+</td>
+<td>
+
+Classe que expoe diversos metodos para construir o conteudo do PDF
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ExportPDFConfig](/?path=/docs/libs-data-export-interfaces-exportpdfconfig)
+
+</td>
+<td>
+
+Objeto de configuração do arquivo final em PDF
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFOptions](/?path=/docs/libs-data-export-interfaces-exportpdfoptions)
+
+</td>
+<td>
+
+Objeto de configuração de cada celula (estilo, conteudo, etc)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFStyles](/?path=/docs/libs-data-export-interfaces-exportpdfstyles)
+
+</td>
+<td>
+
+Objeto de configuração dos estilos possiveis a ser aplicado no pdf (tipo css)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFTableConfig](/?path=/docs/libs-data-export-interfaces-exportpdftableconfig)
+
+</td>
+<td>
+
+Objeto de configuração de uma tabela a ser inserida no conteudo do PDF
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<table>
+<thead>
+<tr>
+<th>Type alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[ExportPDFAlignment](/?path=/docs/libs-data-export-type-aliases-exportpdfalignment)
+
+</td>
+<td>
+
+Tipos de alinhamento em celula de tabela
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFOrientation](/?path=/docs/libs-data-export-type-aliases-exportpdforientation)
+
+</td>
+<td>
+
+Orientações de pagina
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFPositionAlignment](/?path=/docs/libs-data-export-type-aliases-exportpdfpositionalignment)
+
+</td>
+<td>
+
+Tipos de alinhamento em estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFPositionDecoration](/?path=/docs/libs-data-export-type-aliases-exportpdfpositiondecoration)
+
+</td>
+<td>
+
+Tipos de decoração de texto em estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFSize](/?path=/docs/libs-data-export-type-aliases-exportpdfsize)
+
+</td>
+<td>
+
+Tamanhos de pagina
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ExportPDFTableCell](/?path=/docs/libs-data-export-type-aliases-exportpdftablecell)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[exportCSV](/?path=/docs/libs-data-export-functions-exportcsv)
+
+</td>
+<td>
+
+Generate CSV from Array and download file
+
+**Example**
+
+```ts
+await exportCSV('nome-arquivo-x', [{ a: 'A', b: 'B', c: 'C' }]);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[exportExcel](/?path=/docs/libs-data-export-functions-exportexcel)
+
+</td>
+<td>
+
+Generate Excel from Array and download file
+
+**Example**
+
+```ts
+await exportExcel('nome-arquivo-x', [{ a: 'A', b: 'B', c: 'C' }]);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[exportImage](/?path=/docs/libs-data-export-functions-exportimage)
+
+</td>
+<td>
+
+Generate Image from HTML and download file
+
+**Example**
+
+```ts
+await exportImage('nome-arquivo-x', document.getElementById('asd'));
+await exportImage('nome-arquivo-x', elementRef.content);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[exportPDF](/?path=/docs/libs-data-export-functions-exportpdf)
+
+</td>
+<td>
+
+Função responsavel por criar e exportar o PDF como arquivo
+
+**Example**
+
+```ts
+await exportPDF(
+ 'relatorio-reservas',
+ [{
+   text: 'RELATORIO RESERVAS',
+   style: 'title',
+   alignment: 'center',
+   margin: [0, 3]
+ }],
+ {
+   pageSize: 'A4',
+   pageOrientation: 'portrait'
+ }
+);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[exportQrCode](/?path=/docs/libs-data-export-functions-exportqrcode)
+
+</td>
+<td>
+
+Generate QRCode download file
+
+**Example**
+
+```ts
+await exportQrCode('nome-arquivo-x', 'Hello World!');
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[generateImage](/?path=/docs/libs-data-export-functions-generateimage)
+
+</td>
+<td>
+
+Generate Image from HTML and return url as base64
+
+**Example**
+
+```ts
+const url = await generateImage(document.getElementById('asd'));
+const url = await generateImage(elementRef.content);
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[generateQrCode](/?path=/docs/libs-data-export-functions-generateqrcode)
+
+</td>
+<td>
+
+Generate QRCode return url in base64
+
+**Example**
+
+```ts
+const url = await generateQrCode('Hello World!');
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[renderQrCode](/?path=/docs/libs-data-export-functions-renderqrcode)
+
+</td>
+<td>
+
+Generate QRCode render in html
+
+**Example**
+
+```ts
+await renderQrCode(ref.current, 'Hello World!');
+await renderQrCode(document.getElementById('teste'), 'Hello World!');
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

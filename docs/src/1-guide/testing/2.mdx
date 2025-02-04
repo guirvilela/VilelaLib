@@ -1,0 +1,211 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Testing/Estrutura" />
+
+> [Voltar ao sumário](/?path=/docs/guide-testing-summary--page)
+
+# Estrutura dos testes
+
+Utilizamos essa seção para compartilhar conhecimento sobre desenvolvimento de testes.
+
+## Estrutura inicial do teste
+
+![testid structure](/assets/img/tests-guide/guide-testing-folders-structure.png)
+
+no arquivo index.test.tsx, cole o código abaixo e siga as instruções.
+
+- Substitua onde está _YourComponent_ para seu componente
+
+- Selecione YourComponent, aperte CTRL + D até todos textos tiverem selecionados e cole o nome do componente
+
+- Ajuste a tipagem que estará dando erro provavelmente em YourComponentProps. São as tipagens do seu componente que esta no index.tsx
+
+```typescript
+import { useActionMock } from '@hubert/http';
+import { I18nProvider } from '@hubert/i18n';
+import { wrapse } from '@hubert/shared';
+import { ThemeProvider } from '@hubert/styles';
+import { render } from '@testing-library/react';
+import { YourComponent } from '.';
+
+type YourComponentProps = React.YourComponentProps<typeof YourComponent>;
+
+describe('YourComponent component test', () => {
+  const defaultProps: YourComponentProps = {};
+
+  const renderComponent = (props?: Partial<YourComponentProps>) => {
+    return render(<YourComponent {...defaultProps} {...props} />, {
+      wrapper: wrapse(ThemeProvider, I18nProvider)
+    });
+  };
+
+  it('matches snapshot', () => {
+    const { asFragment } = renderComponent();
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
+```
+
+## Explicação da estrutura inicial de teste
+
+### YourComponentProps
+
+Define o tipo das propriedades do componente YourComponent baseado em seu tipo existente, garantindo que os testes estejam alinhados com a tipagem real.
+
+```typescript
+type YourComponentProps = React.YourComponentProps<typeof YourComponent>;
+```
+
+O describe agrupa testes relacionados para o componente YourComponent. Ele serve como um título para identificar esse grupo nos relatórios de teste.
+
+```typescript
+describe('YourComponent component test', () => {...})
+```
+
+### defaultProps
+
+Define as propriedades padrão usadas para renderizar o componente nos testes. Aqui está vazio ({}), mas você pode adicionar valores padrão se necessário.
+
+```typescript
+const defaultProps: YourComponentProps = {};
+```
+
+### Função de renderização auxiliar
+
+**renderComponent**: Função que encapsula a renderização do componente para reutilização nos testes. Aceita propriedades parciais para substituir os valores padrão.
+
+**render**: Renderiza o componente usando os defaultProps e qualquer substituição passada.
+
+**wrapper**: Usa a função wrapse para combinar os provedores ThemeProvider e I18nProvider, criando o contexto necessário para que o componente funcione corretamente.
+
+```typescript
+const renderComponent = (props?: Partial<YourComponentProps>) => {
+  return render(<YourComponent {...defaultProps} {...props} />, {
+    wrapper: wrapse(ThemeProvider, I18nProvider)
+  });
+};
+```
+
+## Teste de Snapshot
+
+```typescript
+it('matches snapshot', () => {
+  const { asFragment } = renderComponent();
+  expect(asFragment()).toMatchSnapshot();
+});
+```
+
+- it: Define um caso de teste individual. Aqui, o teste verifica se o componente corresponde ao snapshot.
+
+- renderComponent: Renderiza o componente com a função auxiliar definida acima.
+
+- asFragment: Retorna o DOM do componente como um fragmento.
+
+- toMatchSnapshot: Compara o fragmento gerado com um snapshot salvo anteriormente. Se o DOM mudou, o teste falhará.
+
+## Tipagens Especiais
+
+Usamos a tipagem do componente dentro da const defaultProps.
+
+```typescript
+import { useActionMock } from '@hubert/http';
+import { useFormMock, wrapse } from '@hubert/shared';
+
+type YourComponentProps = React.YourComponentProps<typeof YourComponent>;
+
+const defaultProps: YourComponentProps = {
+  action: useActionMock(),
+  getAction: useActionMock(),
+  form: useFormMock<PostFunctionRequest>(),
+  formModal: useFormMock<FormModalStatus>(),
+  onFunction: jest.fn(),
+  onDeleteFile: jest.fn()
+};
+```
+
+### useActionMock()
+
+Tipagem para respostas de chamadas a API
+
+- Mocka ações HTTP ou lógicas externas do componente, substituindo as funções reais por implementações simuladas.
+
+#### Setando valores da actionMock()
+
+Ao setar os valores da Action, vai ser considerado nos testes os valores vindo do teste e não relacionado a nada da API.
+
+```typescript
+import { useActionMock } from '@hubert/http';
+
+type YourComponentProps = React.YourComponentProps<typeof YourComponent>;
+
+const defaultProps: YourComponentProps = {
+  action: useActionMock({
+    payload: {
+      condominio: 991,
+      unidade: 43659
+    },
+    loading: false
+  })
+};
+```
+
+### useFormMock()
+
+Mocka os formulários usados pelo componente.
+
+(index.tsx)
+
+```typescript
+export interface YourComponentProps {
+  onFunction: () => void;
+}
+
+export interface MyComponentForm {
+   condominio: number,
+   unidade: number
+}
+
+export function YourComponent({onFunction}: YourComponent) {
+
+const form = useForm<MyComponentForm>({
+  condominio: 0
+  unidade: 0
+})
+
+return (
+  <HubButton onClick={onFunction}>Continuar</HubButton>
+)}
+```
+
+```typescript
+import { useFormMock } from '@hubert/shared';
+
+type YourComponentProps = React.YourComponentProps<typeof YourComponent>;
+
+const defaultProps: YourComponentProps = {
+  form: useFormMock<MyComponentForm>({
+    value: {
+      condominio: 991,
+      unidade: 43659
+    }
+  })
+};
+```
+
+### Tipagem de Funções() {}
+
+Usamos jest.fn(), para falar pro Jest que aquela prop é uma função que poderá ser chamada futuramente para testes
+
+```typescript
+type YourComponentProps = React.YourComponentProps<typeof YourComponent>;
+
+const defaultProps: YourComponentProps = {
+  onFunction: jest.fn()
+};
+```
+
+> Próximo passo... [Primeiro teste ✍🏻](/?path=/docs/guide-testing-primeiro-teste--page)
+
+---
+
+Keep calm and code on 🤘.

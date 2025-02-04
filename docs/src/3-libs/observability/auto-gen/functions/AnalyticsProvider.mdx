@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Observability/functions/AnalyticsProvider" />
+
+
+
+[**Observability Library**](/?path=/docs/libs-observability-overview--page) • **Docs**
+
+***
+
+[Observability Library](/?path=/docs/libs-observability-overview--page) / AnalyticsProvider
+
+# Function: AnalyticsProvider()
+
+```ts
+function AnalyticsProvider(__namedParameters: AnalyticsProviderProps): Element
+```
+
+React provider que expoe todas funções do google analytics pre-configuradas.
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`__namedParameters`
+
+</td>
+<td>
+
+`AnalyticsProviderProps`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Element`
+
+## Example
+
+```ts
+<AnalyticsProvider configs={analyticsConfig}>
+  <OutrosComponents />
+</AnalyticsProvider>
+
+const { sendEvent } = useAnalytics();
+```
+
+## Defined in
+
+analytics/index.tsx:127
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,90 @@
+import { HubGrid, HubRadio, HubRadioGroup } from '@hubert/atoms';
+import { colorsList, size, spacesList } from '@hubert/styles';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { TEXT } from '~/utils';
+import { HubRadioConfig, HubRadioGroupConfig } from './storyConfig.ts';
+
+<Meta title="Design System/Atoms/HubRadio" />
+
+# HubRadio
+
+```
+import { HubRadio } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={HubRadioConfig.args}
+    argTypes={HubRadioConfig.props}
+  >
+    {(args) => {
+      const [selected, setSelected] = React.useState(args.value || 0);
+      return (
+        <HubGrid row gap="3" justify="center">
+          <HubRadio
+            id="#"
+            {...args}
+            checked={selected === 0}
+            onClick={() => setSelected(0)}
+          >
+            {TEXT.Title}
+          </HubRadio>
+          <HubRadio
+            id="#"
+            {...args}
+            checked={selected === 1}
+            onClick={() => setSelected(1)}
+          >
+            {TEXT.Button}
+          </HubRadio>
+          <HubRadio
+            id="#"
+            {...args}
+            checked={selected === 2}
+            onClick={() => setSelected(2)}
+          >
+            {TEXT.Label}
+          </HubRadio>
+        </HubGrid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+# HubRadioGroup
+
+```
+import { HubRadioGroup, HubRadio } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Usage"
+    args={HubRadioGroupConfig.args}
+    argTypes={HubRadioGroupConfig.props}
+  >
+    {(args) => {
+      const [selected, setSelected] = React.useState(args.value || 0);
+      return (
+        <HubGrid row justify="center">
+          <HubRadioGroup {...args} value={selected} onChange={setSelected}>
+            <HubRadio id="#" value={0}>
+              {TEXT.Title}
+            </HubRadio>
+            ,<HubRadio id="#" value={1}>
+              {TEXT.Button}
+            </HubRadio>,
+            <HubRadio id="#" value={2}>
+              {TEXT.Label}
+            </HubRadio>
+          </HubRadioGroup>
+        </HubGrid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Usage" />

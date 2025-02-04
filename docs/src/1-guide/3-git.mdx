@@ -1,0 +1,134 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/GIT" />
+
+# GIT
+
+_"Com o Git, cada erro é uma oportunidade para aprender, melhorar e evoluir seu código. 🤔" by chatGPT_
+
+![](https://i.gifer.com/VHtB.gif)
+
+### Clonando projetos
+
+Para clonar um repositório do Azure DevOps usando uma chave PAT (Personal Access Token), siga os seguintes passos:
+
+1. Crie uma chave PAT no Azure DevOps seguindo as instruções da [documentação oficial](https://learn.microsoft.com/pt-br/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows). É recomendado selecionar permissões somente para leitura para garantir a segurança do seu repositório.
+
+2. Abra o Visual Studio Code ou o terminal do seu sistema operacional e navegue até o diretório onde deseja clonar o repositório.
+
+3. Execute o comando `git clone` seguido da URL do repositório e da chave PAT no formato `https://<usuario>:<PAT>@<url do repositório>`:
+
+```sh
+git clone https://seu_usuario:sua_chave_pat@url_do_repositorio
+```
+
+### Importante antes de continuar
+
+Evite fazer pull de uma branch env (develop/stage/main) para a sua local, continue trabalhando na mesma ou commit todas as mundaças e faça um rebase!
+
+Abaixo você pode encontrar o passo para realizar um rebase.
+
+### Padrão de commit
+
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) é uma convenção de nomenclatura de commits que fornece uma forma consistente de criar mensagens de commit em um projeto. Essa convenção usa um formato específico que é composto por um cabeçalho, um corpo opcional e um rodapé opcional. O cabeçalho segue um padrão definido que inclui um tipo, um escopo e uma descrição curta do commit. Existem os seguintes tipos de commits padronizados pelo Conventional Commits:
+
+- **feat**: Adição de uma nova funcionalidade;
+- **fix**: Ajuste de funcionalidade ou correção de um problema;
+- **docs**: Atualização da documentação;
+- **style**: Mudanças que não afetam o significado do código (espaço em branco, formatação, ponto-e-vírgula faltando, etc.);
+- **refactor**: Refatoração do código, sem adição ou remoção de funcionalidades;
+- **test**: Adição ou modificação de testes;
+- **chore**: Mudanças na estrutura do projeto ou em ferramentas de suporte, como atualização de dependências ou configuração do ambiente de desenvolvimento.
+
+Além do tipo, o cabeçalho do commit também pode incluir um escopo opcional, que indica qual é a parte do código que está sendo modificada, e uma descrição curta do commit. Já o corpo do commit e o rodapé podem incluir informações adicionais, como referências a problemas ou tarefas relacionadas ao commit, por exemplo.
+
+O uso de Conventional Commits é uma boa prática que ajuda a manter a clareza e a consistência nas mensagens de commit, o que pode facilitar o trabalho em equipe e a manutenção do código ao longo do tempo.
+
+### Padrão de branch
+
+O uso de Conventional Commits em branches pode seguir a mesma lógica de uso em commits, onde a mensagem de commit deve seguir as convenções estabelecidas. Por exemplo, se você estiver trabalhando em uma branch de feature, pode nomear sua branch de acordo com o padrão `feat/nome-da-feature`. Além disso, é recomendado que o nome da branch seja descritivo e que descreva o objetivo daquela branch.
+
+Dessa forma, ao criar um novo commit na branch, você deve seguir as convenções de mensagem de commit estabelecidas pelo Conventional Commits. Isso ajuda a manter um padrão na nomenclatura e descrição dos commits, facilitando a compreensão do histórico de mudanças do projeto.
+
+### Padrão de merge
+
+No momento seguimos com o seguinte padrão de merge:
+
+- `sua branch` -> `develop`: squash commit + deleta source branch
+- `develop` -> `stage`: rebase and fast
+- `stage` -> `main`: rebase and fast
+
+### Resolvendo conflitos
+
+Conflitos de código no Git ocorrem quando duas ou mais pessoas estão trabalhando no mesmo arquivo e fazem alterações em linhas semelhantes ou na mesma linha. Quando essas alterações são mescladas (merged) no repositório Git, o Git não consegue determinar automaticamente qual versão do código deve ser mantida, o que leva a um conflito.
+
+O Git sinaliza o conflito, indicando as áreas do arquivo em que as alterações conflitantes foram feitas. O usuário deve então resolver manualmente o conflito, escolhendo quais alterações devem ser mantidas e quais devem ser descartadas. Isso geralmente é feito editando o arquivo em questão, removendo as marcações de conflito inseridas pelo Git e escolhendo as alterações corretas.
+
+É importante lembrar que conflitos de código podem ser evitados ao se trabalhar em branchs separadas e comunicando alterações relevantes ao time com antecedência. Além disso, é recomendável que todos os membros da equipe estejam cientes dos conflitos de código e saibam como resolvê-los.
+
+Resolver conflitos de código no Git utilizando o rebase pode ser feito seguindo os passos abaixo:
+
+1. Certifique-se de que você está no branch que deseja aplicar o rebase. Digamos que você queira aplicar o rebase do branch `feature` em cima do branch `develop`. Primeiro, mude para o branch `feature`:
+
+```
+git checkout feature
+```
+
+2. Certifique-se de que o branch `develop` está atualizado:
+
+```
+git fetch origin
+git rebase origin/develop
+```
+
+3. Resolva os conflitos que ocorreram durante o rebase. Abra os arquivos em conflito e faça as alterações necessárias para resolvê-los.
+
+4. Quando terminar, adicione as alterações resolvidas:
+
+```
+git add <arquivo com conflito>
+```
+
+5. Continue o rebase:
+
+```
+git rebase --continue
+```
+
+6. Se ocorrerem mais conflitos, repita os passos 3 a 5 até que todos os conflitos sejam resolvidos.
+
+7. Por fim, faça o push das alterações para o repositório remoto:
+
+```
+git push --force
+```
+
+É importante lembrar que o `--force` é necessário neste caso, pois o histórico do branch `feature` foi reescrito durante o rebase. Por isso, é preciso sobrescrever o histórico remoto com as novas alterações. No entanto, tenha cuidado ao utilizar o `--force`, pois ele pode sobrescrever alterações de outras pessoas no repositório.
+
+> Recomendamos utilizar a extensão `Git Graph` do VSCode para realizar esta ação e até mesmo todas as funções do GIT 😎.
+
+### Fluxo de PR
+
+PR (Pull Request) é um recurso usado em sistemas de controle de versão como o Git para solicitar a revisão e a mesclagem de alterações de código feitas em um branch para outro. Em geral, uma PR é criada quando um desenvolvedor deseja que suas alterações sejam revisadas e eventualmente integradas ao branch principal (como a branch "master") do repositório. A PR fornece um espaço para discussão e feedback antes de mesclar as alterações. Os revisores podem adicionar comentários, aprovar a PR ou solicitar alterações adicionais antes de serem mescladas.
+
+Para criar uma Pull Request (PR) no Azure DevOps, siga os seguintes passos:
+
+1. Acesse o repositório que você deseja criar a PR.
+2. Clique no botão "New pull request" (Nova solicitação de pull request).
+3. Selecione a branch de origem e a branch de destino para a qual você deseja solicitar a PR.
+4. Adicione um título e descrição para a PR, descrevendo as alterações que você está solicitando.
+5. Adicione os revisores para a PR. Os revisores serão notificados da solicitação de revisão.
+6. Adicione quaisquer informações adicionais necessárias, como anexos ou links para outras informações relevantes.
+7. Clique em "Create pull request" (Criar solicitação de pull request) para enviar a solicitação.
+
+Depois de criada a PR, os revisores podem fazer comentários e sugestões, e você pode fazer alterações e atualizar a PR conforme necessário. Uma vez que a PR foi aprovada, você pode mesclar as alterações na branch de destino.
+
+O Azure DevOps já esta configurado com as regras necessarias para mergiar o codigo da maneira correta. Basta seguir com o `complete` normalmente!
+
+> [Documentação oficial](https://learn.microsoft.com/pt-br/azure/devops/repos/git/pull-requests?view=azure-devops&tabs=browser)
+
+---
+
+> Próximo passo... [Como começar a codar 👨‍💻](/?path=/docs/guide-coding-start--page)
+
+Keep calm and code on 🤘.

@@ -1,0 +1,41 @@
+{
+  "name": "@hubert/styles",
+  "description": "Shared styles for any projects.",
+  "version": "2.29.11",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "extensions": [
+    ".ts",
+    ".tsx",
+    ".js",
+    ".jsx"
+  ],
+  "scripts": {
+    "predev": "node tools",
+    "dev": "hubert-lib dev",
+    "prebuild": "hubert-lib prebuild",
+    "build": "hubert-lib build",
+    "test": "hubert-lib test",
+    "test:update": "hubert-lib test-update",
+    "test:ci": "hubert-lib test-ci",
+    "lint": "hubert-lib lint"
+  },
+  "peerDependencies": {
+    "react": "^18.x",
+    "styled-components": "^5.x"
+  },
+  "devDependencies": {
+    "@hubert/build-lib": "^2.x",
+    "@babel/preset-react": "^7.18.6",
+    "babel-plugin-styled-components": "^1.8.0",
+    "jest-styled-components": "^7.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "sass": "^1.55.0"
+  }
+}

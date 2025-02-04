@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubStatusAlert component matches snapshot 1`] = `
+<DocumentFragment>
+  .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  margin-top: -2px;
+  width: 100%;
+}
+
+.c5 {
+  font-family: Nunito Sans;
+  font-size: 14px;
+  line-height: 1.6666666666666667;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  color: #040C12;
+}
+
+.c6 {
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #FFE7E8;
+  color: #BE1A25;
+  border: 1px solid #BE1A25;
+  border-radius: 4px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+}
+
+.c0 .c2 {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .c4 {
+  font-weight: 400;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  color: #BE1A25;
+}
+
+.c1 svg {
+  height: inherit;
+  width: inherit;
+  min-width: inherit;
+  -webkit-transition: 0.3s ease-in-out -webkit-transform;
+  -webkit-transition: 0.3s ease-in-out transform;
+  transition: 0.3s ease-in-out transform;
+}
+
+<div
+    class="c0"
+    color="error"
+  >
+    <div
+      class="c1"
+      color="error"
+    >
+      <svg
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15.299 8.702a.89.89 0 0 0-1.263 0L12 10.746 9.964 8.702a.893.893 0 0 0-1.262 1.262L10.746 12l-2.044 2.036a.889.889 0 0 0 0 1.263.89.89 0 0 0 1.262 0L12 13.254l2.036 2.045a.89.89 0 0 0 1.457-.29.89.89 0 0 0-.194-.973L13.254 12l2.045-2.036a.89.89 0 0 0 0-1.262Zm2.987-2.988A8.891 8.891 0 1 0 5.714 18.286 8.892 8.892 0 0 0 21 12.032a8.893 8.893 0 0 0-2.714-6.318Zm-1.254 11.318A7.113 7.113 0 1 1 19.112 12a7.068 7.068 0 0 1-2.08 5.032Z"
+          fill="#083350"
+        />
+      </svg>
+    </div>
+    <div
+      class="c2 c3"
+    >
+      <span
+        class="c4 c5"
+      >
+        asdasdasd
+      </span>
+    </div>
+    <button
+      class="c6"
+      type="button"
+    >
+      <svg
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.70449 7.99957L11.8522 4.85652C11.9463 4.76242 11.9991 4.6348 11.9991 4.50174C11.9991 4.36867 11.9463 4.24105 11.8522 4.14696C11.7581 4.05286 11.6305 4 11.4975 4C11.3644 4 11.2368 4.05286 11.1427 4.14696L8 7.29501L4.85728 4.14696C4.76319 4.05286 4.63559 4 4.50253 4C4.36948 4 4.24188 4.05286 4.14779 4.14696C4.05371 4.24105 4.00085 4.36867 4.00085 4.50174C4.00085 4.6348 4.05371 4.76242 4.14779 4.85652L7.29551 7.99957L4.14779 11.1426C4.10096 11.1891 4.06379 11.2443 4.03843 11.3052C4.01306 11.3661 4 11.4314 4 11.4974C4 11.5634 4.01306 11.6287 4.03843 11.6896C4.06379 11.7505 4.10096 11.8057 4.14779 11.8522C4.19424 11.899 4.2495 11.9362 4.31039 11.9616C4.37127 11.9869 4.43658 12 4.50253 12C4.56849 12 4.6338 11.9869 4.69468 11.9616C4.75557 11.9362 4.81083 11.899 4.85728 11.8522L8 8.70414L11.1427 11.8522C11.1892 11.899 11.2444 11.9362 11.3053 11.9616C11.3662 11.9869 11.4315 12 11.4975 12C11.5634 12 11.6287 11.9869 11.6896 11.9616C11.7505 11.9362 11.8058 11.899 11.8522 11.8522C11.899 11.8057 11.9362 11.7505 11.9616 11.6896C11.9869 11.6287 12 11.5634 12 11.4974C12 11.4314 11.9869 11.3661 11.9616 11.3052C11.9362 11.2443 11.899 11.1891 11.8522 11.1426L8.70449 7.99957Z"
+          fill="#BE1A25"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;
