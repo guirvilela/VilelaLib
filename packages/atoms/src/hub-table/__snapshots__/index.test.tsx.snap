@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubTable component matches snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.c0 {
+  width: 100%;
+  overflow: auto;
+  max-height: 100%;
+}
+
+@media print {
+  .c0 {
+    max-height: unset;
+    height: auto;
+    overflow: unset;
+  }
+}
+
+@media print {
+
+}
+
+@media print {
+
+}
+
+@media print {
+
+}
+
+<div
+    class="c0"
+  >
+    <table
+      class="c1"
+    >
+      <thead />
+      <tbody />
+    </table>
+  </div>
+</DocumentFragment>
+`;

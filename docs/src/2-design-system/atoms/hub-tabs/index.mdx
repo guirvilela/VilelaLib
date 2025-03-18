@@ -1,0 +1,40 @@
+import { HubTab, HubTabs } from '@hubert/atoms';
+import { colorLevels, colorsList, spacesList } from '@hubert/styles';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { TEXT } from '~/utils';
+import { HubTabConfig, HubTabsConfig } from './storyConfig.ts';
+
+<Meta title="Design System/Atoms/HubTabs" />
+
+# HubTab
+
+```
+import { HubTab } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story name="Default" args={HubTabConfig.args} argTypes={HubTabConfig.props}>
+    {(args) => <HubTab {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+# HubTabs
+
+```
+import { HubTabs, HubTab } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story name="Usage" args={HubTabsConfig.args} argTypes={HubTabsConfig.props}>
+    {(args) => (
+      <HubTabs {...args}>
+        <HubTab>{TEXT.Title}</HubTab>,<HubTab>{TEXT.Title}</HubTab>,
+        <HubTab>{TEXT.Title}</HubTab>
+      </HubTabs>
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Usage" />

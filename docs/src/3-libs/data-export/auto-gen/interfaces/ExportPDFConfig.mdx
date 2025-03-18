@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/interfaces/ExportPDFConfig" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / ExportPDFConfig
+
+# Interface: ExportPDFConfig
+
+Objeto de configuração do arquivo final em PDF
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`fonts?`</td><td>\{ `bold`: `string`; `bolditalics`: `string`; `italics`: `string`; `normal`: `string`; \}</td><td>font files must be accessible via url address (access by style config 'font') **Example** `fonts: { normal: 'https://example.com/fonts/fontFile.ttf', bold: 'https://example.com/fonts/fontFile2.ttf', italics: 'https://example.com/fonts/fontFile3.ttf', bolditalics: 'https://example.com/fonts/fontFile4.ttf' }`</td><td>pdf/index.ts:61</td></tr>
+<tr><td>`fonts.bold?`</td><td>`string`</td><td>-</td><td>pdf/index.ts:63</td></tr>
+<tr><td>`fonts.bolditalics?`</td><td>`string`</td><td>-</td><td>pdf/index.ts:65</td></tr>
+<tr><td>`fonts.italics?`</td><td>`string`</td><td>-</td><td>pdf/index.ts:64</td></tr>
+<tr><td>`fonts.normal?`</td><td>`string`</td><td>-</td><td>pdf/index.ts:62</td></tr>
+<tr><td>`pageMargins?`</td><td>`number`[]</td><td>[left, top, right, bottom] or [horizontal, vertical] or just a number for equal margins</td><td>pdf/index.ts:32</td></tr>
+<tr><td>`pageNumbers?`</td><td>`number`[]</td><td>pages this element is visible on (e.g. multi-line text could be on more than one page)</td><td>pdf/index.ts:34</td></tr>
+<tr><td>`pageOrientation?`</td><td>[`ExportPDFOrientation`](/?path=/docs/libs-data-export-type-aliases-exportpdforientation)</td><td>-</td><td>pdf/index.ts:30</td></tr>
+<tr><td>`pageSize?`</td><td>[`ExportPDFSize`](/?path=/docs/libs-data-export-type-aliases-exportpdfsize)</td><td>-</td><td>pdf/index.ts:29</td></tr>
+<tr><td>`styles?`</td><td>\{\}</td><td>create custom styles **Example** `bodyBold: { bold: true, fontSize: 9 }, red: { color: '#ed5565' }, customFont: { font: 'customFontName' }`</td><td>pdf/index.ts:49</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

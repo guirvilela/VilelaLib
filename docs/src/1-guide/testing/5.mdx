@@ -1,0 +1,116 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Testing/Inputs" />
+
+> [Voltar ao sumário](/?path=/docs/guide-testing-summary--page)
+
+# Testar inputs com Jest
+
+## onChange do input
+
+```typescript
+export interface MyComponentForm {
+  nome: string;
+}
+
+export function Component() {
+  const form = useForm<MyComponentForm>({
+    nome: ''
+  });
+
+  return (
+    <HubTextField
+      data-testid="component-input-test"
+      id="componentInput"
+      required
+      placeholder={t('component-input-placeholder')}
+      value={form.value.nome}
+      onChange={(v) => form.set('nome', v)}
+    />
+  );
+}
+```
+
+**No teste colocamos "-input" pois está configurado na lib que essa prop vai pegar a ref do input**
+
+```typescript
+it('should be able change change input', () => {
+  const useSetForm = jest.fn();
+
+  const { getByTestId } = renderComponent({
+    form: useFormMock<MyComponentForm>({ set: () => useSetForm })
+  });
+
+  const nameInput = getByTestId('component-input-test-input');
+
+  expect(nameInput).toBeInTheDocument();
+
+  fireEvent.change(nameInput, { target: { value: 'Academia' } });
+
+  expect(useSetForm).toBeCalledWith({
+    nome: 'Academia'
+  });
+});
+```
+
+## Input de Radio
+
+```typescript
+<HubGrid row gap="3">
+  <HubRadio
+    id="component-sindico-s"
+    checked={form.value.radioComponent}
+    onClick={() =>
+      form.setAll({
+        radioComponent: true
+      })
+    }
+  >
+    <HubText typo="body2" weight="600">
+      {t('reuse_yes')}
+    </HubText>
+  </HubRadio>
+
+  <HubRadio
+    id="component-sindico-n"
+    checked={!form.value.radioComponent}
+    onClick={() =>
+      form.setAll({
+        radioComponent: false
+      })
+    }
+  >
+    <HubText typo="body2" weight="600">
+      {t('reuse_no')}
+    </HubText>
+  </HubRadio>
+</HubGrid>
+```
+
+```typescript
+it('Should be able click on radio true', () => {
+  const onMarkRadioMock = jest.fn();
+
+  const { getByText } = renderComponent({
+    isRpa: true,
+    form: useFormMock<MyComponentForm>({
+      value: 1,
+      spySetAll: onMarkRadioMock
+    })
+  });
+
+  const radioServico = getByText('reuse_yes');
+
+  fireEvent.click(radioServico);
+
+  expect(onMarkRadioMock).toHaveBeenCalledWith({
+    radioComponent: true
+  });
+});
+```
+
+> [Voltar ao sumário](/?path=/docs/guide-testing-summary--page)
+
+---
+
+Keep calm and code on 🤘.

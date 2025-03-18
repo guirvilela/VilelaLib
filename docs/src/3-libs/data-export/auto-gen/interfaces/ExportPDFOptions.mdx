@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/interfaces/ExportPDFOptions" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / ExportPDFOptions
+
+# Interface: ExportPDFOptions
+
+Objeto de configuração de cada celula (estilo, conteudo, etc)
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`alignment?`</td><td>[`ExportPDFAlignment`](/?path=/docs/libs-data-export-type-aliases-exportpdfalignment)</td><td>element alignment or column align for table</td><td>pdf/index.ts:285</td></tr>
+<tr><td>`border?`</td><td>`boolean`[]</td><td>table config border</td><td>pdf/index.ts:287</td></tr>
+<tr><td>`colSpan?`</td><td>`number`</td><td>same colspan of html table td for pdf table columns</td><td>pdf/index.ts:272</td></tr>
+<tr><td>`fillColor?`</td><td>`string`</td><td>background color of cell table</td><td>pdf/index.ts:270</td></tr>
+<tr><td>`formatter?`</td><td>(`v`: `string` | `number`) => `string`</td><td>formatter for text content</td><td>pdf/index.ts:289</td></tr>
+<tr><td>`style?`</td><td>`string`[]</td><td>list of styles to apply in this element **Example** `default styles style: ['title','subtitle','body','bodyBold','red','green','gray','bold','italic','centered','left','right'] custom styles style: ['yourCustomStyle']`</td><td>pdf/index.ts:283</td></tr>
+<tr><td>`text?`</td><td>`string`</td><td>generate paragraph or label of table, list, etc</td><td>pdf/index.ts:268</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

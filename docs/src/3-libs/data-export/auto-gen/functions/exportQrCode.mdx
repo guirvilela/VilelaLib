@@ -1,0 +1,111 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/functions/exportQrCode" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / exportQrCode
+
+# Function: exportQrCode()
+
+```ts
+function exportQrCode(
+   name: string, 
+   content: string, 
+   options?: Partial<{
+  colorDark: '#000000';
+  colorLight: '#ffffff';
+  height: 128;
+  width: 128;
+}>): Promise<void>
+```
+
+Generate QRCode download file
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+String (nome arquivo)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+String (conteudo do qrcode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options`?
+
+</td>
+<td>
+
+[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<\{ `colorDark`: `'#000000'`; `colorLight`: `'#ffffff'`; `height`: `128`; `width`: `128`; \}\>
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>
+
+## Example
+
+```ts
+await exportQrCode('nome-arquivo-x', 'Hello World!');
+```
+
+## Defined in
+
+qrcode/index.ts:98
+
+
+***
+
+Keep calm and code on 🤘.

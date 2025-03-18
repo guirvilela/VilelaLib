@@ -1,0 +1,82 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/functions/generateQrCode" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / generateQrCode
+
+# Function: generateQrCode()
+
+```ts
+function generateQrCode(content: string, options?: Partial<{
+  colorDark: '#000000';
+  colorLight: '#ffffff';
+  height: 128;
+  width: 128;
+}>): Promise<string>
+```
+
+Generate QRCode return url in base64
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options`?
+
+</td>
+<td>
+
+[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<\{ `colorDark`: `'#000000'`; `colorLight`: `'#ffffff'`; `height`: `128`; `width`: `128`; \}\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`string`\>
+
+url String
+
+## Example
+
+```ts
+const url = await generateQrCode('Hello World!');
+```
+
+## Defined in
+
+qrcode/index.ts:69
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/I18n/functions/I18nProvider" />
+
+
+
+[**I18n Library**](/?path=/docs/libs-i18n-overview--page) • **Docs**
+
+***
+
+[I18n Library](/?path=/docs/libs-i18n-overview--page) / I18nProvider
+
+# Function: I18nProvider()
+
+```ts
+function I18nProvider(__namedParameters: I18nProviderProps): Element
+```
+
+React provider que expoe toda a logica de autenticação.
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`__namedParameters`
+
+</td>
+<td>
+
+`I18nProviderProps`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Element`
+
+## Example
+
+```ts
+<I18nProvider configs={i18nConfig}>
+  <OutrosComponents />
+</I18nProvider>
+
+const { timezone } = useI18n();
+```
+
+## Defined in
+
+providers/index.tsx:95
+
+
+***
+
+Keep calm and code on 🤘.

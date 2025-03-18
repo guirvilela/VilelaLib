@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Permissions/interfaces/IPermissionsContext" />
+
+
+
+[**Permissions Library**](/?path=/docs/libs-permissions-overview--page) • **Docs**
+
+***
+
+[Permissions Library](/?path=/docs/libs-permissions-overview--page) / IPermissionsContext
+
+# Interface: IPermissionsContext
+
+Objeto com todos as propriedades disponiveis no contexto do `PermissionsProvider`
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`data`</td><td>[`Access`](/?path=/docs/libs-permissions-interfaces-access)[]</td><td>Acessos do usuario logado em lista simples (flat list, simplificada)</td><td>types.ts:52</td></tr>
+<tr><td>`error`</td><td>`string`</td><td>Status se houve erro ao carregar os acessos na API</td><td>types.ts:58</td></tr>
+<tr><td>`hasAccessCodigo`</td><td>(`v`: [`AccessCodigo`](/?path=/docs/libs-permissions-type-aliases-accesscodigo)) => `boolean`</td><td>Função essencial para validar se o usuario logado possui acesso ao recurso informado</td><td>types.ts:60</td></tr>
+<tr><td>`hasAccessTipoUsuario`</td><td>(`v`: [`AccessTipoUsuario`](/?path=/docs/libs-permissions-type-aliases-accesstipousuario)) => `boolean`</td><td>Função essencial para validar se o usuario logado possui o perfil de acesso informado</td><td>types.ts:62</td></tr>
+<tr><td>`load`</td><td>() => `void`</td><td>Caso a configuração `initialLoadData` esteja desativada, pode ser utilizado para buscar os acessos ou recarregar a mesma.</td><td>types.ts:64</td></tr>
+<tr><td>`loading`</td><td>`boolean`</td><td>Status se esta carregando/buscando os acessos na API</td><td>types.ts:56</td></tr>
+<tr><td>`nestedData`</td><td>[`NestedAccess`](/?path=/docs/libs-permissions-interfaces-nestedaccess)[]</td><td>Acessos do usuario logado em lista aninhada (nested list, padrão API)</td><td>types.ts:54</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,66 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/functions/useResponsive" />
+
+
+
+[**Styles Library**](/?path=/docs/libs-styles-overview--page) • **Docs**
+
+***
+
+[Styles Library](/?path=/docs/libs-styles-overview--page) / useResponsive
+
+# Function: useResponsive()
+
+```ts
+function useResponsive(): {
+  breakpoint: undefined | Breakpoint;
+  isBreakpoint: (v: Breakpoint) => boolean;
+  isDesktop: boolean;
+  isIframe: boolean;
+  isLargeDesktop: boolean;
+  isMobile: boolean;
+}
+```
+
+Hook com utils para trabalhar com responsividade
+Exporta o breakpoint atual e funções utils
+
+## Returns
+
+```ts
+{
+  breakpoint: undefined | Breakpoint;
+  isBreakpoint: (v: Breakpoint) => boolean;
+  isDesktop: boolean;
+  isIframe: boolean;
+  isLargeDesktop: boolean;
+  isMobile: boolean;
+}
+```
+
+<table>
+<tr><th>Name</th><th>Type</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`breakpoint`</td><td>`undefined` | [`Breakpoint`](/?path=/docs/libs-styles-enumerations-breakpoint)</td><td>hooks/responsive.ts:85</td></tr>
+<tr><td>`isBreakpoint`</td><td>(`v`: [`Breakpoint`](/?path=/docs/libs-styles-enumerations-breakpoint)) => `boolean`</td><td>hooks/responsive.ts:90</td></tr>
+<tr><td>`isDesktop`</td><td>`boolean`</td><td>hooks/responsive.ts:87</td></tr>
+<tr><td>`isIframe`</td><td>`boolean`</td><td>hooks/responsive.ts:88</td></tr>
+<tr><td>`isLargeDesktop`</td><td>`boolean`</td><td>hooks/responsive.ts:89</td></tr>
+<tr><td>`isMobile`</td><td>`boolean`</td><td>hooks/responsive.ts:86</td></tr>
+</table>
+
+## Example
+
+```ts
+const { isMobile } = useResponsive();
+```
+
+## Defined in
+
+hooks/responsive.ts:12
+
+
+***
+
+Keep calm and code on 🤘.

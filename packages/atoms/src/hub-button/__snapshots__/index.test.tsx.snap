@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubButton component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  -webkit-transition: background-color,outline 0.5s;
+  transition: background-color,outline 0.5s;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: auto;
+  height: 40px;
+  padding: 4px 16px;
+  background-color: #083350;
+  color: #FFFFFF;
+}
+
+.c0:disabled {
+  background-color: #CCD5DD;
+}
+
+.c0:hover:not(:disabled) {
+  background-color: #08273C;
+}
+
+<button
+    class="c0"
+    type="button"
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/Icons" />
+
+# Icons
+
+Os projetos da Hubert por padrão utiliza ícones com formato svg, principalmente por ser mais leve que outras formatações e a facilidade da importação e utilização.
+
+- [Documentação do componente HubIcon](/?path=/docs/design-system-atoms-hubicon--default)
+
+## Importação
+
+Faça o import direto no component que estiver trabalhando e utilize o component HubIcon para instanciar o svg, exemplo:
+
+```ts
+import IconLike from '@hubert/styles/lib/icons/icon-outline-like.svg';
+
+<HubIcon icon={IconLike} color="primary" size="sm" />;
+```
+
+### Importação dentro do HubButton
+
+```ts
+import IconLike from '@hubert/styles/lib/icons/icon-outline-like.svg';
+
+<HubButton variant="icon" full onClick={() => {}}>
+  <HubIcon icon={IconLike} />
+</HubButton>;
+```
+
+Keep calm and code on 🤘.

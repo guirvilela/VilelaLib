@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/interfaces/Pagination" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / Pagination
+
+# Interface: Pagination\<T\>
+
+Objeto retornado pelo `usePagination`
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`currentPage`</td><td>`number`</td><td>Page selected</td><td>hooks/pagination.ts:28</td></tr>
+<tr><td>`data`</td><td>`T`[]</td><td>Paged data</td><td>hooks/pagination.ts:22</td></tr>
+<tr><td>`onAccumulate`</td><td>() => `void`</td><td>Function call accumulate page data</td><td>hooks/pagination.ts:34</td></tr>
+<tr><td>`onChange`</td><td>(`page`: `number`) => `void`</td><td>Function call change page</td><td>hooks/pagination.ts:30</td></tr>
+<tr><td>`onChangePageSize`</td><td>(`size`: `number`) => `void`</td><td>Function call change page size</td><td>hooks/pagination.ts:32</td></tr>
+<tr><td>`onSort`</td><td>(`sorter`: (`data`: `T`[]) => `T`[]) => `void`</td><td>Function call accumulate page data</td><td>hooks/pagination.ts:36</td></tr>
+<tr><td>`pageSize`</td><td>`number`</td><td>Items por page</td><td>hooks/pagination.ts:26</td></tr>
+<tr><td>`totalItems`</td><td>`number`</td><td>Length rows de data</td><td>hooks/pagination.ts:24</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

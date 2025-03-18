@@ -1,0 +1,52 @@
+import { HubBreadcrumb, HubBreadcrumbs, HubButton } from '@hubert/atoms';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { TEXT } from '~/utils';
+import { HubBreadcrumbConfig, HubBreadcrumbsConfig } from './storyConfig.ts';
+
+<Meta title="Design System/Atoms/HubBreadcrumbs" />
+
+# HubBreadcrumb
+
+```
+import { HubBreadcrumb } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={HubBreadcrumbConfig.args}
+    argTypes={HubBreadcrumbConfig.argTypes}
+  >
+    {(args) => <HubBreadcrumb {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+# HubBreadcrumbs
+
+```
+import { HubBreadcrumbs, HubBreadcrumb } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Usage"
+    args={HubBreadcrumbsConfig.args}
+    argTypes={HubBreadcrumbsConfig.argTypes}
+  >
+    {(args) => (
+      <HubBreadcrumbs {...args}>
+        <HubButton link variant="action" href="#">
+          <HubBreadcrumb>{TEXT.Title}</HubBreadcrumb>
+        </HubButton>
+        <HubButton link variant="action" href="#">
+          <HubBreadcrumb>{TEXT.Title}</HubBreadcrumb>
+        </HubButton>
+        <HubBreadcrumb active>{TEXT.Label}</HubBreadcrumb>
+      </HubBreadcrumbs>
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Usage" />

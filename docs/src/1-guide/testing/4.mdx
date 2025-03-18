@@ -1,0 +1,111 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Testing/Funcoes" />
+
+> [Voltar ao sumário](/?path=/docs/guide-testing-summary--page)
+
+# Testar funções com Jest
+
+### Vamos testar o fechamento de um modal ao clicar em cancelar
+
+```typescript
+export interface MyComponentForm {
+  modal: boolean;
+}
+
+export function Component() {
+  const form = useForm<MyComponentForm>({
+    modal: false
+  });
+
+  return (
+    <HubModal
+      opened={form.value.modal}
+      data-testid="my-component-testid"
+      header={t('my-component_modal-header')}
+      width={file ? '70vw' : '40vw'}
+      contentHeight="92vh"
+      onClose={() => form.setAll({ modal: false })}
+      actions={
+        <HubGrid row cols={['4', '4', '4']}>
+          <div />
+          <HubButton
+            full
+            variant="ghost"
+            onClick={() => form.setAll({ modal: false })}
+          >
+            {t('reuse_cancel')}
+          </HubButton>
+        </HubGrid>
+      }
+    />
+  );
+}
+```
+
+```typescript
+it('Should be able close modal when click on cancel button', () => {
+  const closeModalBtnMock = jest.fn();
+
+  const { getByText } = renderComponent({
+    form: useFormMock<MyComponentForm>({
+      value: {
+        modal: true
+      },
+      spySetAll: closeModalBtnMock
+    })
+  });
+
+  const modalCloseBtn = getByText('reuse_cancel');
+
+  fireEvent.click(modalCloseBtn);
+
+  expect(closeModalBtnMock).toHaveBeenCalledWith({ modal: false });
+});
+```
+
+## Explicação
+
+- prmeiro criamos uma variavel que vai ser a função que vamos chamar e observar se ela foi chamada no expect()
+
+```typescript
+const closeModalBtnMock = jest.fn();`
+```
+
+- Setamos as variaveis necessárias para o modal abrir
+- Passamos a função que será chamada no componente dentro da função, no caso formModalStatus.setAll(), então colocamos spySetAll: closeModalBtnMock, para observarmos se closeModalBtnMock vai ser chamada
+
+```typescript
+const { getByText } = renderComponent({
+  formModalStatus: useFormMock<MyComponentStatus>({
+    value: {
+      modal: true
+    },
+    spySetAll: closeModalBtnMock
+  })
+});
+```
+
+- Pegamos através do texto do botão, o elemento de botão que será clicado e ao clicar, executar a função
+
+```typescript
+const modalCloseBtn = getByText('reuse_cancel');
+```
+
+- Usamos a função fireEvent.click(), para executar um clique no botão, passando por parâmetro, o botão que queremos clicar
+
+```typescript
+fireEvent.click(modalCloseBtn);
+```
+
+- Por Final esperamos que a função closeModalBtnMock, seja chamada pelo clique do botão e esperamos que tenha chamado com modal: false do jeito que o index.tsx necessita
+
+```typescript
+expect(closeModalBtnMock).toHaveBeenCalledWith({ modal: false });
+```
+
+> Próximo passo... [Inputs ✍🏻](/?path=/docs/guide-testing-inputs--page)
+
+---
+
+Keep calm and code on 🤘.

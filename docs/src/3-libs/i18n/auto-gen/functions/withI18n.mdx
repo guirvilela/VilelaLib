@@ -1,0 +1,97 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/I18n/functions/withI18n" />
+
+
+
+[**I18n Library**](/?path=/docs/libs-i18n-overview--page) • **Docs**
+
+***
+
+[I18n Library](/?path=/docs/libs-i18n-overview--page) / withI18n
+
+# Function: withI18n()
+
+```ts
+function withI18n(v: Lang<Promise<any> | Promise<any>[]>): (Component: any) => NamedExoticComponent<object>
+```
+
+Função utilizada para adicionar as traduções de uma pagina (pode ser utilizada com composition)
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`v`
+
+</td>
+<td>
+
+[`Lang`](/?path=/docs/libs-i18n-type-aliases-lang)\<[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\> \| [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>[]\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Function`
+
+### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`Component`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Returns
+
+`NamedExoticComponent`\<`object`\>
+
+## Example
+
+```ts
+export default compose(
+  withI18n({
+    [Locale.EN_US]: import('~/i18n/cadastro-page/areas-page/en_US.json'),
+    [Locale.PT_BR]: import('~/i18n/cadastro-page/areas-page/pt_BR.json')
+  })
+)(CadastroAreasPage);
+```
+
+## Defined in
+
+providers/index.tsx:161
+
+
+***
+
+Keep calm and code on 🤘.

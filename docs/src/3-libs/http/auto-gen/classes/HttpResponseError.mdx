@@ -1,0 +1,195 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/classes/HttpResponseError" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / HttpResponseError
+
+# Class: HttpResponseError\<T, B, P, U\>
+
+Classe responsavel por construir e padronizar as respostas de chamada HTTP (se erro, status >= 400)
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`B` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`P` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`U` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Constructors
+
+### new HttpResponseError()
+
+```ts
+new HttpResponseError<T, B, P, U>(
+   status?: number, 
+   data?: any, 
+   configs?: HttpConfig<B, P, T, U, Record<string, any>>, 
+headers?: Headers): HttpResponseError<T, B, P, U>
+```
+
+#### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`status`?
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`data`?
+
+</td>
+<td>
+
+`any`
+
+</td>
+<td>
+
+`[]`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`?
+
+</td>
+<td>
+
+[`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`B`, `P`, `T`, `U`, [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>\>
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`headers`?
+
+</td>
+<td>
+
+[`Headers`](https://developer.mozilla.org/docs/Web/API/Headers)
+
+</td>
+<td>
+
+`undefined`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Returns
+
+[`HttpResponseError`](/?path=/docs/libs-http-classes-httpresponseerror)\<`T`, `B`, `P`, `U`\>
+
+#### Defined in
+
+utils/response.ts:50
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Modifier</th><th>Type</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`configs`</td><td>`public`</td><td>[`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`B`, `P`, `T`, `U`, [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>\></td><td>utils/response.ts:47</td></tr>
+<tr><td>`headers`</td><td>`public`</td><td>[`Headers`](https://developer.mozilla.org/docs/Web/API/Headers)</td><td>utils/response.ts:48</td></tr>
+<tr><td>`message`</td><td>`public`</td><td>`string`</td><td>utils/response.ts:45</td></tr>
+<tr><td>`results`</td><td>`public`</td><td>`T`</td><td>utils/response.ts:46</td></tr>
+<tr><td>`status`</td><td>`public`</td><td>[`HttpStatus`](/?path=/docs/libs-http-type-aliases-httpstatus)</td><td>utils/response.ts:44</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

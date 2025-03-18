@@ -1,0 +1,77 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Azure" />
+
+# Azure Cloud
+
+Utilizamos essa seção para compartilhar conhecimento sobre devops e azure cloud.
+
+## CLI
+
+**Login**
+
+```bash
+az login
+```
+
+### Comandos uteis para WEB APP
+
+**Informações sobre o webapp**
+
+```bash
+az webapp show --resource-group {resourceGroupName} --webapp-name {webappName}
+```
+
+**Change state (start, stop)**
+
+```bash
+az webapp {start/stop/restart} --resource-group {resourceGroupName} --webapp-name {webappName}
+```
+
+**Configuração de um webapp**
+
+```bash
+az webapp config show --resource-group {resourceGroupName} --webapp-name {webappName}
+```
+
+**Lista as variaveis de ambiente de um webapp**
+
+```bash
+az webapp config appsettings list --resource-group {resourceGroupName} --webapp-name {webappName}
+az webapp config connection-string list --resource-group {resourceGroupName} --webapp-name {webappName}
+```
+
+**Mudar configuração de um webapp**
+
+```bash
+az webapp config set --resource-group {resourceGroupName} --webapp-name {webappName} --net-framework-version "v4.0"
+az webapp config set --resource-group {resourceGroupName} --webapp-name {webappName} --windows-fx-version "DOTNETCORE|2.1"
+az webapp config set --resource-group {resourceGroupName} --webapp-name {webappName} --linux-fx-version "NODE|16-lts"
+```
+
+**Mudar dominio customizado de um webapp**
+
+```bash
+az webapp config hostname list --resource-group {resourceGroupName} --webapp-name {webappName}
+```
+
+**Mudar certificado HTTPS de um webapp**
+
+```bash
+az webapp config ssl unbind --certificate-thumbprint {thumbprint} --resource-group {resourceGroupName} --name {webappName}
+az webapp config ssl bind --certificate-thumbprint {thumbprint} --resource-group {resourceGroupName} --name {webappName} --ssl-type SNI
+```
+
+### Comandos uteis para APPLICATION GATEWAY
+
+**Start/Stop gateway**
+
+```bash
+az network application-gateway stop --resource-group {resourceGroupName} --name {gatewayName}
+
+az network application-gateway start --resource-group {resourceGroupName} --name {gatewayName}
+```
+
+---
+
+Keep calm and code on 🤘.

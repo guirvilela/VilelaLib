@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubSection component matches snapshot 1`] = `
+<DocumentFragment>
+  .c1 {
+  padding: 8px 16px;
+  font-weight: 700;
+  color: #083350;
+  background-color: #E8EEF4;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.c3 {
+  width: 100%;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0 .c2 {
+  padding: 16px 8px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2 c3"
+    />
+  </div>
+</DocumentFragment>
+`;

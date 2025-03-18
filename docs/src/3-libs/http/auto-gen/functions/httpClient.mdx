@@ -1,0 +1,149 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/httpClient" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / httpClient
+
+# Function: httpClient()
+
+```ts
+function httpClient<T, B, P, U>(
+   this: any, 
+   url: string, 
+configs: HttpConfig<B, P, T, U, Record<string, any>>): () => Promise<HttpResponse<T, B, P, U>>
+```
+
+Função para realizar chamada HTTP sem necessidade de provider
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`B` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`P` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`U` *extends* `object`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`url`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`
+
+</td>
+<td>
+
+[`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`B`, `P`, `T`, `U`, [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Function`
+
+### Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<[`HttpResponse`](/?path=/docs/libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\>
+
+## Defined in
+
+utils/client.ts:82
+
+
+***
+
+Keep calm and code on 🤘.

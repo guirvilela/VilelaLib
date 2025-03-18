@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubFilters component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  gap: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  width: 100%;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Nunito Sans;
+  font-size: 14px;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  line-height: 1.6666666666666667;
+  margin-bottom: 4px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c1 .c3 {
+  border: 1px solid #A2B2BF;
+  background-color: #FFFFFF;
+  padding: 8px;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    -webkit-box-pack: start;
+    -webkit-justify-content: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    width: 100%;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      readonly=""
+    >
+      <label
+        class="c2"
+        for="hub-text-field-field-a"
+      >
+        field-a
+      </label>
+      <div
+        class="c3 c4"
+      >
+        <input
+          autocomplete="off"
+          class=""
+          id="hub-text-field-field-a"
+          readonly=""
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="c1"
+      readonly=""
+    >
+      <label
+        class="c2"
+        for="hub-text-field-field-b"
+      >
+        field-b
+      </label>
+      <div
+        class="c3 c4"
+      >
+        <input
+          autocomplete="off"
+          class=""
+          id="hub-text-field-field-b"
+          readonly=""
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

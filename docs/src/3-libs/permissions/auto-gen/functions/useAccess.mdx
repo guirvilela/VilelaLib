@@ -1,0 +1,80 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Permissions/functions/useAccess" />
+
+
+
+[**Permissions Library**](/?path=/docs/libs-permissions-overview--page) • **Docs**
+
+***
+
+[Permissions Library](/?path=/docs/libs-permissions-overview--page) / useAccess
+
+# Function: useAccess()
+
+```ts
+function useAccess(v: number[]): (undefined | {
+  byLevel: (level: AccessLevel | AccessLevel[]) => boolean;
+  canAdd: false;
+  canDelete: false;
+  canEdit: false;
+  canRead: false;
+ })[]
+```
+
+Função que pode ser utilizada nas controllers para verificar o acesso do usuario a uma ou mais funcionalidades
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`v`
+
+</td>
+<td>
+
+`number`[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+(`undefined` \| \{
+  `byLevel`: (`level`: [`AccessLevel`](/?path=/docs/libs-permissions-enumerations-accesslevel) \| [`accesslevel`](-?path=-docs-libs-permissions-enumerations-accesslevel)[]) => `boolean`;
+  `canAdd`: `false`;
+  `canDelete`: `false`;
+  `canEdit`: `false`;
+  `canRead`: `false`;
+ \})[]
+
+## Example
+
+```ts
+const [acesso123, acesso456] = useAccess([123, 456]);
+
+acesso123?.canRead = true/false
+acesso123?.canAdd = true/false
+acesso456?.canEdit = true/false
+acesso456?.canDelete = true/false
+```
+
+## Defined in
+
+index.tsx:221
+
+
+***
+
+Keep calm and code on 🤘.

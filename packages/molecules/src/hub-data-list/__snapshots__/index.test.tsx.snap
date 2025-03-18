@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubDataList component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+@media print {
+  .c1 {
+    max-height: unset;
+    height: auto;
+    overflow: unset;
+  }
+}
+
+<ul
+    class="c0 c1"
+  />
+</DocumentFragment>
+`;

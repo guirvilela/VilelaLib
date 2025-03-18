@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Login-Providers/Overview" />
+
+# Login Providers
+
+Esta biblioteca contem e deve somente conter codigo relacionado a login em providers externo (microsoft, gmail e etc).
+
+## Como utilizar
+
+```
+npm i @hubert/login-providers
+```
+
+```jsx
+<SigninWithMicrosoft
+  clientID={config.backend.clientIDMicrosoft}
+  onClick={(token) =>
+    form.setAll({
+      provider: LoginProvider.Microsoft,
+      token
+    })
+  }
+  onError={setProviderError}
+/>
+
+<SigninWithGoogle
+  clientID={config.backend.clientIDGoogle}
+  onClick={(token) =>
+    form.setAll({
+      provider: LoginProvider.Google,
+      token
+    })
+  }
+  onError={setProviderError}
+/>
+```
+
+Keep calm and code on 🤘.

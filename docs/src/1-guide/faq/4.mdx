@@ -1,0 +1,39 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/FAQ/Adicionar icone na lib" />
+
+> [Voltar ao sumário](/?path=/docs/guide-faq-summary--page)
+
+## Adicionar icone na lib
+
+Para adicionar um ou mais icones na lib, siga as seguintes instruções:
+
+- Baixe o arquivo em SVG
+- Adicionar na pasta de icones (packages/styles/src/icons)
+- Renomear o arquivo com base no estilo do mesmo:
+  - Sem backgroud color "icon-outline-\{nome\}.svg"
+  - Com backgroud color "icon-solid-\{nome\}.svg"
+- Rodar `npm run build -w packages/styles` para criar o arquivo final buildado
+- Rodar `npm run dev -w docs` para o script adicionar o icone na docs
+- Criar PR e nela só pode conter os seguintes arquivos:
+
+![adicionar-icone](/assets/img/faq/faq-adicionar-icone-na-lib-1.png)
+
+**Obs: É muito importe que realize a limpeza do svg, pois podemos ter problema para aplicar o css do HubIcon apos a publicação.**
+
+### Limpeza do SVG
+
+Ao exportar um svg de alguma ferramenta Adobe ou Figma (as vezes), o codigo fonte pode vir com elementos que não utilizamos, como grupos, mascaras e camadas.
+
+Siga os passos a seguir:
+
+- Abrir o arquivo utilizando o figma
+- Desagrupar os elementos deixando apenas os vetores no mesmo nivel
+- Tentar remover as mascaras, movendo os vetores para fora do elemento (pode não ser possivel, peça ajuda para mais alguem)
+- Selecionar todos elementos que sobraram e copiar como svg, substituindo o codigo fonte anterior.
+
+---
+
+> [Voltar ao sumário](/?path=/docs/guide-faq-summary--page)
+
+Keep calm and code on 🤘.

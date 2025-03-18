@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubPasswordStrength component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.c1 {
+  width: 50px;
+  height: 6px;
+  border-radius: 12px;
+  background-color: #D7850B;
+}
+
+.c2 {
+  width: 50px;
+  height: 6px;
+  border-radius: 12px;
+  background-color: #E8EEF4;
+}
+
+.c3 {
+  font-family: Nunito Sans;
+  font-size: 14px;
+  line-height: 1.6666666666666667;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  color: #304A5D;
+  margin-left: 8px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      color="#D7850B"
+    />
+    <div
+      class="c1"
+      color="#D7850B"
+    />
+    <div
+      class="c1"
+      color="#D7850B"
+    />
+    <div
+      class="c2"
+      color="#E8EEF4"
+    />
+    <div
+      class="c2"
+      color="#E8EEF4"
+    />
+    <span
+      class="c3"
+    >
+      média
+    </span>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubTime component matches snapshot 1`] = `
+<DocumentFragment>
+  .c5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  -webkit-transition: background-color,outline 0.5s;
+  transition: background-color,outline 0.5s;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: #083350;
+}
+
+.c5:disabled {
+  color: #CAD3E1;
+}
+
+.c5:hover:not(:disabled) {
+  color: #08273C;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  width: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+}
+
+.c6 svg {
+  height: inherit;
+  width: inherit;
+  min-width: inherit;
+  -webkit-transition: 0.3s ease-in-out -webkit-transform;
+  -webkit-transition: 0.3s ease-in-out transform;
+  transition: 0.3s ease-in-out transform;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+}
+
+.c3 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.c0 .c1 {
+  border: 1px solid #A2B2BF;
+  background-color: #FFFFFF;
+  padding: 4px 8px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <input
+        autocomplete="off"
+        class=""
+        id="hub-text-field-hub-time-"
+        type="text"
+        value=""
+      />
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        width="auto"
+      >
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c6"
+          >
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m17 13.41-4.29-4.24a1.001 1.001 0 0 0-1.42 0l-4.24 4.24a1 1 0 1 0 1.41 1.42L12 11.29l3.54 3.54a1 1 0 0 0 1.41 0 .999.999 0 0 0 .05-1.42Z"
+                fill="#083350"
+              />
+            </svg>
+          </div>
+        </button>
+        <button
+          class="c5"
+          type="button"
+        >
+          <div
+            class="c6"
+          >
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a.999.999 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42Z"
+                fill="#083350"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

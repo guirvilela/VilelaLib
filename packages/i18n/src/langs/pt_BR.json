@@ -1,0 +1,82 @@
+{
+  "hub-password-strength_very-weak": "muito fraca",
+  "hub-password-strength_weak": "fraca",
+  "hub-password-strength_average": "média",
+  "hub-password-strength_strong": "forte",
+  "hub-password-strength_very-strong": "muito forte",
+
+  "hub-dropdown_empty": "Não há dados",
+
+  "hub-file-upload_title-blue": "Clique para enviar",
+  "hub-file-upload_title-content": "ou arraste e solte aqui",
+  "hub-file-upload_title-drop": "Solte para enviar.",
+  "hub-file-upload_ext-title": "Formatos aceitos: ",
+  "hub-file-upload_ext-content": "até ",
+  "hub-file-upload_selected-multi": "arquivos selecionados.",
+  "hub-file-upload_selected": "Arquivo selecionado:",
+  "hub-file-upload_remove": "Clique aqui para remover.",
+
+  "hub-pagination_prev-label": "Anterior",
+  "hub-pagination_next-label": "Próximo",
+  "hub-pagination_results-label": "Resultado: ",
+  "hub-pagination_results-of-label": " de ",
+
+  "hub-data-table-empty_title": "Nenhum resultado encontrado",
+  "hub-data-table-empty_content": "Por favor faça uma nova pesquisa.",
+
+  "hub-filters_title": "Filtros",
+  "hub-filters_btn-search": "Pesquisar",
+
+  "hub-calendar_period-1": "DOM.",
+  "hub-calendar_period-2": "SEG.",
+  "hub-calendar_period-3": "TER.",
+  "hub-calendar_period-4": "QUA.",
+  "hub-calendar_period-5": "QUI.",
+  "hub-calendar_period-6": "SEX.",
+  "hub-calendar_period-7": "SÁB.",
+  "hub-calendar_today": "Hoje",
+  "hub-calendar_month-1": "Janeiro",
+  "hub-calendar_month-2": "Fevereiro",
+  "hub-calendar_month-3": "Março",
+  "hub-calendar_month-4": "Abril",
+  "hub-calendar_month-5": "Maio",
+  "hub-calendar_month-6": "Junho",
+  "hub-calendar_month-7": "Julho",
+  "hub-calendar_month-8": "Agosto",
+  "hub-calendar_month-9": "Setembro",
+  "hub-calendar_month-10": "Outubro",
+  "hub-calendar_month-11": "Novembro",
+  "hub-calendar_month-12": "Dezembro",
+
+  "hub-list_loadmore": "Carregando mais...",
+  "hub-table_loadmore": "Carregando mais...",
+
+  "hub-feedback_title-success": "Tudo certo",
+  "hub-feedback_title-error": "Ops!",
+  "hub-feedback_title-info": "Aviso",
+  "hub-feedback_title-warning": "Cuidado",
+  "hub-feedback_done": "Ok",
+
+  "hub-phone-modal-title": "Escolha o país",
+  "hub-phone-modal-search": "Procurar país ou código",
+
+  "hub-condominio-select_loading": "Carregando...",
+
+  "hub-yes-no_done": "Sim",
+  "hub-yes-no_cancel": "Não",
+
+  "hub-modal-right_title": "Mais filtros",
+  "hub-modal-right_close": "Fechar",
+  "hub-modal-right_done": "Concluir",
+
+  "hub-webcam_alt": "Alterar câmera",
+  "hub-webcam_clear": "Tirar outra foto",
+  "hub-webcam_send": "Enviar",
+  "hub-webcam_capture": "Capturar foto",
+  "hub-webcam_error": "Houve um problema ao acessar a câmera. Por favor, entre em contato com o suporte para assistência.",
+  "hub-webcam_no-device": "Nenhum dispositivo encontrado!",
+
+  "hub-photo-upload_tooltip": "Alterar foto?",
+  "hub-photo-upload_upload": "Enviar do computador",
+  "hub-photo-upload_camera": "Utilizar a câmera"
+}

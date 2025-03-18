@@ -1,0 +1,93 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Librarys Repo" />
+
+# Repositorio de codigo compartilhado e documentação
+
+### Bibliotecas
+
+Bibliotecas de compartilhamento de código permitem que as equipes de desenvolvimento colaborem em projetos, trabalhando com códigos e recursos compartilhados em vez de recriar tudo a partir do zero. Isso também ajuda a garantir a consistência do código e a manter os padrões de qualidade.
+
+### Documentação
+
+Uma documentação técnica tem como objetivo fornecer informações detalhadas sobre o funcionamento e a implementação de um produto ou sistema de software. Ela é importante para ajudar no entendimento e na manutenção do código, além de facilitar a integração com outras aplicações e a colaboração entre os membros da equipe de desenvolvimento.
+
+A documentação técnica pode incluir descrições detalhadas das funcionalidades do sistema, das APIs disponíveis, dos algoritmos utilizados, das arquiteturas de software, dos requisitos de hardware e software, dos padrões e práticas de codificação, dos casos de teste, das configurações de ambiente, dentre outras informações relevantes para a construção e manutenção do sistema.
+
+## Como contribuir
+
+Para clonar o projeto em que concentramos todas as libs e documentação, siga os proximos passos:
+
+1. Acesse o **Azure DevOps**, em **Repos**, selecione o projeto `hubert.lib.front` e faça o clone desse projeto.
+
+> Mais detalhes de como clonar utilizando GIT... [Git, Repo e como clonar projetos 💾](/?path=/docs/guide-2-git--page)
+
+2. Entre na pasta criada e execute a instalação das dependecias:
+
+```
+npm i
+```
+
+3. Recomendado buildar todas os pacotes, antes de começar o desenvolvimentos (a maioria das libs dependem de outras libs diretamente do projeto):
+
+```
+npm run build
+```
+
+4. Finalizando a instalação utilize o comando abaixo para iniciar o projeto da lib que gostaria de modificar:
+
+```sh
+npm run dev -w packages/atoms
+```
+
+5. E utilize o comando abaixo para iniciar o projeto da documentação:
+
+```sh
+npm run dev -w docs
+```
+
+Utilize o link `http://localhost:3001` para visualizar as modificações em realtime.
+
+> Utilizamos o proprio projeto da documentação para testar as implementações executadas nas libs, isso ocorre em realtime e sempre que modificar algo atualize os testes e a documentação do mesmo, assim mantemos todos os codigos testado e documentado 🙏!
+
+### Monorepo
+
+Monorepo é um conceito de arquitetura de software que consiste em manter todo o código de um projeto em um único repositório de controle de versão, em vez de dividir o código em vários repositórios menores. Em outras palavras, todas as partes de um projeto são gerenciadas em um único lugar. Isso significa que um monorepo pode conter vários aplicativos, bibliotecas, documentação e outras dependências necessárias para o projeto. Essa abordagem pode simplificar a manutenção do código, a colaboração entre equipes e a garantia da consistência do código em todo o projeto. Grandes empresas de tecnologia como Google, Facebook e Microsoft usam o monorepo para gerenciar o código de seus projetos.
+
+**Utilizamos o [NPM Workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) para gerencias o monorepo.**
+
+Para instalar dependencias, executar ou buildar algum pacote expecifico, utilize o seguite padrão de comandos:
+
+```sh
+npm i # instala/atualiza todas as dependencias
+npm i -w docs/ lodash@1.0.0 # instala uma lib na documentacao
+npm i -w packages/atoms lodash@1.0.0 # instala uma lib no pacote @hubert/atoms
+
+npm run dev -w docs/ # executa a documentacao
+npm run dev -w packages/atoms # executa o pacote @hubert/atoms
+npm run build -w packages/ # build todos os pacotes dentro da pasta packages/
+npm run build -w docs # build somente a documentacao
+npm run test -ws # dispara todos os testes em todos os pacotes incluindo a documentacao
+```
+
+### Markdown
+
+Markdown é uma linguagem de marcação simples que é frequentemente usada para escrever documentação técnica, arquivos README para projetos de código aberto, posts de blogs, entre outros. A linguagem foi criada por John Gruber em 2004 com o objetivo de permitir que os usuários escrevam conteúdo com formatação básica usando uma sintaxe fácil de ler e escrever. O Markdown é convertido em HTML, PDF e outros formatos de saída usando ferramentas de conversão de Markdown. A sintaxe do Markdown inclui elementos como cabeçalhos, listas, ênfase em texto, links e imagens, entre outros.
+
+**A documentação de components pode ser feita em Typescript, seguindo o exemplos dos components já existente e em alguns casos pode-se utilizar markdown tambem. Em caso de textos e imagens sempre utilize markdown!**
+
+> Caso necessite de ajuda com os comandos utilize a wiki no [GitHub](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+
+### Pipelines
+
+Por padrão todos os projetos possui uma pasta `deploy` contendo todos os pipelines necessarios para o [CI/CD](/?path=/docs/guide-7-devops--page), somente no projeto da lib concentramos `templates` de pipeline para ser reutilizado em outros projetos garantindo assim um compartilhamento de codigo tambem para o DevOps da Hubert.
+
+## This is the end...
+
+Parabêns você chegou ao fim do guia de desenvolvimento, utilize o conhecimento adquirido aqui e ao longo do tempo, para compartilhar novas experiências com o time e quem sabe adicionar melhorias nas bibliotecas, design system e documentação!
+
+![](https://i.gifer.com/ICU.gif)
+
+---
+
+Keep calm and code on 🤘.

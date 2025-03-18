@@ -1,0 +1,93 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/functions/enumToObject" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / enumToObject
+
+# Function: enumToObject()
+
+```ts
+function enumToObject<T>(en: T): {
+  key: T;
+  value: keyof T;
+}
+```
+
+Get object from enum entries
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T` *extends* `object`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`en`
+
+</td>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+```ts
+{
+  key: T;
+  value: keyof T;
+}
+```
+
+Object 'key:value'
+
+<table>
+<tr><th>Name</th><th>Type</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`key`</td><td>`T`</td><td>utils/object.ts:32</td></tr>
+<tr><td>`value`</td><td>keyof `T`</td><td>utils/object.ts:32</td></tr>
+</table>
+
+## Defined in
+
+utils/object.ts:26
+
+
+***
+
+Keep calm and code on 🤘.

@@ -1,0 +1,106 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/functions/generateImage" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / generateImage
+
+# Function: generateImage()
+
+```ts
+function generateImage<T>(el: null | T, options?: Options): Promise<any>
+```
+
+Generate Image from HTML and return url as base64
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T` *extends* [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`el`
+
+</td>
+<td>
+
+`null` \| `T`
+
+</td>
+<td>
+
+HTMLElement (elemento html que sera utilizado)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options`?
+
+</td>
+<td>
+
+`Options`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`any`\>
+
+## Example
+
+```ts
+const url = await generateImage(document.getElementById('asd'));
+const url = await generateImage(elementRef.content);
+```
+
+## Defined in
+
+image/index.ts:122
+
+
+***
+
+Keep calm and code on 🤘.

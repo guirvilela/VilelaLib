@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubRadio component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  border-radius: 50%;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
+}
+
+.c3 {
+  display: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .c1 {
+  background-color: #FFFFFF;
+  border: 1px solid #A2B2BF;
+  min-width: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+<div
+    class="c0"
+    id="test"
+  >
+    <div
+      class="c1 c2"
+      id="hub-radio-icon-test"
+    />
+    <input
+      class="c3"
+      id="hub-radio-test"
+      type="radio"
+    />
+  </div>
+</DocumentFragment>
+`;

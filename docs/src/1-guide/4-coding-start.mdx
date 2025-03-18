@@ -1,0 +1,103 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Coding Start" />
+
+# Como começar a desenvolver
+
+![](https://i.gifer.com/2AC.gif)
+
+### Primeiro start do projeto
+
+- clone o projeto
+- instale os pacotes utilizando o `npm install` (**nao use o yarn para instalar, particularidade do nosso ci/cd**)
+- copie o arquivo `.env.example` e renomei para `.env`
+- preencha as variaveis de ambiente no arquivo `.env`
+- rode o projeto em modo de desenvolvimento (npm run dev)
+- abra a url `http://localhost:3000` no navegador de sua preferencia (existe projetos que utilizam outras portas, leia o README de cada projeto tambem)
+
+### Primeiro passo antes de codar
+
+Crie uma branch, seguindo o padrao do conversional commits `feat/, fix/, epic/` + o nome da branch (e.g - preciso corrigir um bug no botao de login apos preencher o usuario e senha, entao crio a branch `fix/login-page-btn-submit`; e.g 2 - preciso adicionar uma funcionalidade nova na tela de login que avisara ao usuario que ele precisar trocar a senha, entao crio `feat/login-page-message-password-policy`).
+
+> Lembre de sempre rodar `npm install` após criar uma branch, quando o seu projeto estiver desatualizado, pois pode ter alterações em pacotes e libs.
+
+### Primeiro componente
+
+Crie uma pasta com o nome do component, dentro da pasta dos components da pagina que ira utilizar este component (e.g - preciso criar um formulario de login para pagina de login, crio entao uma pasta `src/components/login-page/login-page-form`), dentro dessa pasta crio o `index.tsx` que ira conter meu codigo react.
+
+### Primeiro estilos
+
+Crie um arquivo chamado `styles.ts`, dentro da pasta do meu component, nele deve conter todos os estilos que somente meu component pode utilizar.
+
+### Primeira pagina
+
+Crie uma pasta com o nome da `feature/rota`, dentro da pasta `src/pages`, crie tmb a pasta mae que ira conter todos os components burros na pasta `src/component` e crio a pasta do controller em `src/hooks` que contera o hook com a logica da pagina (e.g - pagina de login, crio a pagina/rota `src/pages/login`, a pasta mae `src/components/login-page` e o controller em `src/hooks/login-page/login-page-controller`).
+
+### Primeira http request
+
+Caso seja um novo endpoint dentro de uma API existente, verifique dentro da pasta `src/services`, se o servico já existe e simplemente adicione o novo endpoint como metodo da classe desse servico existente, não esqueca de criar os tipos dentro do arquivo `types.ts` desse servico.
+
+Caso seja uma nova a API, crie uma nova pasta em `src/services`, com o servico em formato de classe no arquivo `index.ts` e as interfaces que serao utilizadas como tipos de parametros das requests e das respostas dos endpoints em `types.ts` (e.g - o backend criou um novo endpoint na API de _cadastro_ com o nome _pagamentos_, nele contem os endpoints _get pagamentos_, crio entao um novo servico `src/services/cadastro/pagamentos`, na classe principal com nome `CadastroPagamentosService` em `src/services/cadastro/pagamentos/index.ts`, crio o metodos _getPagamentos_, no arquivo `src/services/cadastro/pagamentos/types.ts` adiciono as interfaces, _GetPagamentosRequest_ (com os parametros da request _getPagamentos_) e _GetPagamentosResponse_ (com os campos retornados pelo _getPagamentos_) ).
+
+Para usar o servico criado ou existente, basta utilizar o hook `useService()` dentro do controller de sua feature...
+
+```ts
+const pagamentos = useService((h) => new CadastroPagamentosService(h));
+```
+
+Ou para multiplos serviços...
+
+```ts
+const services = useService((h) => ({
+  accounts: new AccountsService(h),
+  pagamentos: new CadastroPagamentosService(h)
+}));
+```
+
+### Primeira PR
+
+Após criar sua branch e codar a tarefa que lhe foi atribuida, crie seus commits separando o codigo da forma mais organizadas possivel para realizarmos o code-review posteriormente, de um git push para o remote.
+Acesse o link de PR do repositorio [Azure DevOps](https://dev.azure.com/hubert-vso/dev/_git/hubert.app.validacaocadastral/pullrequests?_a=active).
+Clique em _New pull request_, troque o apontamento de branch da forma correta (sua branch -> develop). Adicione ao corpo da PR as mensagens dos commits (clique em _Add commit messages_), para o titulo da PR siga o mesmo padrão de mensagem de commit, clique em _Create_ e após finalizar mande o link da PR (https://.../hubert.app.validacaocadastral/pullrequest/####) no grupo dos Front-enders para realizarmos o code review.
+
+### Versionamento automatico
+
+- Crie uma nova branch a partir da `develop`, seguindo um dos padrões abaixo:
+  - `fix/***` para patch (1.0.x)
+  - `feat/***` para minor (1.x.0)
+  - `epic/***` para major (x.0.0)
+- Modifique os arquivos necessarios.
+- Faça o commit das alterações.
+- Crie o PR com o titulo seguindo um dos padrões abaixo:
+  - `fix: ***` para patch (1.0.x)
+  - `feat: ***` para minor (1.x.0)
+  - `epic: ***` para major (x.0.0)
+- Envie para o time realizar o code review.
+
+Ao completar e o pipe de DEV rodar, o mesmo atualiza-ra o package.json e criar a tag com o versionamento correto!
+
+### Outras definicoes
+
+- `src/config`: instancias das variaveis de ambiente, padronizacao das chaves e constantes utilizados no projeto
+- `src/layout`: layouts utilizados no projeto, tambem conhecido como _shell/casca/template_ com os components singleton utilizados em todas paginas
+- `src/hooks`: pasta que contem os hooks com as logicas das paginas
+- `src/i18n/{lang}.json`: arquivos com as strings de texto por idioma
+- `public/assets`: coloque aqui imagens e arquivos publicos que nao passaram pelo build, mas serao servidos pela aplicacao apos deploy
+
+## Como buidar o projeto
+
+- rode `npm run build`
+- arquivos estaticos disponivel na pasta `/out`
+
+## Como testar o projeto
+
+- rode `npm run test`
+- relatorio disponivel direto no terminal
+- relatorio disponivel na pasta `/coverage`
+- tmb possivel testar um unico component (e.g `npm run test -- src/components/###`)
+
+---
+
+> Próximo passo... [Guia de boas praticas no desenvolvimento 🧙‍♂️](/?path=/docs/guide-develop-guide--page)
+
+Keep calm and code on 🤘.

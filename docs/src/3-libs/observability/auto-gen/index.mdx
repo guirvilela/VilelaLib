@@ -1,0 +1,158 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Observability/Overview" />
+
+**Observability Library** • **Docs**
+
+***
+
+# Observability
+
+Esta biblioteca contem e deve somente conter codigo relacionado a observability (analytics e metricas).
+
+## Como utilizar
+
+```
+npm i @hubert/observability
+```
+
+Exemplo:
+
+```javascript
+import { AnalyticsProvider } from '@hubert/observability';
+```
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[AnalyticsConfig](/?path=/docs/libs-observability-interfaces-analyticsconfig)
+
+</td>
+<td>
+
+Objeto de configuração do `AnalyticsProvider`
+
+</td>
+</tr>
+<tr>
+<td>
+
+[AppInsightsConfig](/?path=/docs/libs-observability-interfaces-appinsightsconfig)
+
+</td>
+<td>
+
+Objeto de configuração do `AppInsightsProvider`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[AnalyticsProvider](/?path=/docs/libs-observability-functions-analyticsprovider)
+
+</td>
+<td>
+
+React provider que expoe todas funções do google analytics pre-configuradas.
+
+**Example**
+
+```ts
+<AnalyticsProvider configs={analyticsConfig}>
+  <OutrosComponents />
+</AnalyticsProvider>
+
+const { sendEvent } = useAnalytics();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[AppInsightsProvider](/?path=/docs/libs-observability-functions-appinsightsprovider)
+
+</td>
+<td>
+
+React provider que expoe todas funções do application insights pre-configurado.
+
+**Example**
+
+```ts
+<AppInsightsProvider configs={appInsightsConfig}>
+  <OutrosComponents />
+</AppInsightsProvider>
+
+const { trackEvent } = useAppInsights();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useAnalytics](/?path=/docs/libs-observability-functions-useanalytics)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `AnalyticsProvider`
+
+**Example**
+
+```ts
+const { sendEvent } = useAnalytics();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useAppInsights](/?path=/docs/libs-observability-functions-useappinsights)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `AppInsightsProvider`
+
+**Example**
+
+```ts
+const { trackEvent } = useAppInsights();
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

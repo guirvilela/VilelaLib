@@ -1,0 +1,150 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/functions/exportImage" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / exportImage
+
+# Function: exportImage()
+
+```ts
+function exportImage<T>(
+   name: string, 
+   el: null | T, 
+   type?: ExportImageType, 
+options?: Options): Promise<void>
+```
+
+Generate Image from HTML and download file
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+[`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+String (nome arquivo)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`el`
+
+</td>
+<td>
+
+`null` \| `T`
+
+</td>
+<td>
+
+HTMLElement (elemento html que sera utilizado)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`type`?
+
+</td>
+<td>
+
+[`ExportImageType`](/?path=/docs/libs-data-export-enumerations-exportimagetype)
+
+</td>
+<td>
+
+ExportImageType (PNG, JPEG, BLOB, SVG)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options`?
+
+</td>
+<td>
+
+`Options`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>
+
+## Example
+
+```ts
+await exportImage('nome-arquivo-x', document.getElementById('asd'));
+await exportImage('nome-arquivo-x', elementRef.content);
+```
+
+## Defined in
+
+image/index.ts:61
+
+
+***
+
+Keep calm and code on 🤘.

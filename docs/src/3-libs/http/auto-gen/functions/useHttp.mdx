@@ -1,0 +1,62 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/useHttp" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / useHttp
+
+# Function: useHttp()
+
+```ts
+function useHttp(): {
+  delete: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  get: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  patch: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  post: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  put: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+}
+```
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `HttpProvider`
+
+## Returns
+
+```ts
+{
+  delete: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  get: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  patch: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  post: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+  put: <T, B, P, U>(this: any, url: string, configs: HttpConfig<B, P, T, U, Record<string, any>>) => () => Promise<HttpResponse<T, B, P, U>>;
+}
+```
+
+<table>
+<tr><th>Name</th><th>Type</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`delete`</td><td>\<`T`, `B`, `P`, `U`\>(`this`: `any`, `url`: `string`, `configs`: [`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\></td><td>utils/client.ts:204</td></tr>
+<tr><td>`get`</td><td>\<`T`, `B`, `P`, `U`\>(`this`: `any`, `url`: `string`, `configs`: [`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\></td><td>utils/client.ts:188</td></tr>
+<tr><td>`patch`</td><td>\<`T`, `B`, `P`, `U`\>(`this`: `any`, `url`: `string`, `configs`: [`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\></td><td>utils/client.ts:200</td></tr>
+<tr><td>`post`</td><td>\<`T`, `B`, `P`, `U`\>(`this`: `any`, `url`: `string`, `configs`: [`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\></td><td>utils/client.ts:192</td></tr>
+<tr><td>`put`</td><td>\<`T`, `B`, `P`, `U`\>(`this`: `any`, `url`: `string`, `configs`: [`HttpConfig`](/?path=/docs/libs-http-interfaces-httpconfig)\<`b`, `p`, `t`, `u`, [`record`](https:--www.typescriptlang.org-docs-handbook-utility-types.html#recordkeys-type)\<`string`, `any`\>\>) => () => [`promise`](https:--developer.mozilla.org-docs-web-javascript-reference-global_objects-promise)\<[`httpresponse`](-?path=-docs-libs-http-classes-httpresponse)\<`T`, `B`, `P`, `U`\>\></td><td>utils/client.ts:196</td></tr>
+</table>
+
+## Example
+
+```ts
+const httpClient = useHttp();
+```
+
+## Defined in
+
+providers/index.tsx:14
+
+
+***
+
+Keep calm and code on 🤘.

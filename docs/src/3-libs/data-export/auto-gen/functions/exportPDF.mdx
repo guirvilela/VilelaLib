@@ -1,0 +1,118 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Data-export/functions/exportPDF" />
+
+
+
+[**Data-export Library**](/?path=/docs/libs-data-export-overview--page) • **Docs**
+
+***
+
+[Data-export Library](/?path=/docs/libs-data-export-overview--page) / exportPDF
+
+# Function: exportPDF()
+
+```ts
+function exportPDF(
+   name: string, 
+   content: ExportPDFOptions & ExportPDFTableConfig[], 
+configs?: ExportPDFConfig): Promise<void>
+```
+
+Função responsavel por criar e exportar o PDF como arquivo
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`name`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Nome do arquivo, sem extensão
+
+</td>
+</tr>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+[`ExportPDFOptions`](/?path=/docs/libs-data-export-interfaces-exportpdfoptions) & [`exportpdftableconfig`](-?path=-docs-libs-data-export-interfaces-exportpdftableconfig)[]
+
+</td>
+<td>
+
+Conteudo do PDF configurado
+
+</td>
+</tr>
+<tr>
+<td>
+
+`configs`?
+
+</td>
+<td>
+
+[`ExportPDFConfig`](/?path=/docs/libs-data-export-interfaces-exportpdfconfig)
+
+</td>
+<td>
+
+Objeto de configuração do arquivo de PDF
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+[`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\>
+
+## Example
+
+```ts
+await exportPDF(
+ 'relatorio-reservas',
+ [{
+   text: 'RELATORIO RESERVAS',
+   style: 'title',
+   alignment: 'center',
+   margin: [0, 3]
+ }],
+ {
+   pageSize: 'A4',
+   pageOrientation: 'portrait'
+ }
+);
+```
+
+## Defined in
+
+pdf/index.ts:467
+
+
+***
+
+Keep calm and code on 🤘.

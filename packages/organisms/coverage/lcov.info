@@ -1,0 +1,17 @@
+TN:
+SF:src\hub-yes-no\index.tsx
+FN:25,HubYesNo
+FNF:1
+FNH:1
+FNDA:1,HubYesNo
+DA:36,1
+DA:38,1
+LF:2
+LH:2
+BRDA:41,0,0,0
+BRDA:41,0,1,1
+BRDA:48,1,0,1
+BRDA:48,1,1,0
+BRF:4
+BRH:2
+end_of_record

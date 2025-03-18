@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubIcon component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+}
+
+.c0 svg {
+  height: inherit;
+  width: inherit;
+  min-width: inherit;
+  -webkit-transition: 0.3s ease-in-out -webkit-transform;
+  -webkit-transition: 0.3s ease-in-out transform;
+  transition: 0.3s ease-in-out transform;
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;

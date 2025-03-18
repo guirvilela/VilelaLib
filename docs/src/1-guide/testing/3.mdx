@@ -1,0 +1,148 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Testing/Primeiro teste" />
+
+> [Voltar ao sumário](/?path=/docs/guide-testing-summary--page)
+
+## Funções para identificar o componente
+
+**Padrão Test ID para capturar elementos**
+
+![testid pattern](/assets/img/tests-guide/guide-testing-testid.png)
+
+Para capturar elemtentos, usamos duas funções principais
+
+- getByText
+- getByTestId
+
+## getByText
+
+Identifica o elemento através do texto que possui em seu children
+
+**Exemplo:**
+
+```typescript
+<HubText>Texto de exemplo</HubText>
+```
+
+**index.test.tsx**
+
+```typescript
+const { getByText } = renderComponent();
+
+expect(getByText('Texto de exemplo')).toBeInTheDocument();
+
+//toBeInTheDocument() verifica se o elemento está aparecendo em tela
+```
+
+## getByTestId
+
+Identifica o elemento através da propriedade "testId", todos os componentes podem tere essa propriedade, como um ID de teste para aquele elemento.
+
+**Exemplo:**
+
+```typescript
+<HubGrid testId="mycomponent-test-grid">{...}</HubGrid>
+```
+
+**index.test.tsx**
+
+```typescript
+const { getByTestId } = renderComponent();
+
+expect(getByTestId('mycomponent-test-grid')).toBeInTheDocument();
+
+//toBeInTheDocument() verifica se o elemento está aparecendo em tela
+```
+
+# Primeiro teste
+
+### Para o primeiro teste vamos fazer uma validação simples, se os textos estão sendo renderizados corretamente
+
+**Compoente Principal (index.tsx)**
+
+```typescript
+export function MyComponent() {
+  const t = useI18nMessage();
+
+  return (
+    <HubCard pad={['2', '4']}>
+      <HubText typo="h1">{t('my-component_translate-arquivos')}</HubText>
+
+      <HubText typo="h1">{t('my-component_translate-andamento')}</HubText>
+
+      <HubText typo="h1">{t('my-component_translate-historico')}</HubText>
+
+      <HubText typo="h1">{t('my-component_translate-imposto')}</HubText>
+    </HubCard>
+  );
+}
+```
+
+**index.test.tsx**
+
+```typescript
+const renderComponent = (props?: Partial<MyComponentProps>) => {
+  return render(<MyComponent {...defaultProps} {...props} />, {
+    wrapper: wrapse(ThemeProvider, I18nProvider)
+  });
+};
+
+it('Should be able renders component with correct texts', () => {
+  const { getByText } = renderComponent();
+
+  expect(getByText('my-component_translate-arquivos')).toBeInTheDocument();
+  expect(getByText('my-component_translate-detalhes')).toBeInTheDocument();
+  expect(getByText('my-component_translate-andamento')).toBeInTheDocument();
+  expect(getByText('my-component_translate-imposto')).toBeInTheDocument();
+});
+```
+
+### Vamos testar se caso um texto apareça apenas por uma condição
+
+**Compoente Principal (index.tsx)**
+
+```typescript
+interface MyComponentProps {
+  isValid: boolean;
+}
+
+export function MyComponent({ isValid }: MyComponentProps) {
+  const t = useI18nMessage();
+
+  return (
+    <HubCard pad={['2', '4']}>
+      <HubText typo="h1">{t('my-component_translate-arquivos')}</HubText>
+
+      {isValid && <HubText typo="h1">{t('my-component_is-valid')}</HubText>}
+    </HubCard>
+  );
+}
+```
+
+**index.test.tsx**
+
+```typescript
+const renderComponent = (props?: Partial<MyComponentProps>) => {
+  return render(<MyComponent {...defaultProps} {...props} />, {
+    wrapper: wrapse(ThemeProvider, I18nProvider)
+  });
+};
+
+it('Should be able renders component with correct texts', () => {
+  const { getByText } = renderComponent({
+    isValid: true
+  });
+
+  expect(getByText('my-component_translate-arquivos')).toBeInTheDocument();
+  expect(getByText('my-component_is-valid')).toBeInTheDocument();
+});
+```
+
+se a variavel isValid for false, o teste vai falhar, pois nosso expect ta esperando que ele esteja aparecendo em tela.
+
+> Próximo passo... [Funções ✍🏻](/?path=/docs/guide-testing-funcoes--page)
+
+---
+
+Keep calm and code on 🤘.

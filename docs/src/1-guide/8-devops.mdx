@@ -1,0 +1,74 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Devops" />
+
+# DevOps
+
+DevOps é uma cultura ou prática de colaboração entre as equipes de desenvolvimento de software (dev) e de operações (ops) para agilizar o ciclo de vida de desenvolvimento de software, desde o planejamento, passando pelo desenvolvimento, teste e entrega até a produção. O objetivo é aumentar a velocidade de entrega de software com mais qualidade e confiabilidade, utilizando automação, integração e colaboração entre as equipes. Em resumo, o DevOps é uma filosofia que busca integrar o desenvolvimento e as operações para melhorar a entrega de software.
+
+## CI and CD
+
+CI (Continuous Integration) e CD (Continuous Delivery ou Continuous Deployment) são duas práticas essenciais no contexto de DevOps que visam melhorar a qualidade e a eficiência do processo de desenvolvimento de software.
+
+CI é um processo em que as alterações de código são integradas em um repositório central e, em seguida, são automaticamente construídas e testadas para identificar possíveis problemas precocemente. Com isso, a equipe pode ter uma resposta rápida sobre a qualidade do código e garantir que não haja problemas de integração.
+
+Já o CD é o processo que visa automatizar o lançamento de novas funcionalidades e atualizações em produção de forma contínua. Com o CD, é possível reduzir o tempo entre a criação de uma nova funcionalidade e a entrega dessa funcionalidade ao usuário final. O CD pode ser dividido em duas categorias: Continuous Delivery e Continuous Deployment.
+
+No Continuous Delivery, todas as mudanças são testadas e compiladas automaticamente, mas a decisão final de implantar ou não no ambiente de produção é manual. Já no Continuous Deployment, as alterações são automaticamente implantadas no ambiente de produção assim que passam pelos testes e compilações.
+
+## Azure DevOps
+
+O Azure DevOps é uma ferramenta completa de DevOps que permite a aplicação de CI/CD em projetos de software. Para isso, ele possui várias funcionalidades que permitem criar pipelines de integração e entrega contínuas.
+
+Na prática, isso significa que é possível configurar pipelines automatizados que realizam tarefas como compilar o código-fonte, executar testes automatizados, gerar pacotes de instalação, implantar a aplicação em ambientes de testes e produção, além de outras tarefas que sejam necessárias para o processo de desenvolvimento e entrega do software.
+
+O Azure DevOps oferece uma série de ferramentas para a criação desses pipelines, incluindo o Azure Pipelines (para a criação de pipelines de compilação e implantação), o Azure Boards (para o gerenciamento de projetos e tarefas), o Azure Repos (para o controle de versão de código-fonte), entre outros.
+
+Para implementar CI/CD no Azure DevOps, é necessário criar um pipeline de integração e entrega contínuas que irá automatizar todo o processo de construção, testes e implantação da aplicação. Isso é feito por meio da definição de um conjunto de etapas que serão executadas de forma automatizada sempre que houver uma alteração no código-fonte.
+
+Algumas das etapas comuns em um pipeline de CI/CD incluem a obtenção do código-fonte do repositório, a compilação do código, a execução de testes automatizados, a geração de artefatos de implantação, a implantação em ambientes de testes e, por fim, em ambientes de produção.
+
+Com a implementação de um pipeline de CI/CD no Azure DevOps, é possível garantir que as alterações no código-fonte sejam validadas e testadas de forma automática antes de serem implantadas em ambientes de produção. Isso aumenta a qualidade do software e reduz o risco de problemas e falhas em produção.
+
+## Na pratica
+
+Temos 3 pipelines para cada ambiente de a ser distribuido e pipelines auxiliares para configuração e rotinas de testes unitarios e/ou validação de PRs.
+
+> [Documentação oficial](https://learn.microsoft.com/pt-br/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)
+
+> [Veja aqui os pipes existentes...](https://dev.azure.com/hubert-vso/dev/_build?view=folders&treeState=XGZyb250ZW5k)
+
+## Templates de pipelines
+
+Templates de pipelines no Azure são modelos pré-definidos que facilitam a criação de pipelines de CI/CD no Azure DevOps. Eles são úteis para padronizar e automatizar os processos de build e deployment de um projeto, permitindo que os desenvolvedores foquem no código em si.
+
+Ao utilizar um template, é possível definir um conjunto de etapas e tarefas comuns a todas as pipelines de um projeto, evitando assim a necessidade de replicar manualmente essas mesmas etapas em cada pipeline individualmente. Isso pode economizar tempo e reduzir a probabilidade de erros de configuração.
+
+Além disso, os templates de pipelines no Azure também permitem a reutilização de configurações de pipeline em diferentes projetos, tornando a manutenção e a atualização mais fácil e consistente em toda a organização.
+
+### Como utilizar
+
+Após as definições de triggers, adicione o codigo abaixo:
+
+```yml
+resources:
+  repositories:
+    - repository: lib
+      type: git
+      name: dev/hubert.lib.front
+```
+
+Na steps ou jobs, adicione os templates desejados, exemplo:
+
+```yml
+steps:
+  - template: deploy/templates/install-nodejs.yml@lib
+```
+
+> Explicação: o '@lib' refere-se ao '- repository: lib' e o 'deploy/templates/install-nodejs.yml' é o caminho do arquivo dentro do repositorio 'hubert.lib.front' no projeto 'dev'.
+
+---
+
+> Próximo passo... [Biblioteca externas 🛠](/?path=/docs/guide-third-party-libs--page)
+
+Keep calm and code on 🤘.

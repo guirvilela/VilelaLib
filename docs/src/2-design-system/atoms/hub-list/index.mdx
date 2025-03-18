@@ -1,0 +1,52 @@
+import { HubGrid, HubList, HubListItem } from '@hubert/atoms';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { TEXT } from '~/utils';
+import { HubListConfig, HubListItemConfig } from './storyConfig';
+
+<Meta title="Design System/Atoms/HubList" />
+
+# HubListItem
+
+```
+import { HubListItem } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={HubListItemConfig.args}
+    argTypes={HubListItemConfig.props}
+  >
+    {(args) => (
+      <HubGrid width="300px" fluid>
+        <HubListItem {...args} />
+      </HubGrid>
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+# HubList
+
+```
+import { HubList, HubListItem } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story name="Usage" args={HubListConfig.args} argTypes={HubListConfig.props}>
+    {(args) => {
+      return (
+        <HubGrid width="300px" fluid>
+          <HubList {...args}>
+            <HubListItem>{TEXT.Title}</HubListItem>,
+            <HubListItem>{TEXT.Button}</HubListItem>,
+            <HubListItem>{TEXT.Label}</HubListItem>
+          </HubList>
+        </HubGrid>
+      );
+    }}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Usage" />

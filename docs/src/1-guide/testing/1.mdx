@@ -1,0 +1,105 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Guide/Testing/Primeiros passos" />
+
+> [Voltar ao sumário](/?path=/docs/guide-testing-summary--page)
+
+# Primeiros passos com Testing com Jest
+
+## Comandos para testar os componentes
+
+**1. Atualizar e executar todos os testes do projeto.**
+
+Atualiza os snapshots dos testes existentes. Útil quando você tem mudanças intencionais na interface ou no comportamento do componente e quer refletir essas mudanças nos testes de snapshot.
+
+```
+  npm run test:update
+```
+
+**2. Executa os teste e deixa em modo observação.**
+
+O teste é reexecutado automaticamente sempre que há mudanças no código. Ideal para desenvolvimento contínuo e iterações rápidas.
+
+```
+  npm run test:watch
+```
+
+**2.1 Executar num arquivo específico**
+
+Ao executar uma pasta específica, evita de ficar testando outros componentes.
+
+```
+npm run test:watch -- --coverage /src/components/financeiro-page/detalhes-pagamentos-page/detalhe-pagamento-modal-add-arquivo
+```
+
+**3. Execução de Testes Otimizada para Integração Contínua**
+
+Ele desativa a geração de alguns arquivos de relatório, priorizando a eficiência no processo de testes. Além disso, ao identificar uma falha em algum teste, o Jest interrompe imediatamente a execução e retorna um sinal de erro, fazendo com que o agente de CI trave o pipeline, evitando que o processo continue em caso de falhas críticas.
+
+```
+  npm run test:ci
+```
+
+**4. Execução de Testes que falharam**
+
+```
+  npm run test:fails
+```
+
+**5. Update de Testes que falharam**
+
+```
+  npm run test:update:fails
+```
+
+---
+
+## Estruturas de pastas
+
+![testid structure](/assets/img/tests-guide/guide-testing-folders-structure.png)
+
+**Pasta Snapshots**
+
+Esta pasta é gerada automaticamente ao executar o comando abaixo, quando o teste de "matches snapshot" é renderizado corretamente.
+
+```
+npm run test:update
+```
+
+**Pasta index.test.tsx**
+
+- Pasta na qual contem todos os testes do componente principal e que será reconhecida automaticamente para executar os testes.
+
+**Pasta index.tsx**
+
+Componente principal na qual vai ser testado
+
+---
+
+## Abrir o Coverage
+
+Após a execução dos testes, você pode abrir o coverage (relatório de cobertura de código) para verificar a cobertura de testes de seu componente.
+
+Abra o a pasta Covegage e identifique o index.html
+
+**Visualizar Coverage**
+
+- Instale a Extensão "Live Server"
+- Aperte com botão direito no index.html
+- Selecione "Open with Live server"
+
+> Extensão... [Live server 💻](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+![testid folder coverage](/assets/img/tests-guide/guide-testing-folder-coverage.png)
+
+**Executar projeto com Coverage**
+
+Execute o comando de teste com a flag --coverage para atualizar a pasta index.html
+
+![testid coverage](/assets/img/tests-guide/guide-testing-coverage.png)
+
+> Próximo passo... [Estrutura dos Testes ✍🏻](/?path=/docs/guide-testing-estrutura--page)
+
+---
+
+Keep calm and code on 🤘.

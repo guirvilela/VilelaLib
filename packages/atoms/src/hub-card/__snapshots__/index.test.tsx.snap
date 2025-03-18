@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubCard component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid #CCD5DD;
+  background-color: #FFFFFF;
+  padding: 16px;
+}
+
+<div
+    class="c0"
+  />
+</DocumentFragment>
+`;

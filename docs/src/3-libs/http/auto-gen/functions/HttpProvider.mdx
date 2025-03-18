@@ -1,0 +1,68 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/functions/HttpProvider" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / HttpProvider
+
+# Function: HttpProvider()
+
+```ts
+function HttpProvider(__namedParameters: HttpProviderProps): Element
+```
+
+É um componente React que fornece um contexto Http para seus filhos, criado com React.createContext.
+Ele usa a função useAuth para obter as informações de autenticação e, em seguida, cria um objeto Http usando as funções factoryHttp ou factoryHttpMock, dependendo das configurações passadas por props.
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`__namedParameters`
+
+</td>
+<td>
+
+`HttpProviderProps`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Element`
+
+## Example
+
+```ts
+<HttpProvider configs={httpConfig}>
+  <OutrosComponents />
+</HttpProvider>
+
+const httpClient = useHttp();
+```
+
+## Defined in
+
+providers/index.tsx:47
+
+
+***
+
+Keep calm and code on 🤘.

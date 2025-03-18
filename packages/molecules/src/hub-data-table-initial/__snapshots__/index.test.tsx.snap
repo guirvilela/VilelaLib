@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubDataTableInitial component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  gap: 24px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  padding: 48px 20px;
+}
+
+.c1 {
+  gap: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 540px;
+}
+
+.c3 {
+  gap: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.c4 {
+  font-family: Kanit;
+  font-size: 32px;
+  line-height: 1.2666666666666666;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  text-align: center;
+  color: #083350;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c5 {
+  font-family: Nunito Sans;
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  text-align: center;
+  color: #304A5D;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.c2 {
+  color: #083350 !important;
+}
+
+@media (max-width:768px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+      width="540px"
+    >
+      <svg
+        class="c2"
+        fill="none"
+        height="144"
+        viewBox="0 0 144 144"
+        width="144"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="72"
+          cy="72"
+          fill="#E8EEF4"
+          r="72"
+        />
+        <path
+          d="M68.1952 46.2437C57.5267 46.2437 48.8781 54.8923 48.8781 65.5608C48.8781 76.2293 57.5267 84.8779 68.1952 84.8779C78.8637 84.8779 87.5123 76.2293 87.5123 65.5608C87.5123 54.8923 78.8637 46.2437 68.1952 46.2437ZM42.4391 65.5608C42.4391 51.3361 53.9705 39.8047 68.1952 39.8047C82.4199 39.8047 93.9513 51.3361 93.9513 65.5608C93.9513 71.5127 91.9324 76.9931 88.542 81.3546L105.886 98.6989C107.144 99.9562 107.144 101.995 105.886 103.252C104.629 104.509 102.591 104.509 101.333 103.252L83.989 85.9076C79.6275 89.298 74.1471 91.3169 68.1952 91.3169C53.9705 91.3169 42.4391 79.7855 42.4391 65.5608Z"
+          fill="#083350"
+        />
+      </svg>
+      <div
+        class="c3"
+      >
+        <h2
+          class="c4"
+          color="primary"
+        >
+          aaaa
+        </h2>
+        <span
+          class="c5"
+          color="neutral"
+        >
+          bbbbb
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

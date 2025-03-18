@@ -1,0 +1,83 @@
+import { HubProgressStep, HubProgressStepper, HubText } from '@hubert/atoms';
+import { colorLevels, colorsList } from '@hubert/styles';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { TEXT } from '~/utils';
+import {
+  HubProgressStepConfig,
+  HubProgressStepperConfig
+} from './storyConfig.ts';
+
+<Meta title="Design System/Atoms/HubProgressStep" />
+
+# HubProgressStep
+
+```
+import { HubProgressStep } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Default"
+    args={HubProgressStepConfig.args}
+    argTypes={HubProgressStepConfig.props}
+  >
+    {(args) => <HubProgressStep {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+# HubProgressStepper
+
+```
+import { HubProgressStepper, HubProgressStep } from '@hubert/atoms';
+```
+
+<Canvas>
+  <Story
+    name="Usage"
+    args={HubProgressStepperConfig.args}
+    argTypes={HubProgressStepperConfig.props}
+  >
+    {(args) => (
+      <HubProgressStepper {...args}>
+        <HubProgressStep label="1" complete />,
+        <HubProgressStep label="2" active />,
+        <HubProgressStep label="3" />
+      </HubProgressStepper>
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Usage" />
+
+# With Content
+
+<Canvas>
+  <Story name="With Content" args={HubProgressStepperConfig.args}>
+    {(args) => (
+      <HubProgressStepper {...args}>
+        <HubProgressStep label="1" complete>
+          <HubText typo="body1" weight="600">
+            {TEXT.Title}
+          </HubText>
+          {TEXT.Subtitle}
+        </HubProgressStep>
+        ,
+        <HubProgressStep label="2" active>
+          <HubText typo="body1" weight="600">
+            {TEXT.Title}
+          </HubText>
+          {TEXT.Subtitle}
+        </HubProgressStep>
+        ,
+        <HubProgressStep label="3">
+          <HubText typo="body1" weight="600">
+            {TEXT.Title}
+          </HubText>
+          {TEXT.Subtitle}
+        </HubProgressStep>
+      </HubProgressStepper>
+    )}
+  </Story>
+</Canvas>

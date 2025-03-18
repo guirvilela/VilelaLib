@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1730233159353" clover="3.2.0">
+  <project timestamp="1730233159353" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1" elements="7" coveredelements="5" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+    <file name="index.tsx" path="C:\Users\guirv\Desenvolvimento\Hubert\hubert.lib.front\packages\organisms\src\hub-yes-no\index.tsx">
+      <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

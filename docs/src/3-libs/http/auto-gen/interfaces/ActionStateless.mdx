@@ -1,0 +1,62 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Http/interfaces/ActionStateless" />
+
+
+
+[**Http Library**](/?path=/docs/libs-http-overview--page) • **Docs**
+
+***
+
+[Http Library](/?path=/docs/libs-http-overview--page) / ActionStateless
+
+# Interface: ActionStateless\<T\>
+
+Type return of useActionStateless Hook
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+<th>Default type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+<td>
+
+`unknown`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`catcher`</td><td>(`err`: [`HttpResponse`](/?path=/docs/libs-http-classes-httpresponse)\<`T`, `any`, `any`, `any`\>) => `void`</td><td>change error message</td><td>hooks/action.ts:271</td></tr>
+<tr><td>`clearStatus`</td><td>() => `void`</td><td>clear status messages</td><td>hooks/action.ts:273</td></tr>
+<tr><td>`error`</td><td>`string`</td><td>request error message (use updateStatus)</td><td>hooks/action.ts:259</td></tr>
+<tr><td>`finish`</td><td>() => `void`</td><td>call on finally request</td><td>hooks/action.ts:269</td></tr>
+<tr><td>`hasMsg`</td><td>`boolean`</td><td>true if has any status message</td><td>hooks/action.ts:263</td></tr>
+<tr><td>`loading`</td><td>`boolean`</td><td>request loading between start and finally</td><td>hooks/action.ts:261</td></tr>
+<tr><td>`start`</td><td>() => `void`</td><td>call on init request</td><td>hooks/action.ts:267</td></tr>
+<tr><td>`success`</td><td>`string`</td><td>request success message (use updateStatus)</td><td>hooks/action.ts:255</td></tr>
+<tr><td>`updateStatus`</td><td>(`success`?: `string`, `warning`?: `string`, `error`?: `string`) => `void`</td><td>change status message</td><td>hooks/action.ts:265</td></tr>
+<tr><td>`warning`</td><td>`string`</td><td>request warning message (use updateStatus)</td><td>hooks/action.ts:257</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

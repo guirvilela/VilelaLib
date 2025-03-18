@@ -1,0 +1,17 @@
+svg:not(.ignore):not([class^='recharts']) {
+  path[stroke]:not(:is([stroke='white'], [stroke='#fff'])) {
+    stroke: currentColor !important;
+  }
+
+  path[fill]:not(:is([fill='white'], [fill='#fff'])) {
+    fill: currentColor !important;
+  }
+
+  g[stroke]:not(:is([stroke='white'], [stroke='#fff'])) {
+    stroke: currentColor !important;
+  }
+
+  g[fill]:not(:is([fill='white'], [fill='#fff'])) {
+    fill: currentColor !important;
+  }
+}

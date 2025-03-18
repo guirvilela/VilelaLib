@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/functions/ThemeProvider" />
+
+
+
+[**Styles Library**](/?path=/docs/libs-styles-overview--page) • **Docs**
+
+***
+
+[Styles Library](/?path=/docs/libs-styles-overview--page) / ThemeProvider
+
+# Function: ThemeProvider()
+
+```ts
+function ThemeProvider(__namedParameters: ThemeProviderProps): Element
+```
+
+React provider que expoe toda a logica do style-guide.
+
+## Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`__namedParameters`
+
+</td>
+<td>
+
+`ThemeProviderProps`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Returns
+
+`Element`
+
+## Example
+
+```ts
+<ThemeProvider configs={themeConfig}>
+  <OutrosComponents />
+</ThemeProvider>
+
+const theme = useTheme();
+```
+
+## Defined in
+
+providers/theme/index.tsx:28
+
+
+***
+
+Keep calm and code on 🤘.

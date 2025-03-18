@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Observability/interfaces/AnalyticsConfig" />
+
+
+
+[**Observability Library**](/?path=/docs/libs-observability-overview--page) • **Docs**
+
+***
+
+[Observability Library](/?path=/docs/libs-observability-overview--page) / AnalyticsConfig
+
+# Interface: AnalyticsConfig
+
+Objeto de configuração do `AnalyticsProvider`
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Description</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`gtag?`</td><td>`string`</td><td>Google Analytics Property ID</td><td>analytics/types.ts:25</td></tr>
+<tr><td>`gtm?`</td><td>`string`</td><td>Google Tag Manager ID</td><td>analytics/types.ts:23</td></tr>
+<tr><td>`hotjar?`</td><td>`string`</td><td>Hotjar Site ID</td><td>analytics/types.ts:27</td></tr>
+<tr><td>`pageViewParams?`</td><td>(`path`: `string`, `user`?: `User`) => [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `string`\></td><td>Parametros/dados enviados no evento page view</td><td>analytics/types.ts:29</td></tr>
+<tr><td>`pathSerializer?`</td><td>(`path`: `string`) => `string`</td><td>Function para ajustar a url enviada nos eventos</td><td>analytics/types.ts:31</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

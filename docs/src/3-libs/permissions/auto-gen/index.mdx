@@ -1,0 +1,247 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Permissions/Overview" />
+
+**Permissions Library** • **Docs**
+
+***
+
+# Permissions Lib
+
+Esta biblioteca contem e deve somente conter codigo relacionado logica de permissionamento.
+
+## Como utilizar
+
+```
+npm i @hubert/permissions
+```
+
+Exemplo:
+
+```javascript
+import { PermissionsProvider } from '@hubert/permissions';
+```
+
+## Enumerations
+
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[AccessLevel](/?path=/docs/libs-permissions-enumerations-accesslevel)
+
+</td>
+<td>
+
+Lista de niveis de acessos disponivel por permissão
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Access](/?path=/docs/libs-permissions-interfaces-access)
+
+</td>
+<td>
+
+Objeto que representa uma permissão
+
+</td>
+</tr>
+<tr>
+<td>
+
+[IPermissionsContext](/?path=/docs/libs-permissions-interfaces-ipermissionscontext)
+
+</td>
+<td>
+
+Objeto com todos as propriedades disponiveis no contexto do `PermissionsProvider`
+
+</td>
+</tr>
+<tr>
+<td>
+
+[NestedAccess](/?path=/docs/libs-permissions-interfaces-nestedaccess)
+
+</td>
+<td>
+
+Objeto que representa uma permissão retorna pela API (utilizar somente se souber do que se trara!)
+
+</td>
+</tr>
+<tr>
+<td>
+
+[PermissionsConfig](/?path=/docs/libs-permissions-interfaces-permissionsconfig)
+
+</td>
+<td>
+
+Objeto de configuração do `PermissionsProvider`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<table>
+<thead>
+<tr>
+<th>Type alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[AccessCodigo](/?path=/docs/libs-permissions-type-aliases-accesscodigo)
+
+</td>
+<td>
+
+Codigo ou lista de acessos a ser validado
+
+</td>
+</tr>
+<tr>
+<td>
+
+[AccessTipoUsuario](/?path=/docs/libs-permissions-type-aliases-accesstipousuario)
+
+</td>
+<td>
+
+Codigo ou lista de perfis a ser validado
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[PermissionsProvider](/?path=/docs/libs-permissions-functions-permissionsprovider)
+
+</td>
+<td>
+
+React provider que expoe toda a logica de permissionamento de paginas (TB_ERP_FUNCIONALIDADES).
+
+**Example**
+
+```ts
+<PermissionsProvider configs={permissionsConfig}>
+  <OutrosComponents />
+</PermissionsProvider>
+
+const { hasAccessCodigo } = usePermissions();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useAccess](/?path=/docs/libs-permissions-functions-useaccess)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers para verificar o acesso do usuario a uma ou mais funcionalidades
+
+**Example**
+
+```ts
+const [acesso123, acesso456] = useAccess([123, 456]);
+
+acesso123?.canRead = true/false
+acesso123?.canAdd = true/false
+acesso456?.canEdit = true/false
+acesso456?.canDelete = true/false
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[usePermissions](/?path=/docs/libs-permissions-functions-usepermissions)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do `PermissionsProvider`
+
+**Example**
+
+```ts
+const { hasAccessCodigo } = usePermissions();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[withAccess](/?path=/docs/libs-permissions-functions-withaccess)
+
+</td>
+<td>
+
+Função utilizada como guarda das paginas que requerem permissionamento (pode ser utilizada com composition)
+
+**Example**
+
+```ts
+export default compose(
+  withAccess([123])
+)(CadastroAreasPage);
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

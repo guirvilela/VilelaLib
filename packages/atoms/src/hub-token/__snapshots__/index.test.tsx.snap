@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HubToken component matches snapshot 1`] = `
+<DocumentFragment>
+  .c2 {
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.c0 .c1 {
+  font-family: Kanit;
+  font-size: 40px;
+  line-height: 1.2105263157894737;
+  -webkit-letter-spacing: -0.02em;
+  -moz-letter-spacing: -0.02em;
+  -ms-letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
+  width: calc(16px + 40px);
+  height: calc(32px + 40px);
+  color: #040C12;
+  border: 1px solid #A2B2BF;
+}
+
+<div
+    class="c0"
+  >
+    <input
+      class="c1 c2"
+      id="hub-token-input-1"
+      maxlength="1"
+      type="text"
+      value=""
+    />
+    <input
+      class="c1 c2"
+      id="hub-token-input-2"
+      maxlength="1"
+      type="text"
+      value=""
+    />
+    <input
+      class="c1 c2"
+      id="hub-token-input-3"
+      maxlength="1"
+      type="text"
+      value=""
+    />
+    <input
+      class="c1 c2"
+      id="hub-token-input-4"
+      maxlength="1"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;

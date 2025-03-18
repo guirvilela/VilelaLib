@@ -1,0 +1,1141 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Styles/Overview" />
+
+**Styles Library** • **Docs**
+
+***
+
+# Styles
+
+Esta biblioteca contem e deve somente conter codigos relacionados a estilos (e.g: styled-components e css).
+
+## Como utilizar
+
+```
+npm i @hubert/styles
+```
+
+No arquivo de entrada da aplicação faça o import do css principal:
+
+```javascript
+import '@hubert/styles/lib/styles.css';
+```
+
+### Fonts
+
+**Não é recomendado recriar classes ou components que utilizem a fontes dessa lib diretamente**!
+Para isso utilize o component `HubText` disponivel nas libs `@hubert/atoms`.
+
+### Icones
+
+Faça o import direto no component que estiver trabalhando e utilize o component HubIcon para instanciar o svg, exemplo:
+
+```javascript
+import IconLike from '@hubert/styles/lib/icons/icon-outline-like.svg';
+
+<HubIcon icon={IconLike} color="primary" size="sm" />;
+```
+
+> Projetos criados a partir dos templates react desse monorepo, já estão preparados para lidar com esse tipo de import!
+
+### Types
+
+Tipo utilizados para manter coesão entre as duas implementações de components baseados no style-guide.
+
+## Enumerations
+
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Breakpoint](/?path=/docs/libs-styles-enumerations-breakpoint)
+
+</td>
+<td>
+
+Breakpoints disponiveis a ser utilizado pelos utils
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Interfaces
+
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Theme](/?path=/docs/libs-styles-interfaces-theme)
+
+</td>
+<td>
+
+Objeto com todas as variaveis do style-guide
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ThemeConfig](/?path=/docs/libs-styles-interfaces-themeconfig)
+
+</td>
+<td>
+
+Objeto de configuração do ThemeProvider
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Type Aliases
+
+<table>
+<thead>
+<tr>
+<th>Type alias</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[Align](/?path=/docs/libs-styles-type-aliases-align)
+
+</td>
+<td>
+
+Alinhamento utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Animations](/?path=/docs/libs-styles-type-aliases-animations)
+
+</td>
+<td>
+
+Objeto que contem animações prontas
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Autocomplete](/?path=/docs/libs-styles-type-aliases-autocomplete)
+
+</td>
+<td>
+
+Tipo de autocomplete utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[BorderStyle](/?path=/docs/libs-styles-type-aliases-borderstyle)
+
+</td>
+<td>
+
+Estilo de borda utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Breakpoints](/?path=/docs/libs-styles-type-aliases-breakpoints)
+
+</td>
+<td>
+
+Objeto com a configuração de cada breakpoint
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Col](/?path=/docs/libs-styles-type-aliases-col)
+
+</td>
+<td>
+
+Tipo que representa um tamanho de coluna dentro do grid de 12 colunas
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Color](/?path=/docs/libs-styles-type-aliases-color)
+
+</td>
+<td>
+
+Nome da cor no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ColorLevel](/?path=/docs/libs-styles-type-aliases-colorlevel)
+
+</td>
+<td>
+
+Nivel da cor no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ColorLevelAlternative](/?path=/docs/libs-styles-type-aliases-colorlevelalternative)
+
+</td>
+<td>
+
+Nivel da cor alternativa no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Colors](/?path=/docs/libs-styles-type-aliases-colors)
+
+</td>
+<td>
+
+Cores definidas pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Cursor](/?path=/docs/libs-styles-type-aliases-cursor)
+
+</td>
+<td>
+
+Cursor de mouse utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[DisplayPosition](/?path=/docs/libs-styles-type-aliases-displayposition)
+
+</td>
+<td>
+
+Display css utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[FontStyle](/?path=/docs/libs-styles-type-aliases-fontstyle)
+
+</td>
+<td>
+
+Estilo de fonte utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[FontWeight](/?path=/docs/libs-styles-type-aliases-fontweight)
+
+</td>
+<td>
+
+Espessura da tipografia disponivel no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Grid](/?path=/docs/libs-styles-type-aliases-grid)
+
+</td>
+<td>
+
+Objeto com a configuração do grid de 12 colunas.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[InputType](/?path=/docs/libs-styles-type-aliases-inputtype)
+
+</td>
+<td>
+
+Tipos de inputs utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[MediaQuery](/?path=/docs/libs-styles-type-aliases-mediaquery)
+
+</td>
+<td>
+
+Representa um media query, utilizando os breakpoints pré-configurados.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[MediaQuerys](/?path=/docs/libs-styles-type-aliases-mediaquerys)
+
+</td>
+<td>
+
+Objeto a configuração dos media query, utilizando os breakpoints pré-configurados.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Overflow](/?path=/docs/libs-styles-type-aliases-overflow)
+
+</td>
+<td>
+
+Overflow css utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Position](/?path=/docs/libs-styles-type-aliases-position)
+
+</td>
+<td>
+
+Posição/Alinhamento utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[PositionExtra](/?path=/docs/libs-styles-type-aliases-positionextra)
+
+</td>
+<td>
+
+Posição complexa utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Resize](/?path=/docs/libs-styles-type-aliases-resize)
+
+</td>
+<td>
+
+Tipo de resize utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Shadow](/?path=/docs/libs-styles-type-aliases-shadow)
+
+</td>
+<td>
+
+Sombra definida pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Shadows](/?path=/docs/libs-styles-type-aliases-shadows)
+
+</td>
+<td>
+
+Sombras definidas pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Size](/?path=/docs/libs-styles-type-aliases-size)
+
+</td>
+<td>
+
+Tamanho utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Sort](/?path=/docs/libs-styles-type-aliases-sort)
+
+</td>
+<td>
+
+Ordenação utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Space](/?path=/docs/libs-styles-type-aliases-space)
+
+</td>
+<td>
+
+Espaçamento definido pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Spaces](/?path=/docs/libs-styles-type-aliases-spaces)
+
+</td>
+<td>
+
+Espaçamentos definidos pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Target](/?path=/docs/libs-styles-type-aliases-target)
+
+</td>
+<td>
+
+Tipo de redirect de link utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[TextDecoration](/?path=/docs/libs-styles-type-aliases-textdecoration)
+
+</td>
+<td>
+
+Decoração de texto utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[TextTransform](/?path=/docs/libs-styles-type-aliases-texttransform)
+
+</td>
+<td>
+
+Transformação de texto utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Trigger](/?path=/docs/libs-styles-type-aliases-trigger)
+
+</td>
+<td>
+
+Gatilho/evento utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Type](/?path=/docs/libs-styles-type-aliases-type)
+
+</td>
+<td>
+
+Tipo de botão utilizado nos estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Typo](/?path=/docs/libs-styles-type-aliases-typo)
+
+</td>
+<td>
+
+Tipografia disponivel no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Typography](/?path=/docs/libs-styles-type-aliases-typography)
+
+</td>
+<td>
+
+Lista de tipografias disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[Variant](/?path=/docs/libs-styles-type-aliases-variant)
+
+</td>
+<td>
+
+Estilo de botão utilizado nos estilos
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Variables
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[align](/?path=/docs/libs-styles-variables-align)
+
+</td>
+<td>
+
+Lista de alinhamentos utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[animations](/?path=/docs/libs-styles-variables-animations)
+
+</td>
+<td>
+
+Objeto que contem animações prontas
+
+</td>
+</tr>
+<tr>
+<td>
+
+[autocomplete](/?path=/docs/libs-styles-variables-autocomplete)
+
+</td>
+<td>
+
+Lista de tipos de autocomplete utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[borderStyle](/?path=/docs/libs-styles-variables-borderstyle)
+
+</td>
+<td>
+
+Lista de estilos de borda utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[breakpointList](/?path=/docs/libs-styles-variables-breakpointlist)
+
+</td>
+<td>
+
+Lista de breakpoints disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[breakpoints](/?path=/docs/libs-styles-variables-breakpoints)
+
+</td>
+<td>
+
+Objeto com a configuração de cada breakpoint
+
+</td>
+</tr>
+<tr>
+<td>
+
+[colorLevels](/?path=/docs/libs-styles-variables-colorlevels)
+
+</td>
+<td>
+
+Lista de niveis de cor disponivel no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[colors](/?path=/docs/libs-styles-variables-colors)
+
+</td>
+<td>
+
+Cores definidas pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[colorsList](/?path=/docs/libs-styles-variables-colorslist)
+
+</td>
+<td>
+
+Lista de cores disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[cursor](/?path=/docs/libs-styles-variables-cursor)
+
+</td>
+<td>
+
+Lista de cursores de mouse utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[displayPosition](/?path=/docs/libs-styles-variables-displayposition)
+
+</td>
+<td>
+
+Lista de displays css utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[fontStyle](/?path=/docs/libs-styles-variables-fontstyle)
+
+</td>
+<td>
+
+Lista de estilo de fonte utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[grid](/?path=/docs/libs-styles-variables-grid)
+
+</td>
+<td>
+
+Objeto com a configuração do grid de 12 colunas.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[gridList](/?path=/docs/libs-styles-variables-gridlist)
+
+</td>
+<td>
+
+Lista de tamanhos de coluna do grid disponivel no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[inputType](/?path=/docs/libs-styles-variables-inputtype)
+
+</td>
+<td>
+
+Lista de tipos de inputs utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[mediaQuery](/?path=/docs/libs-styles-variables-mediaquery)
+
+</td>
+<td>
+
+Objeto a configuração dos media query, utilizando os breakpoints pré-configurados.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[overflow](/?path=/docs/libs-styles-variables-overflow)
+
+</td>
+<td>
+
+Lista de overflow utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[position](/?path=/docs/libs-styles-variables-position)
+
+</td>
+<td>
+
+Lista de posições/alinhamento utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[positionExtra](/?path=/docs/libs-styles-variables-positionextra)
+
+</td>
+<td>
+
+Lista de posições complexas utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[resize](/?path=/docs/libs-styles-variables-resize)
+
+</td>
+<td>
+
+Lista de tipos de resize utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[shadows](/?path=/docs/libs-styles-variables-shadows)
+
+</td>
+<td>
+
+Sombras definidas pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[shadowsList](/?path=/docs/libs-styles-variables-shadowslist)
+
+</td>
+<td>
+
+Lista de sombras disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[size](/?path=/docs/libs-styles-variables-size)
+
+</td>
+<td>
+
+Lista de tamanhos utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[sort](/?path=/docs/libs-styles-variables-sort)
+
+</td>
+<td>
+
+Lista de ordenações utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[spaces](/?path=/docs/libs-styles-variables-spaces)
+
+</td>
+<td>
+
+Espaçamentos definidos pelo style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[spacesList](/?path=/docs/libs-styles-variables-spaceslist)
+
+</td>
+<td>
+
+Lista de espaçamentos disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[target](/?path=/docs/libs-styles-variables-target)
+
+</td>
+<td>
+
+Lista de tipo de redirect de links utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[textDecoration](/?path=/docs/libs-styles-variables-textdecoration)
+
+</td>
+<td>
+
+Lista de decoração de texto utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[textTransform](/?path=/docs/libs-styles-variables-texttransform)
+
+</td>
+<td>
+
+Lista de transformação de texto utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[theme](/?path=/docs/libs-styles-variables-theme)
+
+</td>
+<td>
+
+Objeto com todas as variaveis do style-guide
+
+</td>
+</tr>
+<tr>
+<td>
+
+[trigger](/?path=/docs/libs-styles-variables-trigger)
+
+</td>
+<td>
+
+Lista de gatilhos/evento utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[type](/?path=/docs/libs-styles-variables-type)
+
+</td>
+<td>
+
+Lista de tipos de botão utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[typography](/?path=/docs/libs-styles-variables-typography)
+
+</td>
+<td>
+
+Lista de tipografias disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[typoList](/?path=/docs/libs-styles-variables-typolist)
+
+</td>
+<td>
+
+Lista de tipografias disponiveis no style-guide.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[variant](/?path=/docs/libs-styles-variables-variant)
+
+</td>
+<td>
+
+Lista de estilos de botões utilizados nos componentes/estilos
+
+</td>
+</tr>
+<tr>
+<td>
+
+[weightList](/?path=/docs/libs-styles-variables-weightlist)
+
+</td>
+<td>
+
+Lista de espessuras de tipografia disponiveis no style-guide.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Functions
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[addAlphaHex](/?path=/docs/libs-styles-functions-addalphahex)
+
+</td>
+<td>
+
+Util para adicionar alpha em cor hexadecimal
+
+</td>
+</tr>
+<tr>
+<td>
+
+[parsePixel](/?path=/docs/libs-styles-functions-parsepixel)
+
+</td>
+<td>
+
+Converte pixel de string para numero
+
+</td>
+</tr>
+<tr>
+<td>
+
+[randomColor](/?path=/docs/libs-styles-functions-randomcolor)
+
+</td>
+<td>
+
+Retorna uma cor aleatória do style-guide
+
+</td>
+</tr>
+<tr>
+<td>
+
+[randomColorLevel](/?path=/docs/libs-styles-functions-randomcolorlevel)
+
+</td>
+<td>
+
+Retorna um nivel de cor aleatória do style-guide
+
+</td>
+</tr>
+<tr>
+<td>
+
+[ThemeProvider](/?path=/docs/libs-styles-functions-themeprovider)
+
+</td>
+<td>
+
+React provider que expoe toda a logica do style-guide.
+
+**Example**
+
+```ts
+<ThemeProvider configs={themeConfig}>
+  <OutrosComponents />
+</ThemeProvider>
+
+const theme = useTheme();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useResponsive](/?path=/docs/libs-styles-functions-useresponsive)
+
+</td>
+<td>
+
+Hook com utils para trabalhar com responsividade
+Exporta o breakpoint atual e funções utils
+
+**Example**
+
+```ts
+const { isMobile } = useResponsive();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[useTheme](/?path=/docs/libs-styles-functions-usetheme)
+
+</td>
+<td>
+
+Função que pode ser utilizada nas controllers/pages para acessar o contexto do ThemeProvider
+
+**Example**
+
+```ts
+const theme = useTheme();
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+[withLayout](/?path=/docs/libs-styles-functions-withlayout)
+
+</td>
+<td>
+
+Função utilizada para adicionar um layout pré-configurado em uma pagina (pode ser utilizada com composition)
+
+**Example**
+
+```ts
+export default compose(
+  withLayout(DefaultLayout)
+)(CadastroAreasPage);
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.

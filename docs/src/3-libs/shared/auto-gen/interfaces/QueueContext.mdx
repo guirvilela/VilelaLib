@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Libs/Shared/interfaces/QueueContext" />
+
+
+
+[**Shared Library**](/?path=/docs/libs-shared-overview--page) • **Docs**
+
+***
+
+[Shared Library](/?path=/docs/libs-shared-overview--page) / QueueContext
+
+# Interface: QueueContext\<T\>
+
+Objeto retornado pelo hook `useQueue()`
+
+## Type Parameters
+
+<table>
+<thead>
+<tr>
+<th>Type Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+## Properties
+
+<table>
+<tr><th>Property</th><th>Type</th><th>Defined in</th></tr>
+<tr></tr>
+<tr><td>`addQueue`</td><td>(`task`: [`Queue`](/?path=/docs/libs-shared-type-aliases-queue)\<`T`\>) => `void`</td><td>hooks/queue.ts:11</td></tr>
+<tr><td>`queue`</td><td>[`QueueList`](/?path=/docs/libs-shared-type-aliases-queuelist)\<`T`\></td><td>hooks/queue.ts:10</td></tr>
+<tr><td>`runQueue`</td><td>(`data`: `T`) => [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`void`\></td><td>hooks/queue.ts:12</td></tr>
+</table>
+
+
+***
+
+Keep calm and code on 🤘.
